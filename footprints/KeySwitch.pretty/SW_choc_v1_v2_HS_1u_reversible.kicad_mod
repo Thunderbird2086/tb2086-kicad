@@ -204,7 +204,7 @@
   (pad "2" thru_hole circle (at 0 5.95) (size 3.3 3.3) (drill 3) (layers "*.Cu" "B.Mask") (tstamp 90fc724c-076a-4d35-8bea-a19c4f445197))
   (pad "2" smd roundrect (at 2.045 5.95) (size 3.1 2.6) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.1) (tstamp 09a14e6b-cca2-4927-bf0e-88b6211c4722))
   (model "${KICAD7_3RD_PARTY}/3dmodels/com_github_ebastler_marbastlib/HS_Kailh_Choc.step"
-    (offset (xyz -5 -3.75 1.2))
+    (offset (xyz -5 -3.75 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 90 0 180))
   )
