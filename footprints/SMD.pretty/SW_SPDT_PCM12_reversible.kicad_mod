@@ -103,7 +103,7 @@
   (pad "" smd rect (at 3.65 1.43) (size 1.4 0.8) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp f5bc9b86-f5a2-444d-b28e-5ab47d408153))
   (pad "" smd rect (at 3.65 1.43) (size 1.4 0.8) (layers "B.Cu" "B.Paste" "B.Mask") (tstamp da8bd762-1bfb-4a23-b38b-11fa8d379b47))
   (pad "1" smd rect (at -2.25 -1.43) (size 0.8 2) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 8562797f-5557-409a-9701-b683b0a37891))
-  (pad "1" thru_hole circle (at 0 0.65) (size 0.5 0.5) (drill 0.3) (layers "*.Cu" "*.Mask") (tstamp b27e7490-a5df-4b29-b31b-ea667cf5b63c))
+  (pad "1" thru_hole circle (at 0 0.3) (size 0.5 0.5) (drill 0.3) (layers "*.Cu" "*.Mask") (tstamp b27e7490-a5df-4b29-b31b-ea667cf5b63c))
   (pad "1" smd rect (at 2.25 -1.43) (size 0.8 2) (layers "B.Cu" "B.Paste" "B.Mask") (tstamp 352ce223-0237-4119-9215-9aa2319cd3ee))
   (pad "2" smd rect (at -0.75 -1.43) (size 0.8 2) (layers "B.Cu" "B.Paste" "B.Mask") (tstamp b19a8fe6-d4c9-4a5b-b981-0795e091a0ef))
   (pad "2" smd roundrect (at -0.25 -1.43) (size 0.5 0.25) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25)
@@ -113,7 +113,7 @@
     (thermal_bridge_angle 45) (tstamp a5c24f3c-3565-4345-9b77-49ab28e19eb7))
   (pad "2" smd rect (at 0.75 -1.43) (size 0.8 2) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 4983bb3e-0bfa-4ef6-a58c-ce13177b9816))
   (pad "3" smd rect (at -2.25 -1.43) (size 0.8 2) (layers "B.Cu" "B.Paste" "B.Mask") (tstamp b8ba774a-9f08-4c4a-9b6b-e98615c19547))
-  (pad "3" thru_hole circle (at 0 0) (size 0.5 0.5) (drill 0.3) (layers "*.Cu" "*.Mask") (tstamp 72b8dd29-cf1f-415a-951c-a5fffaa728e1))
+  (pad "3" thru_hole circle (at 0 -3.025) (size 0.5 0.5) (drill 0.3) (layers "*.Cu" "*.Mask") (tstamp 72b8dd29-cf1f-415a-951c-a5fffaa728e1))
   (pad "3" smd rect (at 2.25 -1.43) (size 0.8 2) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp b5bd6b39-a3bc-46ca-9cce-18ca523ef84f))
   (model "${KICAD6_3DMODEL_DIR}/Button_Switch_SMD.3dshapes/SW_SPDT_PCM12.wrl"
     (offset (xyz 0 0 -1.7))
