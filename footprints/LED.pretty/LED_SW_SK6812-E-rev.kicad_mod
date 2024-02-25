@@ -25,17 +25,17 @@
   )
   (fp_poly
     (pts
-      (xy 2.886929 1.379036)
-      (xy 2.286929 1.379036)
-      (xy 2.286929 1.979036)
+      (xy 2.886929 1.479036)
+      (xy 2.286929 1.479036)
+      (xy 2.286929 2.079036)
     )
 
     (stroke (width 0.1) (type solid)) (fill solid) (layer "B.SilkS") (tstamp 3755e0ba-f919-4cbc-97c6-06d2062098a3))
   (fp_poly
     (pts
-      (xy 2.861929 -1.395964)
-      (xy 2.261929 -1.395964)
-      (xy 2.261929 -1.995964)
+      (xy 2.861929 -1.495964)
+      (xy 2.261929 -1.495964)
+      (xy 2.261929 -2.095964)
     )
 
     (stroke (width 0.1) (type solid)) (fill solid) (layer "F.SilkS") (tstamp 96e4ff59-99b6-4e43-86bd-c881afd833e0))
@@ -79,16 +79,16 @@
     (stroke (width 0.05) (type solid)) (layer "F.CrtYd") (tstamp f68f9deb-849d-4d50-9714-3cf7d06aef67))
   (fp_line (start 3.8 2.000001) (end -3.8 2.000001)
     (stroke (width 0.05) (type solid)) (layer "F.CrtYd") (tstamp 99081f73-7a11-4ac8-815c-322142a69d15))
-  (pad "1" smd rect (at -2.488071 -0.745964) (size 1.7 0.82) (layers "B.Cu" "B.Paste" "B.Mask") (tstamp a6e04ba9-879c-4fa8-954b-136b348bf4ea))
-  (pad "1" smd rect (at -2.488071 0.754036) (size 1.7 0.82) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 75a9c09e-6095-47fa-9f00-6a3fc2596600))
-  (pad "2" smd rect (at -2.488071 -0.745964) (size 1.7 0.82) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp c7708a04-cfb3-4a41-b032-7efa38203761))
-  (pad "2" smd rect (at -2.488071 0.754036) (size 1.7 0.82) (layers "B.Cu" "B.Paste" "B.Mask") (tstamp 466da1bd-d899-49c6-9cc9-8eb0c536ab19))
-  (pad "3" smd roundrect (at 2.611929 -0.745964) (size 1.7 0.82) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0)
+  (pad "1" smd rect (at -2.688071 -0.845964) (size 1.9 0.82) (layers "B.Cu" "B.Paste" "B.Mask") (tstamp a6e04ba9-879c-4fa8-954b-136b348bf4ea))
+  (pad "1" smd rect (at -2.688071 0.854036) (size 1.9 0.82) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 75a9c09e-6095-47fa-9f00-6a3fc2596600))
+  (pad "2" smd rect (at -2.688071 -0.845964) (size 1.9 0.82) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp c7708a04-cfb3-4a41-b032-7efa38203761))
+  (pad "2" smd rect (at -2.688071 0.854036) (size 1.9 0.82) (layers "B.Cu" "B.Paste" "B.Mask") (tstamp 466da1bd-d899-49c6-9cc9-8eb0c536ab19))
+  (pad "3" smd roundrect (at 2.811929 -0.845964) (size 1.9 0.82) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0)
     (chamfer_ratio 0.5) (chamfer top_right) (tstamp daebc9b4-e784-4f10-8dff-e80b21e484e6))
-  (pad "3" smd roundrect (at 2.611929 0.754036) (size 1.7 0.82) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0)
+  (pad "3" smd roundrect (at 2.811929 0.854036) (size 1.9 0.82) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0)
     (chamfer_ratio 0.5) (chamfer bottom_right) (tstamp c1353ad3-3f30-426b-887a-7a00d1318e88))
-  (pad "4" smd rect (at 2.611929 -0.745964) (size 1.7 0.82) (layers "B.Cu" "B.Paste" "B.Mask") (tstamp 65fe2b8d-e49b-4dd8-af24-b51a2607e3d0))
-  (pad "4" smd rect (at 2.611929 0.754036) (size 1.7 0.82) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 931cf504-bc02-4aa7-9ffe-409da53a347d))
+  (pad "4" smd rect (at 2.811929 -0.845964) (size 1.9 0.82) (layers "B.Cu" "B.Paste" "B.Mask") (tstamp 65fe2b8d-e49b-4dd8-af24-b51a2607e3d0))
+  (pad "4" smd rect (at 2.811929 0.854036) (size 1.9 0.82) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 931cf504-bc02-4aa7-9ffe-409da53a347d))
   (model "${KICAD7_3RD_PARTY}/3dmodels/com_github_ebastler_marbastlib/LED_SK6812MINI-E.step"
     (offset (xyz 0 -5.08 -1.75))
     (scale (xyz 1 1 1))
