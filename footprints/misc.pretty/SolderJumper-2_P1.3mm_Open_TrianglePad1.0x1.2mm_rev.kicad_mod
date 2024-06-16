@@ -1,4 +1,4 @@
-(footprint "SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm_rev"
+(footprint "SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.2mm_rev"
 	(version 20240108)
 	(generator "pcbnew")
 	(generator_version "8.0")
@@ -17,9 +17,10 @@
 			)
 		)
 	)
-	(property "Value" "SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm_rev"
+	(property "Value" "SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.2mm_rev"
 		(at 0 1.9 0)
 		(layer "F.Fab")
+		(hide yes)
 		(uuid "a752f8c1-d50d-4fd4-83d1-e4b7c9358d47")
 		(effects
 			(font
@@ -146,8 +147,8 @@
 		(uuid "244ccf4d-6bff-4251-b2aa-cbe5d9b19e7b")
 	)
 	(fp_line
-		(start -1.65 1.25)
-		(end -1.65 -1.25)
+		(start -1.25 1.1)
+		(end -1.25 -1.1)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -156,8 +157,8 @@
 		(uuid "e52eed2e-e7ba-448e-83ab-0778be2d13a8")
 	)
 	(fp_line
-		(start -1.65 1.25)
-		(end 1.65 1.25)
+		(start -1.25 1.1)
+		(end 1.25 1.1)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -166,8 +167,8 @@
 		(uuid "821ad021-57fc-40c8-9f82-82bb8b11584e")
 	)
 	(fp_line
-		(start 1.65 -1.25)
-		(end -1.65 -1.25)
+		(start 1.25 -1.1)
+		(end -1.25 -1.1)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -176,8 +177,8 @@
 		(uuid "3e479e6b-b19a-4248-8ce5-25f6741211ec")
 	)
 	(fp_line
-		(start 1.65 -1.25)
-		(end 1.65 1.25)
+		(start 1.25 -1.1)
+		(end 1.25 1.1)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -186,8 +187,8 @@
 		(uuid "824cbc5d-bd58-4400-a676-3daccca67800")
 	)
 	(fp_line
-		(start -1.65 -1.25)
-		(end -1.65 1.25)
+		(start -1.25 -1.1)
+		(end -1.25 1.1)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -196,8 +197,8 @@
 		(uuid "473bb80a-c3af-4cc0-8d83-6b0cd7143ec4")
 	)
 	(fp_line
-		(start -1.65 -1.25)
-		(end 1.65 -1.25)
+		(start -1.25 -1.1)
+		(end 1.25 -1.1)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -206,18 +207,8 @@
 		(uuid "36eb4a4d-8aee-4d0e-8aa8-9b9dd142818b")
 	)
 	(fp_line
-		(start 1.65 1.25)
-		(end -1.65 1.25)
-		(stroke
-			(width 0.05)
-			(type solid)
-		)
-		(layer "F.CrtYd")
-		(uuid "2fb2b89c-81f1-48ea-8e24-6ee974bac911")
-	)
-	(fp_line
-		(start 1.65 1.25)
-		(end 1.65 -1.25)
+		(start 1.25 1)
+		(end 1.25 -1.1)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -225,53 +216,22 @@
 		(layer "F.CrtYd")
 		(uuid "885a2927-fe5c-4a37-90ee-0623cdf8972a")
 	)
-	(pad "1" smd custom
-		(at -0.725 0)
-		(size 0.3 0.3)
-		(layers "F.Cu" "F.Mask")
-		(zone_connect 2)
-		(thermal_bridge_angle 45)
-		(options
-			(clearance outline)
-			(anchor rect)
+	(fp_line
+		(start 1.25 1.1)
+		(end -1.25 1.1)
+		(stroke
+			(width 0.05)
+			(type solid)
 		)
-		(primitives
-			(gr_poly
-				(pts
-					(xy 1 0) (xy 0.5 0.75) (xy -0.5 0.75) (xy -0.5 -0.75) (xy 0.5 -0.75)
-				)
-				(width 0)
-				(fill yes)
-			)
-		)
-		(uuid "b69c9f40-8973-419c-b2c0-dbebaca6e371")
+		(layer "F.CrtYd")
+		(uuid "2fb2b89c-81f1-48ea-8e24-6ee974bac911")
 	)
 	(pad "1" smd custom
-		(at -0.725 0)
-		(size 0.3 0.3)
-		(layers "B.Cu" "B.Mask")
-		(zone_connect 2)
-		(thermal_bridge_angle 45)
-		(options
-			(clearance outline)
-			(anchor rect)
-		)
-		(primitives
-			(gr_poly
-				(pts
-					(xy 1 0) (xy 0.5 0.75) (xy -0.5 0.75) (xy -0.5 -0.75) (xy 0.5 -0.75)
-				)
-				(width 0)
-				(fill yes)
-			)
-		)
-		(uuid "cdb7968a-f8f3-4853-9ad8-9341888863c6")
-	)
-	(pad "2" smd custom
-		(at 0.725 0)
-		(size 0.3 0.3)
+		(at -0.441 0 90)
+		(size 0.1 0.1)
 		(layers "F.Cu" "F.Mask")
-		(zone_connect 2)
+		(clearance 0.1)
+		(zone_connect 0)
 		(thermal_bridge_angle 45)
 		(options
 			(clearance outline)
@@ -280,19 +240,42 @@
 		(primitives
 			(gr_poly
 				(pts
-					(xy 0.5 0.75) (xy -0.65 0.75) (xy -0.15 0) (xy -0.65 -0.75) (xy 0.5 -0.75)
+					(xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)
 				)
 				(width 0)
 				(fill yes)
 			)
 		)
-		(uuid "8970f70d-502a-401e-b938-b9f4e820a1e7")
+		(uuid "64039192-a390-41e3-ae44-a7f8b2259e3d")
+	)
+	(pad "1" smd custom
+		(at -0.441 0 90)
+		(size 0.1 0.1)
+		(layers "B.Cu" "B.Mask")
+		(clearance 0.1)
+		(zone_connect 0)
+		(thermal_bridge_angle 45)
+		(options
+			(clearance outline)
+			(anchor rect)
+		)
+		(primitives
+			(gr_poly
+				(pts
+					(xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)
+				)
+				(width 0)
+				(fill yes)
+			)
+		)
+		(uuid "5a25fe1f-8490-497b-a2fb-d630041ecd56")
 	)
 	(pad "2" smd custom
-		(at 0.725 0)
-		(size 0.3 0.3)
-		(layers "B.Cu" "B.Mask")
-		(zone_connect 2)
+		(at 0.575 0 90)
+		(size 1.2 0.5)
+		(layers "F.Cu" "F.Mask")
+		(clearance 0.1)
+		(zone_connect 0)
 		(thermal_bridge_angle 45)
 		(options
 			(clearance outline)
@@ -301,12 +284,34 @@
 		(primitives
 			(gr_poly
 				(pts
-					(xy 0.5 0.75) (xy -0.65 0.75) (xy -0.15 0) (xy -0.65 -0.75) (xy 0.5 -0.75)
+					(xy 0.6 0) (xy -0.6 0) (xy -0.6 -1) (xy 0 -0.4) (xy 0.6 -1)
 				)
 				(width 0)
 				(fill yes)
 			)
 		)
-		(uuid "2d07f8f2-77a1-494a-955a-be071683dc45")
+		(uuid "a97c33ef-c9ac-4850-b979-1219fa8d6d13")
+	)
+	(pad "2" smd custom
+		(at 0.575 0 90)
+		(size 1.2 0.5)
+		(layers "B.Cu" "B.Mask")
+		(clearance 0.1)
+		(zone_connect 0)
+		(thermal_bridge_angle 45)
+		(options
+			(clearance outline)
+			(anchor rect)
+		)
+		(primitives
+			(gr_poly
+				(pts
+					(xy 0.6 0) (xy -0.6 0) (xy -0.6 -1) (xy 0 -0.4) (xy 0.6 -1)
+				)
+				(width 0)
+				(fill yes)
+			)
+		)
+		(uuid "ad215432-18fa-48b1-8e84-eb16690f51f3")
 	)
 )
