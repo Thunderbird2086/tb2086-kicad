@@ -103,7 +103,7 @@
   (pad "4" thru_hole circle (at 3.2 0) (size 0.4 0.4) (drill 0.3) (layers "*.Cu" "*.Mask") (tstamp 0f272398-3077-4f8f-87bc-8edb092a2a6f))
   (pad "4" smd roundrect (at 3.2 0.25) (size 0.25 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25)
     (thermal_bridge_angle 45) (tstamp f531cf6b-9719-4bbe-af8c-67d56752b82b))
-  (model "${TB2086_KICAD}/packages3D/SK6812MINI.wrl"
+  (model "${KIPRJMOD}/tb2086-kicad/packages3D/SK6812MINI.wrl"
     (offset (xyz 0 0 -1.8))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

@@ -49,7 +49,7 @@
     (clearance 0.15) (tstamp 5ed54c93-4fa3-4f24-b8c5-4d098e420279))
   (pad "D" thru_hole oval (at 2.1 10.3) (size 1.7 2.5) (drill oval 1 1.5) (layers "*.Cu" "*.Mask")
     (clearance 0.15) (tstamp 671f1509-6c69-40af-bb8d-b95323d5c30b))
-  (model "${TB2086_KICAD}/packages3D/PJ-320A.wrl"
+  (model "${KIPRJMOD}/tb2086-kicad/packages3D/PJ-320A.wrl"
     (offset (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

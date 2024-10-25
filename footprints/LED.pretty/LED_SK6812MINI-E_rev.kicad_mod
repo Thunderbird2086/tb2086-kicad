@@ -51,7 +51,7 @@
   (pad "4" smd rect (at 3.075 -0.4) (size 0.25 0.82) (layers "B.Cu" "B.Paste" "B.Mask") (tstamp 22fd7df0-215f-43aa-99e1-365f69b00094))
   (pad "4" thru_hole circle (at 3.075 0) (size 0.4 0.4) (drill 0.3) (layers "*.Cu" "*.Mask") (tstamp 3e6232b3-c61d-4c50-84b6-0a6509920b58))
   (pad "4" smd rect (at 3.075 0.4) (size 0.25 0.82) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp b93fc79e-5ba9-48e3-a7ea-34665f54185c))
-  (model "${TB2086_KICAD}/packages3D/SK6812MINI-E.wrl"
+  (model "${KIPRJMOD}/tb2086-kicad/packages3D/SK6812MINI-E.wrl"
     (offset (xyz 0 0 -1.8))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))
