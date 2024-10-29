@@ -4129,7 +4129,7 @@
 		)
 		(uuid "0ba6da00-d20a-4342-a5b4-b07fe2131a9d")
 	)
-	(model "${KIPRJMOD}/packages3D/PinSocket_2.54mm_5mm_2x-12.step"
+	(model "${KIPRJMOD}/tb2086-kicad/packages3D/PinSocket_2.54mm_5mm_2x-12.step"
 		(offset
 			(xyz 0 12.7 0)
 		)
@@ -4140,7 +4140,7 @@
 			(xyz -90 0 90)
 		)
 	)
-	(model "${KIPRJMOD}/packages3D/Nice_Nano_V2.step"
+	(model "${KIPRJMOD}/tb2086-kicad/packages3D/Nice_Nano_V2.step"
 		(offset
 			(xyz 0 0 5)
 		)
