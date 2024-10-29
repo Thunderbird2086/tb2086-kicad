@@ -96,10 +96,10 @@ module.exports = {
 
     `
     let final = standard_opening;
-    final += front_pads;
 
     if (p.reversible || p.side == "F") {
         final += front_silkscreen;
+        final += front_pads;
         final += front_fabrication;
         final += front_mask;
         final += front_courtyard;
@@ -109,8 +109,8 @@ module.exports = {
     final += pads;
 
     if (p.reversible || p.side == "B") {
-        final += back_pads;
         final += back_silkscreen;
+        final += back_pads;
         final += back_fabrication;
         final += back_mask;
         final += back_courtyard;
