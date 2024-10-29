@@ -171,18 +171,18 @@ module.exports = {
 
     `
     let final = standard_opening;
+    final += front_silkscreen;
     final += front_pads;
+    final += front_fabrication;
+    final += front_mask;
+    final += front_courtyard;
+    final += front_paste;
     final += pads;
     final += back_pads;
-    final += front_silkscreen;
     final += back_silkscreen;
-    final += front_fabrication;
     final += back_fabrication;
-    final += front_mask;
     final += back_mask;
-    final += front_courtyard;
     final += back_courtyard;
-    final += front_paste;
     final += back_paste;
     final += edge_cuts;
     final += user_drawing;
