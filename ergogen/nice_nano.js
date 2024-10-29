@@ -358,8 +358,8 @@ module.exports = {
     const user_eco2 = `
     `
     const model = `
-        (model "\${KIPRJMOD}/packages3D/PinSocket_2.54mm_5mm_2x-12.step" (offset (xyz 0 12.7 0)) (scale (xyz 1 1 1)) (rotate (xyz -90 0 90)))
-        (model "\${KIPRJMOD}/packages3D/Nice_Nano_V2.step" (offset (xyz 0 0 5)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
+        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/PinSocket_2.54mm_5mm_2x-12.step" (offset (xyz 0 12.7 0)) (scale (xyz 1 1 1)) (rotate (xyz -90 0 90)))
+        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/Nice_Nano_V2.step" (offset (xyz 0 0 5)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
     `
     const standard_closing = `
             )
