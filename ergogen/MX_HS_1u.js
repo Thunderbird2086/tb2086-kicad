@@ -3,8 +3,9 @@ module.exports = {
     designator: 'S',    // change it accordingly
     side: 'F',          // delete if not needed
     reversible: false,  // delete if not needed
-    P2: {type: 'net', value: 'P2'}, // undefined, // change to undefined as needed
-    P1: {type: 'net', value: 'P1'}, // undefined, // change to undefined as needed
+    show_3d: false,     // delete if not needed
+    P2: {type: 'net', value: undefined}, // change to undefined as needed
+    P1: {type: 'net', value: undefined}, // change to undefined as needed
   },
   body: p => {
     const standard_opening = `(
@@ -16,23 +17,6 @@ module.exports = {
         (descr "Footprint for Cherry MX style switches with Kailh hotswap socket")
         (attr smd)
         ${p.at /* parametric position */}
-    `
-    const front_pads = `
-        (pad "1" smd roundrect (at 6.535 -2.54 ${p.rot}) (size 4.2 2.5) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.1) (uuid "f200f7ff-c180-4b88-af2f-15382c7ef9f8") ${p.P1})
-        (pad "2" smd roundrect (at -5.265 -5.08 ${p.rot}) (size 4.2 2.5) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.1) (uuid "1db8ccdb-d377-428b-b096-5e1ee7615369") ${p.P2})
-    `
-    const pads = `
-        (pad "" np_thru_hole circle (at -5.08 0 ${p.rot}) (size 1.75 1.75) (drill 1.75) (layers "*.Mask") (uuid "ec8122ca-7f62-429e-878f-11558e016561"))
-        (pad "" np_thru_hole circle (at 0 0 ${p.rot}) (size 3.9878 3.9878) (drill 3.9878) (layers "*.Cu" "*.Mask") (uuid "e51bca19-f6a2-465e-ad69-da03145fe870"))
-        (pad "" np_thru_hole circle (at 5.08 0 ${p.rot}) (size 1.75 1.75) (drill 1.75) (layers "*.Mask") (uuid "cc9b3f43-dda1-4ddd-b125-29d2dfb90375"))
-        (pad "1" thru_hole circle (at 2.590176 -5.06978 ${p.rot}) (size 3.3 3.3) (drill 3) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (uuid "f789ec5e-6ec5-4eb6-8ed7-3f29aa8c71b3") ${p.P1})
-        (pad "1" thru_hole circle (at 3.81 -2.54 ${p.rot}) (size 3.3 3.3) (drill 3) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (uuid "f931232a-e0ed-4928-bd42-952175a01e45") ${p.P1})
-        (pad "2" thru_hole circle (at -3.759824 -2.52978 ${p.rot}) (size 3.3 3.3) (drill 3) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (uuid "a25d5e04-cf8b-4d96-84eb-d6c6993c0eeb") ${p.P2})
-        (pad "2" thru_hole circle (at -2.54 -5.08 ${p.rot}) (size 3.3 3.3) (drill 3) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (uuid "03e21442-98c6-468f-a9bf-67569c56c4d9") ${p.P2})
-    `
-    const back_pads = `
-        (pad "1" smd roundrect (at 5.315176 -5.06978 ${p.rot}) (size 4.2 2.5) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.1) (uuid "1cffe02a-95b3-462c-924b-fe525044de00") ${p.P1})
-        (pad "2" smd roundrect (at -6.484824 -2.52978 ${p.rot}) (size 4.2 2.5) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.1) (uuid "e9dc95fc-cae4-4923-a789-5bba6ca5811e") ${p.P2})
     `
     const front_silkscreen = `
         (fp_line (start -4.864824 -6.75022) (end -4.864824 -6.52022) (stroke (width 0.15) (type solid)) (layer "F.SilkS") (uuid "06b3cf51-3d6d-4e92-bf48-a8900dba2381"))
@@ -46,17 +30,9 @@ module.exports = {
         (fp_arc (start 0.2 -2.70022) (mid 1.670693 -2.183637) (end 2.494322 -0.86022) (stroke (width 0.15) (type solid)) (layer "F.SilkS") (uuid "c2d05716-4175-4181-8539-0877ea239b59"))
         (fp_arc (start 4.085176 -6.75022) (mid 5.49939 -6.164434) (end 6.085176 -4.75022) (stroke (width 0.15) (type solid)) (layer "F.SilkS") (uuid "be36be03-7526-4bc8-aa7d-8c8a89e8aef8"))
     `
-    const back_silkscreen = `
-        (fp_line (start -6.035 -3.94) (end -6.035 -4.74) (stroke (width 0.15) (type solid)) (layer "B.SilkS") (uuid "12d0e19b-0623-4451-86c9-89818f5b7b2f"))
-        (fp_line (start -6.035 -1.09) (end -6.035 -0.85) (stroke (width 0.15) (type solid)) (layer "B.SilkS") (uuid "09b428f1-3bbd-4a65-9523-aff91d19df9b"))
-        (fp_line (start -4.035 -6.74) (end 1.865 -6.74) (stroke (width 0.15) (type solid)) (layer "B.SilkS") (uuid "411f3d6f-5067-497b-a887-94dab357a5ef"))
-        (fp_line (start 3.365 -6.74) (end 4.915 -6.74) (stroke (width 0.15) (type solid)) (layer "B.SilkS") (uuid "6df06d9a-54ff-4198-80de-abccc7a6d4ce"))
-        (fp_line (start 4.415 -2.69) (end -0.149824 -2.69) (stroke (width 0.15) (type solid)) (layer "B.SilkS") (uuid "5ccc4600-4d15-46de-bb10-622c5e2ec5ba"))
-        (fp_line (start 4.915 -6.74) (end 4.915 -6.51) (stroke (width 0.15) (type solid)) (layer "B.SilkS") (uuid "51b7324e-7a60-49ae-8c5d-424c0b8ec02b"))
-        (fp_line (start 4.915 -3.66) (end 4.915 -3.19) (stroke (width 0.15) (type solid)) (layer "B.SilkS") (uuid "06f81f12-b095-4a10-9685-def2fdbd33ce"))
-        (fp_arc (start -6.035 -4.74) (mid -5.449216 -6.154216) (end -4.035 -6.74) (stroke (width 0.15) (type solid)) (layer "B.SilkS") (uuid "0cc173bc-0997-44c6-a5d8-0908a8b6cb10"))
-        (fp_arc (start -2.444146 -0.85) (mid -1.620517 -2.173417) (end -0.149824 -2.69) (stroke (width 0.15) (type solid)) (layer "B.SilkS") (uuid "afc70bb4-d449-4e06-902b-844f26f1a554"))
-        (fp_arc (start 4.915 -3.19) (mid 4.768553 -2.836447) (end 4.415 -2.69) (stroke (width 0.15) (type solid)) (layer "B.SilkS") (uuid "449b8352-c950-4576-950f-590b9e74e9d3"))
+    const front_pads = `
+        (pad "1" smd roundrect (at 6.535 -2.54 ${p.rot}) (size 4.2 2.5) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.1) (uuid "f200f7ff-c180-4b88-af2f-15382c7ef9f8") ${p.P1})
+        (pad "2" smd roundrect (at -5.265 -5.08 ${p.rot}) (size 4.2 2.5) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.1) (uuid "1db8ccdb-d377-428b-b096-5e1ee7615369") ${p.P2})
     `
     const front_fabrication = `
         (property "Reference" "${p.ref}" (at -4.2672 1.8288 ${0 + p.rot}) (layer "F.Fab") (uuid "abcea926-33d8-442d-a367-35cda3816ca5") (effects (font (size 1 1) (thickness 0.15))))
@@ -65,12 +41,7 @@ module.exports = {
         (property "Datasheet" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "97908711-b100-4f9b-9d99-d4ace9c400f3") (effects (font (size 1.27 1.27) (thickness 0.15))))
         (property "Description" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "c2729870-136b-4d3e-935d-23edcda4626e") (effects (font (size 1.27 1.27) (thickness 0.15))))
     `
-    const back_fabrication = `
-        (fp_text user "${p.ref}" (at 4.3688 1.778 ${0 + p.rot}) (layer "B.Fab") (uuid "4ff0e365-b6ae-4867-8c9c-5d66e8a9d918") (effects (font (size 1 1) (thickness 0.15)) (justify mirror)))
-    `
     const front_mask = `
-    `
-    const back_mask = `
     `
     const front_courtyard = `
         (fp_line (start -7.414824 -6.32022) (end -4.864824 -6.32022) (stroke (width 0.05) (type solid)) (layer "F.CrtYd") (uuid "da533c10-61cd-43f6-8693-6fabbad8e5ae"))
@@ -89,6 +60,38 @@ module.exports = {
         (fp_line (start 8.685176 -1.30022) (end 6.085176 -1.30022) (stroke (width 0.05) (type solid)) (layer "F.CrtYd") (uuid "10d890dd-f309-4ce7-bb04-a4ac495436b1"))
         (fp_arc (start 0.2 -2.70022) (mid 1.670503 -2.183399) (end 2.494322 -0.86022) (stroke (width 0.05) (type solid)) (layer "F.CrtYd") (uuid "ae096316-2a43-409e-b6e8-a6d1a49a12f2"))
         (fp_arc (start 4.085176 -6.75022) (mid 5.49939 -6.164434) (end 6.085176 -4.75022) (stroke (width 0.05) (type solid)) (layer "F.CrtYd") (uuid "b4449849-5028-4cf6-be71-48e1764448bc"))
+    `
+    const front_paste = `
+    `
+    const pads = `
+        (pad "" np_thru_hole circle (at -5.08 0 ${p.rot}) (size 1.75 1.75) (drill 1.75) (layers "*.Mask") (uuid "ec8122ca-7f62-429e-878f-11558e016561"))
+        (pad "" np_thru_hole circle (at 0 0 ${p.rot}) (size 3.9878 3.9878) (drill 3.9878) (layers "*.Cu" "*.Mask") (uuid "e51bca19-f6a2-465e-ad69-da03145fe870"))
+        (pad "" np_thru_hole circle (at 5.08 0 ${p.rot}) (size 1.75 1.75) (drill 1.75) (layers "*.Mask") (uuid "cc9b3f43-dda1-4ddd-b125-29d2dfb90375"))
+        (pad "1" thru_hole circle (at 2.590176 -5.06978 ${p.rot}) (size 3.3 3.3) (drill 3) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (uuid "f789ec5e-6ec5-4eb6-8ed7-3f29aa8c71b3") ${p.P1})
+        (pad "1" thru_hole circle (at 3.81 -2.54 ${p.rot}) (size 3.3 3.3) (drill 3) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (uuid "f931232a-e0ed-4928-bd42-952175a01e45") ${p.P1})
+        (pad "2" thru_hole circle (at -3.759824 -2.52978 ${p.rot}) (size 3.3 3.3) (drill 3) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (uuid "a25d5e04-cf8b-4d96-84eb-d6c6993c0eeb") ${p.P2})
+        (pad "2" thru_hole circle (at -2.54 -5.08 ${p.rot}) (size 3.3 3.3) (drill 3) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (uuid "03e21442-98c6-468f-a9bf-67569c56c4d9") ${p.P2})
+    `
+    const back_silkscreen = `
+        (fp_line (start -6.035 -3.94) (end -6.035 -4.74) (stroke (width 0.15) (type solid)) (layer "B.SilkS") (uuid "12d0e19b-0623-4451-86c9-89818f5b7b2f"))
+        (fp_line (start -6.035 -1.09) (end -6.035 -0.85) (stroke (width 0.15) (type solid)) (layer "B.SilkS") (uuid "09b428f1-3bbd-4a65-9523-aff91d19df9b"))
+        (fp_line (start -4.035 -6.74) (end 1.865 -6.74) (stroke (width 0.15) (type solid)) (layer "B.SilkS") (uuid "411f3d6f-5067-497b-a887-94dab357a5ef"))
+        (fp_line (start 3.365 -6.74) (end 4.915 -6.74) (stroke (width 0.15) (type solid)) (layer "B.SilkS") (uuid "6df06d9a-54ff-4198-80de-abccc7a6d4ce"))
+        (fp_line (start 4.415 -2.69) (end -0.149824 -2.69) (stroke (width 0.15) (type solid)) (layer "B.SilkS") (uuid "5ccc4600-4d15-46de-bb10-622c5e2ec5ba"))
+        (fp_line (start 4.915 -6.74) (end 4.915 -6.51) (stroke (width 0.15) (type solid)) (layer "B.SilkS") (uuid "51b7324e-7a60-49ae-8c5d-424c0b8ec02b"))
+        (fp_line (start 4.915 -3.66) (end 4.915 -3.19) (stroke (width 0.15) (type solid)) (layer "B.SilkS") (uuid "06f81f12-b095-4a10-9685-def2fdbd33ce"))
+        (fp_arc (start -6.035 -4.74) (mid -5.449216 -6.154216) (end -4.035 -6.74) (stroke (width 0.15) (type solid)) (layer "B.SilkS") (uuid "0cc173bc-0997-44c6-a5d8-0908a8b6cb10"))
+        (fp_arc (start -2.444146 -0.85) (mid -1.620517 -2.173417) (end -0.149824 -2.69) (stroke (width 0.15) (type solid)) (layer "B.SilkS") (uuid "afc70bb4-d449-4e06-902b-844f26f1a554"))
+        (fp_arc (start 4.915 -3.19) (mid 4.768553 -2.836447) (end 4.415 -2.69) (stroke (width 0.15) (type solid)) (layer "B.SilkS") (uuid "449b8352-c950-4576-950f-590b9e74e9d3"))
+    `
+    const back_pads = `
+        (pad "1" smd roundrect (at 5.315176 -5.06978 ${p.rot}) (size 4.2 2.5) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.1) (uuid "1cffe02a-95b3-462c-924b-fe525044de00") ${p.P1})
+        (pad "2" smd roundrect (at -6.484824 -2.52978 ${p.rot}) (size 4.2 2.5) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.1) (uuid "e9dc95fc-cae4-4923-a789-5bba6ca5811e") ${p.P2})
+    `
+    const back_fabrication = `
+        (fp_text user "${p.ref}" (at 4.3688 1.778 ${0 + p.rot}) (layer "B.Fab") (uuid "4ff0e365-b6ae-4867-8c9c-5d66e8a9d918") (effects (font (size 1 1) (thickness 0.15)) (justify mirror)))
+    `
+    const back_mask = `
     `
     const back_courtyard = `
         (fp_line (start -8.635 -3.74) (end -8.635 -1.29) (stroke (width 0.05) (type solid)) (layer "B.CrtYd") (uuid "6a78cafd-cc76-4b03-9298-3ed913f17221"))
@@ -110,8 +113,6 @@ module.exports = {
         (fp_line (start 7.465 -3.86) (end 7.465 -6.31) (stroke (width 0.05) (type solid)) (layer "B.CrtYd") (uuid "0ffc8684-8545-4502-8455-ab03b183baf8"))
         (fp_arc (start -6.035 -4.74) (mid -5.449216 -6.154216) (end -4.035 -6.74) (stroke (width 0.05) (type solid)) (layer "B.CrtYd") (uuid "d6842c89-ddd5-47f2-9744-3f8377d08847"))
         (fp_arc (start -2.444146 -0.85) (mid -1.620326 -2.173179) (end -0.149824 -2.69) (stroke (width 0.05) (type solid)) (layer "B.CrtYd") (uuid "0512bc39-7278-4055-8976-6579dd8e8c22"))
-    `
-    const front_paste = `
     `
     const back_paste = `
     `
@@ -153,15 +154,15 @@ module.exports = {
 
     `
     let final = standard_opening;
-    final += front_pads;
     final += front_silkscreen;
+    final += front_pads;
     final += front_fabrication;
     final += front_mask;
     final += front_courtyard;
     final += front_paste;
     final += pads;
-    final += back_pads;
     final += back_silkscreen;
+    final += back_pads;
     final += back_fabrication;
     final += back_mask;
     final += back_courtyard;
