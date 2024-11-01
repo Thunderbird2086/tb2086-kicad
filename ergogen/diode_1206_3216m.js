@@ -69,6 +69,7 @@ module.exports = {
         (pad "2" smd rect (at 1.775 0 ${p.rot}) (size 1.3 0.95) (layers "B.Cu" "B.Paste" "B.Mask") (uuid "a03215f3-66f4-4d89-8b4f-0648c1fc9077") ${p.P2})
     `
     const back_fabrication = `
+        (property "Reference" "${p.ref}" (at 0.5 0 ${180 + p.rot}) (layer "B.Fab") (hide yes) (uuid "2562fb51-5ca0-4c16-a2e3-51668621502c") (effects (font (size 0.5 0.5) (thickness 0.125))))
     `
     const back_mask = `
     `
@@ -86,7 +87,10 @@ module.exports = {
     `
     const user_eco2 = `
     `
-    const model = `
+    const front_model = `
+        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/D_1206_3216Metric.wrl" (offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
+    `
+    const back_model = `
         (model "\${KIPRJMOD}/tb2086-kicad/packages3D/D_1206_3216Metric.wrl" (offset (xyz 0 0 -1.6)) (scale (xyz 1 1 1)) (rotate (xyz 180 0 0)))
     `
     const standard_closing = `
@@ -121,7 +125,11 @@ module.exports = {
     final += user_eco2;
 
     if (p.show_3d) {
-        final += model;
+        if (p.side == "F") {
+            final += front_model;
+        } else {
+            final += back_model;
+        }
     }
 
     final += standard_closing;

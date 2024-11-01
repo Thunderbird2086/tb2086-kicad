@@ -56,6 +56,7 @@ module.exports = {
         (fp_line (start -0.227064 0.735) (end 0.227064 0.735) (stroke (width 0.12) (type solid)) (layer "B.SilkS") (uuid "16b30b70-08b0-4df3-a3bd-f10bacbcb189"))
     `
     const back_pads = `
+        (property "Reference" "${p.ref}" (at 0 -1.65 ${180 + p.rot}) (layer "B.SilkS") (hide yes) (uuid "ea8a26ea-3a6d-4dab-baac-2b7813101d69") (effects (font (size 1 1) (thickness 0.15))))
         (pad "1" smd roundrect (at -1 0 ${180 + p.rot}) (size 1.2 1.4) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.208333) (uuid "a8dfb015-9e15-4834-8e95-f9d6591eb820") ${p.P1})
         (pad "2" smd roundrect (at 1 0 ${180 + p.rot}) (size 1.2 1.4) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.208333) (uuid "80533845-5781-46cd-a5d3-f7fb58976153") ${p.P2})
     `
@@ -77,7 +78,10 @@ module.exports = {
     `
     const user_eco2 = `
     `
-    const model = `
+    const front_model = `
+        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/R_0805_2012Metric.step" (offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
+    `
+    const back_model = `
         (model "\${KIPRJMOD}/tb2086-kicad/packages3D/R_0805_2012Metric.step" (offset (xyz 0 0 -1.6)) (scale (xyz 1 1 1)) (rotate (xyz 0 180 0)))
     `
     const standard_closing = `
@@ -111,7 +115,11 @@ module.exports = {
     final += user_eco2;
 
     if (p.show_3d) {
-        final += model;
+        if (p.side == "F") {
+            final += front_model;
+        } else {
+            final += back_model;
+        }
     }
 
     final += standard_closing;

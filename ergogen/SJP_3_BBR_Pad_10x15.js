@@ -57,6 +57,7 @@ module.exports = {
         (net_tie_pad_groups "1, 2, 3")
     `
     const back_silkscreen = `
+        (fp_text reference "${p.ref}" (at 0 -1.8 ${p.rot}) (layer "B.SilkS") hide (effects (font (size 1 1) (thickness 0.15)) (justify mirror)) (tstamp 72926832-b657-495c-9bf6-1bc19dd97510))
         (fp_line (start -2.05 -0.3) (end -2.05 0.3) (stroke (width 0.12) (type solid)) (layer "B.SilkS") (tstamp fea3a642-27ae-43f6-8fed-01d6207bdad6))
         (fp_line (start -1.4 1) (end 1.4 1) (stroke (width 0.12) (type solid)) (layer "B.SilkS") (tstamp 70e695c8-8d5f-4722-be90-70108d9e9dc1))
         (fp_line (start -1.2 1.2) (end -1.5 1.5) (stroke (width 0.12) (type solid)) (layer "B.SilkS") (tstamp c1dc468f-8022-4654-bc3d-6ddd0fb932d9))

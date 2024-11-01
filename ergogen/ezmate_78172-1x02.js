@@ -99,6 +99,7 @@ module.exports = {
         (pad "MP" smd roundrect (at 1.75 1.9 ${p.rot}) (size 0.7 0.8) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25) (uuid "4b8648d5-3889-4513-8e0d-b25de29397e0") ${p.MP})
     `
     const back_fabrication = `
+        (fp_text user "${p.ref}" (at 0 0.27 ${0 + p.rot}) (layer "B.Fab") (uuid "c4a7460e-c105-4c6b-8438-19173dd519bb") (effects (font (size 1 1) (thickness 0.15)) (justify left bottom)))
     `
     const back_mask = `
     `
@@ -116,7 +117,10 @@ module.exports = {
     `
     const user_eco2 = `
     `
-    const model = `
+    const front_model = `
+        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/Molex_Ezmate_Pico_Socket_2pin.step" (offset (xyz 0 0 1.6)) (scale (xyz 1 1 1)) (rotate (xyz -90 0 0)))
+    `
+    const back_model = `
         (model "\${KIPRJMOD}/tb2086-kicad/packages3D/Molex_Ezmate_Pico_Socket_2pin.step" (offset (xyz 0 0 -3.1)) (scale (xyz 1 1 1)) (rotate (xyz 90 0 180)))
     `
     const standard_closing = `
@@ -124,25 +128,38 @@ module.exports = {
 
     `
     let final = standard_opening;
-    final += front_silkscreen;
-    final += front_pads;
-    final += front_fabrication;
-    final += front_mask;
-    final += front_courtyard;
-    final += front_paste;
     final += pads;
-    final += back_silkscreen;
-    final += back_pads;
-    final += back_fabrication;
-    final += back_mask;
-    final += back_courtyard;
-    final += back_paste;
+    if (p.reversible || p.side == "F") {
+       final += front_silkscreen;
+       final += front_pads;
+       final += front_fabrication;
+       final += front_mask;
+       final += front_courtyard;
+       final += front_paste;
+    }
+
+    if (p.reversible || p.side == "B") {
+        final += back_silkscreen;
+        final += back_pads;
+        final += back_fabrication;
+        final += back_mask;
+        final += back_courtyard;
+        final += back_paste;
+    }
+
     final += edge_cuts;
     final += user_drawing;
     final += user_comments;
     final += user_eco1;
     final += user_eco2;
-    final += model;
+
+    if (p.show_3d) {
+        if (p.side == "F") {
+            final += front_model;
+        } else {
+            final += back_model;
+        }
+    }
     final += standard_closing;
 
     return final

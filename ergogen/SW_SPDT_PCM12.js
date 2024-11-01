@@ -92,6 +92,7 @@ module.exports = {
         (fp_line (start 1.4 2.95) (end 1.2 3.15) (stroke (width 0.1) (type solid)) (layer "B.Fab") (uuid "f4c0bbc6-9065-49c0-b1da-75f924dac4f0"))
         (fp_line (start 3.35 -1) (end 3.35 1.6) (stroke (width 0.1) (type solid)) (layer "B.Fab") (uuid "cac1c303-2555-4d5a-bc88-a2386786b8e1"))
         (fp_line (start 3.35 1.6) (end -3.35 1.6) (stroke (width 0.1) (type solid)) (layer "B.Fab") (uuid "792320c2-c77d-4b57-bcdc-ec77d4342db9"))
+        (fp_text user "${p.ref}" (at 0 -3.2 ${180 + p.rot}) (layer "B.Fab") (hide yes) (uuid "78497502-3ead-4574-8e28-1dc72e219299") (effects (font (size 1 1) (thickness 0.15)) (justify mirror)))
     `
     const back_mask = `
     `
@@ -117,8 +118,11 @@ module.exports = {
     `
     const user_eco2 = `
     `
-    const model = `
+    const front_model = `
         (model "\${KIPRJMOD}/tb2086-kicad/packages3D/SW_SPDT_PCM12.wrl" (offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
+    `
+    const back_model = `
+        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/SW_SPDT_PCM12.wrl" (offset (xyz 0 0 -1.6)) (scale (xyz 1 1 1)) (rotate (xyz 0 180 0)))
     `
     const standard_closing = `
             )
@@ -153,7 +157,11 @@ module.exports = {
     final += user_eco2;
 
     if (p.show_3d) {
-        final += model;
+        if (p.side == "F") {
+            final += front_model;
+        } else {
+            final += back_model;
+        } 
     }
 
     final += standard_closing;
