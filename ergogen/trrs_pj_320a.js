@@ -3,7 +3,7 @@ module.exports = {
     designator: 'TRRS',    // change it accordingly
     side: 'F',          // delete if not needed
     reversible: false,  // delete if not needed
-    show_3d: false,
+    show_3d: false,     // delete if not needed
     C: {type: 'net', value: 'C'}, // undefined, // change to undefined as needed
     D: {type: 'net', value: 'D'}, // undefined, // change to undefined as needed
     A: {type: 'net', value: 'A'}, // undefined, // change to undefined as needed
@@ -19,7 +19,30 @@ module.exports = {
         (attr through_hole)
         ${p.at /* parametric position */}
     `
+    const front_silkscreen = `
+        (fp_line (start -3 0) (end 3 0) (stroke (width 0.15) (type solid)) (layer "F.SilkS") (uuid "03dea40d-e91a-4b24-aa5b-708171a239ed"))
+        (fp_line (start -3 12) (end -3 0) (stroke (width 0.15) (type solid)) (layer "F.SilkS") (uuid "c3b02967-ed92-42cb-87a0-ceea76b2e9ab"))
+        (fp_line (start 3 0) (end 3 12) (stroke (width 0.15) (type solid)) (layer "F.SilkS") (uuid "3898b45c-0f18-4de0-95a4-60204e2d6b98"))
+        (fp_line (start 3 12) (end -3 12) (stroke (width 0.15) (type solid)) (layer "F.SilkS") (uuid "69409e19-b12a-46c4-91c9-48a515c43efc"))
+        (fp_text user "TRRS" (at -0.75 6.45 ${0 + p.rot}) (layer "F.SilkS") (hide yes) (uuid "d733c401-514d-4af5-ac7e-5d73b8bb6c98") (effects (font (size 1 1) (thickness 0.15))))
+    `
     const front_pads = `
+    `
+    const front_fabrication = `
+        (property "Reference" "${p.ref}" (at -0.85 4.95 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "c82d1e33-0f8a-4e7d-9d60-c12ce216083e") (effects (font (size 1 1) (thickness 0.15))))
+        (property "Value" "TRRS-PJ-320A-rev" (at 0 14 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "a03a5d5e-2da7-45ae-9c8c-db7cb2c071f2") (effects (font (size 1 1) (thickness 0.15))))
+        (property "Footprint" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "089d9085-97b8-4c02-8791-75e0a1bd8df8") (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (property "Datasheet" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "7c58da21-033e-4997-8064-f32422786723") (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (property "Description" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "7e182a65-87fc-444f-8def-959c17d2096a") (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (fp_line (start -2.82 0) (end -2.82 -2) (stroke (width 0.15) (type solid)) (layer "F.Fab") (uuid "6477381f-417b-4b1e-a033-819ce78333fd"))
+        (fp_line (start 2.78 -2) (end -2.82 -2) (stroke (width 0.15) (type solid)) (layer "F.Fab") (uuid "93ceaccd-3be5-425e-92bf-9b6196be1ba1"))
+        (fp_line (start 2.78 0) (end 2.78 -2) (stroke (width 0.15) (type solid)) (layer "F.Fab") (uuid "90dadc9a-1ecd-4906-b264-6fca8bef8d62"))
+    `
+    const front_mask = `
+    `
+    const front_courtyard = `
+    `
+    const front_paste = `
     `
     const pads = `
         (pad "" np_thru_hole circle (at -1.75 1.5 ${p.rot}) (size 1.2 1.2) (drill 1.2) (layers "*.Cu" "*.Mask" "F.SilkS") (uuid "82cc78f3-b373-41da-a0e4-077e7c2ab4f3"))
@@ -35,15 +58,6 @@ module.exports = {
         (pad "D" thru_hole oval (at -3.85 10.3 ${p.rot}) (size 1.7 2.5) (drill oval 1 1.5) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (clearance 0.15) (uuid "5ed54c93-4fa3-4f24-b8c5-4d098e420279") ${p.D})
         (pad "D" thru_hole oval (at 2.1 10.3 ${p.rot}) (size 1.7 2.5) (drill oval 1 1.5) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (clearance 0.15) (uuid "671f1509-6c69-40af-bb8d-b95323d5c30b") ${p.D})
     `
-    const back_pads = `
-    `
-    const front_silkscreen = `
-        (fp_line (start -3 0) (end 3 0) (stroke (width 0.15) (type solid)) (layer "F.SilkS") (uuid "03dea40d-e91a-4b24-aa5b-708171a239ed"))
-        (fp_line (start -3 12) (end -3 0) (stroke (width 0.15) (type solid)) (layer "F.SilkS") (uuid "c3b02967-ed92-42cb-87a0-ceea76b2e9ab"))
-        (fp_line (start 3 0) (end 3 12) (stroke (width 0.15) (type solid)) (layer "F.SilkS") (uuid "3898b45c-0f18-4de0-95a4-60204e2d6b98"))
-        (fp_line (start 3 12) (end -3 12) (stroke (width 0.15) (type solid)) (layer "F.SilkS") (uuid "69409e19-b12a-46c4-91c9-48a515c43efc"))
-        (fp_text user "TRRS" (at -0.75 6.45 ${0 + p.rot}) (layer "F.SilkS") (hide yes) (uuid "d733c401-514d-4af5-ac7e-5d73b8bb6c98") (effects (font (size 1 1) (thickness 0.15))))
-    `
     const back_silkscreen = `
         (fp_line (start -4.75 0) (end 1.25 0) (stroke (width 0.15) (type solid)) (layer "B.SilkS") (uuid "b2c87f52-5d9b-4f87-91bc-b0518c170422"))
         (fp_line (start -4.75 12) (end -4.75 0) (stroke (width 0.15) (type solid)) (layer "B.SilkS") (uuid "99210d47-52c9-43d3-a6d9-e7a053e321be"))
@@ -51,30 +65,16 @@ module.exports = {
         (fp_line (start 1.25 12) (end -4.75 12) (stroke (width 0.15) (type solid)) (layer "B.SilkS") (uuid "c6ccc080-6fc3-4732-8499-87b8da5520f4"))
         (fp_text user "TRRS" (at -0.8255 6.4135 ${0 + p.rot}) (layer "B.SilkS") (hide yes) (uuid "647693fd-7bc9-42e1-a83a-a15a93ac2fc2") (effects (font (size 1 1) (thickness 0.15)) (justify mirror)))
     `
-    const front_fabrication = `
-        (property "Reference" "J*" (at -0.85 4.95 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "c82d1e33-0f8a-4e7d-9d60-c12ce216083e") (effects (font (size 1 1) (thickness 0.15))))
-        (property "Value" "TRRS-PJ-320A-rev" (at 0 14 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "a03a5d5e-2da7-45ae-9c8c-db7cb2c071f2") (effects (font (size 1 1) (thickness 0.15))))
-        (property "Footprint" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "089d9085-97b8-4c02-8791-75e0a1bd8df8") (effects (font (size 1.27 1.27) (thickness 0.15))))
-        (property "Datasheet" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "7c58da21-033e-4997-8064-f32422786723") (effects (font (size 1.27 1.27) (thickness 0.15))))
-        (property "Description" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "7e182a65-87fc-444f-8def-959c17d2096a") (effects (font (size 1.27 1.27) (thickness 0.15))))
-        (fp_line (start -2.82 0) (end -2.82 -2) (stroke (width 0.15) (type solid)) (layer "F.Fab") (uuid "6477381f-417b-4b1e-a033-819ce78333fd"))
-        (fp_line (start 2.78 -2) (end -2.82 -2) (stroke (width 0.15) (type solid)) (layer "F.Fab") (uuid "93ceaccd-3be5-425e-92bf-9b6196be1ba1"))
-        (fp_line (start 2.78 0) (end 2.78 -2) (stroke (width 0.15) (type solid)) (layer "F.Fab") (uuid "90dadc9a-1ecd-4906-b264-6fca8bef8d62"))
+    const back_pads = `
     `
     const back_fabrication = `
         (fp_line (start -4.51 -2) (end 1.09 -2) (stroke (width 0.15) (type solid)) (layer "B.Fab") (uuid "773c629a-57ce-4777-a9b9-eaae4f93009c"))
         (fp_line (start -4.51 0) (end -4.51 -2) (stroke (width 0.15) (type solid)) (layer "B.Fab") (uuid "017929e8-27de-4d6d-9ae6-330dd77ca888"))
         (fp_line (start 1.09 0) (end 1.09 -2) (stroke (width 0.15) (type solid)) (layer "B.Fab") (uuid "def607c4-ce04-41d3-8903-e7bad45407e4"))
     `
-    const front_mask = `
-    `
     const back_mask = `
     `
-    const front_courtyard = `
-    `
     const back_courtyard = `
-    `
-    const front_paste = `
     `
     const back_paste = `
     `

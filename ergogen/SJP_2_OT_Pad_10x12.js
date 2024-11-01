@@ -3,8 +3,9 @@ module.exports = {
     designator: 'JP',    // change it accordingly
     side: 'F',          // delete if not needed
     reversible: false,  // delete if not needed
-    P1: {type: 'net', value: 'P1'}, // undefined, // change to undefined as needed
-    P2: {type: 'net', value: 'P2'}, // undefined, // change to undefined as needed
+    show_3d: false,     // delete if not needed
+    P2: {type: 'net', value: undefined}, // change to undefined as needed
+    P1: {type: 'net', value: undefined}, // change to undefined as needed
   },
   body: p => {
     const standard_opening = `(
@@ -17,12 +18,12 @@ module.exports = {
         (attr exclude_from_pos_files exclude_from_bom)
         ${p.at /* parametric position */}
     `
+    const front_silkscreen = `
+        (fp_text reference "${p.ref}" (at 0 -1.8 ${p.rot}) (layer "F.SilkS") hide (effects (font (size 1 1) (thickness 0.15))) (tstamp b9c83bb8-4f46-406b-bb8c-95f6709eb55c))
+    `
     const front_pads = `
         (pad "1" smd custom (at 0.4334 0.0002 ${270 + p.rot}) (size 0.1 0.1) (layers "F.Cu" "F.Mask") (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_poly (pts (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)) (width 0) (fill yes))) (tstamp f483a99d-2924-46d4-b5b0-97cbf0e23508) ${p.P1})
         (pad "2" smd custom (at -0.5826 0.0002 ${270 + p.rot}) (size 1.2 0.5) (layers "F.Cu" "F.Mask") (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_poly (pts (xy 0.6 0) (xy -0.6 0) (xy -0.6 -1) (xy 0 -0.4) (xy 0.6 -1)) (width 0) (fill yes))) (tstamp 968d8ede-ebdd-4798-b81c-4ce0c0a39be3) ${p.P2})
-    `
-    const front_silkscreen = `
-        (fp_text reference "${p.ref}" (at 0 -1.8 ${p.rot}) (layer "F.SilkS") hide (effects (font (size 1 1) (thickness 0.15))) (tstamp b9c83bb8-4f46-406b-bb8c-95f6709eb55c))
     `
     const front_fabrication = `
         (fp_text value "SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.2mm_rev" (at 0 1.9 ${p.rot}) (layer "F.Fab") (effects (font (size 1 1) (thickness 0.15))) (tstamp a752f8c1-d50d-4fd4-83d1-e4b7c9358d47))
@@ -40,11 +41,11 @@ module.exports = {
     `
     const pads = `
     `
+    const back_silkscreen = `
+    `
     const back_pads = `
         (pad "1" smd custom (at 0.4334 0.0002 ${270 + p.rot}) (size 0.1 0.1) (layers "B.Cu" "B.Mask") (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_poly (pts (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)) (width 0) (fill yes))) (tstamp 106f3f18-10c7-4e18-aa7f-7534bcb78068) ${p.P1})
         (pad "2" smd custom (at -0.5826 0.0002 ${270 + p.rot}) (size 1.2 0.5) (layers "B.Cu" "B.Mask") (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_poly (pts (xy 0.6 0) (xy -0.6 0) (xy -0.6 -1) (xy 0 -0.4) (xy 0.6 -1)) (width 0) (fill yes))) (tstamp 0bc7c2ba-0688-4ca1-807d-2323e618da72) ${p.P2})
-    `
-    const back_silkscreen = `
     `
     const back_fabrication = `
     `
@@ -97,7 +98,7 @@ module.exports = {
     final += user_comments;
     final += user_eco1;
     final += user_eco2;
-
+    final += model;
     final += standard_closing;
 
     return final

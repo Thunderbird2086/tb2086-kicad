@@ -3,9 +3,10 @@ module.exports = {
     designator: 'JP',    // change it accordingly
     side: 'F',          // delete if not needed
     reversible: false,  // delete if not needed
-    P1: {type: 'net', value: 'P1'}, // undefined, // change to undefined as needed
-    P3: {type: 'net', value: 'P3'}, // undefined, // change to undefined as needed
-    P2: {type: 'net', value: 'P2'}, // undefined, // change to undefined as needed
+    show_3d: false,     // delete if not needed
+    P2: {type: 'net', value: undefined}, // change to undefined as needed
+    P3: {type: 'net', value: undefined}, // change to undefined as needed
+    P1: {type: 'net', value: undefined}, // change to undefined as needed
   },
   body: p => {
     const standard_opening = `(
@@ -16,13 +17,6 @@ module.exports = {
         (tags "net tie solder jumper bridged")
         (attr exclude_from_pos_files exclude_from_bom)
         ${p.at /* parametric position */}
-    `
-    const front_pads = `
-        (pad "1" smd custom (at -1.3 0 ${p.rot}) (size 1 0.5) (layers "F.Cu" "F.Mask") (zone_connect 2) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_circle (center 0 0.25) (end 0.5 0.25) (width 0) (fill yes)) (gr_circle (center 0 -0.25) (end 0.5 -0.25) (width 0) (fill yes)) (gr_poly (pts (xy 0.55 0.75) (xy 0 0.75) (xy 0 -0.75) (xy 0.55 -0.75)) (width 0) (fill yes))) (tstamp 2390a2fa-6c26-4034-b454-ad6a4b1c6410) ${p.P1})
-        (pad "2" smd rect (at 0 0 ${p.rot}) (size 1 1.5) (layers "F.Cu" "F.Mask") (tstamp e081c470-9841-4614-a0bc-6cfd88dc7479) ${p.P2})
-        (pad "3" smd custom (at 1.3 0 ${p.rot}) (size 1 0.5) (layers "F.Cu" "F.Mask") (zone_connect 2) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_circle (center 0 0.25) (end 0.5 0.25) (width 0) (fill yes)) (gr_circle (center 0 -0.25) (end 0.5 -0.25) (width 0) (fill yes)) (gr_poly (pts (xy 0 0.75) (xy -0.55 0.75) (xy -0.55 -0.75) (xy 0 -0.75)) (width 0) (fill yes))) (tstamp 5c32e2f9-3879-4d68-83bb-b55bf9eca3f9) ${p.P3})
-        (fp_poly (pts (xy -0.9 -0.6) (xy -0.4 -0.6) (xy -0.4 -0.2) (xy -0.9 -0.2)) (stroke (width 0) (type solid)) (fill solid) (layer "F.Cu") (tstamp 03b71dcb-729a-4483-b065-e6de03d5f2c6))
-        (fp_poly (pts (xy -0.9 0.2) (xy -0.4 0.2) (xy -0.4 0.6) (xy -0.9 0.6)) (stroke (width 0) (type solid)) (fill solid) (layer "F.Cu") (tstamp 0d6fcf97-8338-4515-824b-348958865365))
     `
     const front_silkscreen = `
         (fp_text reference "${p.ref}" (at 0 -1.8 ${p.rot}) (layer "F.SilkS") hide (effects (font (size 1 1) (thickness 0.15))) (tstamp 72926832-b657-495c-9bf6-1bc19dd97510))
@@ -37,6 +31,13 @@ module.exports = {
         (fp_arc (start -1.35 1) (mid -1.844975 0.794975) (end -2.05 0.3) (stroke (width 0.12) (type solid)) (layer "F.SilkS") (tstamp 55e9575a-d795-4c94-9e52-e98230ef3a4a))
         (fp_arc (start 1.35 -1) (mid 1.844975 -0.794975) (end 2.05 -0.3) (stroke (width 0.12) (type solid)) (layer "F.SilkS") (tstamp 248f4ab1-2d5b-4d60-b38e-3e1ab1ebc3cb))
         (fp_arc (start 2.05 0.3) (mid 1.844975 0.794975) (end 1.35 1) (stroke (width 0.12) (type solid)) (layer "F.SilkS") (tstamp c55b15b1-d28e-468b-ae8a-1155f4c0a0cb))
+    `
+    const front_pads = `
+        (fp_poly (pts (xy -0.9 -0.6) (xy -0.4 -0.6) (xy -0.4 -0.2) (xy -0.9 -0.2)) (stroke (width 0) (type solid)) (fill solid) (layer "F.Cu") (tstamp 03b71dcb-729a-4483-b065-e6de03d5f2c6))
+        (fp_poly (pts (xy -0.9 0.2) (xy -0.4 0.2) (xy -0.4 0.6) (xy -0.9 0.6)) (stroke (width 0) (type solid)) (fill solid) (layer "F.Cu") (tstamp 0d6fcf97-8338-4515-824b-348958865365))
+        (pad "1" smd custom (at -1.3 0 ${p.rot}) (size 1 0.5) (layers "F.Cu" "F.Mask") (zone_connect 2) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_circle (center 0 0.25) (end 0.5 0.25) (width 0) (fill yes)) (gr_circle (center 0 -0.25) (end 0.5 -0.25) (width 0) (fill yes)) (gr_poly (pts (xy 0.55 0.75) (xy 0 0.75) (xy 0 -0.75) (xy 0.55 -0.75)) (width 0) (fill yes))) (tstamp 2390a2fa-6c26-4034-b454-ad6a4b1c6410) ${p.P1})
+        (pad "2" smd rect (at 0 0 ${p.rot}) (size 1 1.5) (layers "F.Cu" "F.Mask") (tstamp e081c470-9841-4614-a0bc-6cfd88dc7479) ${p.P2})
+        (pad "3" smd custom (at 1.3 0 ${p.rot}) (size 1 0.5) (layers "F.Cu" "F.Mask") (zone_connect 2) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_circle (center 0 0.25) (end 0.5 0.25) (width 0) (fill yes)) (gr_circle (center 0 -0.25) (end 0.5 -0.25) (width 0) (fill yes)) (gr_poly (pts (xy 0 0.75) (xy -0.55 0.75) (xy -0.55 -0.75) (xy 0 -0.75)) (width 0) (fill yes))) (tstamp 5c32e2f9-3879-4d68-83bb-b55bf9eca3f9) ${p.P3})
     `
     const front_fabrication = `
         (fp_text value "SolderJumper-3_P1.3mm_Bridged2Bar12_RoundedPad1.0x1.5mm_rev" (at 0 1.9 ${p.rot}) (layer "F.Fab") (effects (font (size 1 1) (thickness 0.15))) (tstamp a31ee0f2-1d38-4b27-90f6-bbe48192db6e))
@@ -55,13 +56,6 @@ module.exports = {
         (descr "SMD Solder 3-pad Jumper, 1x1.5mm rounded Pads, 0.3mm gap, pads 1-2 Bridged2Bar with 2 copper strip")
         (net_tie_pad_groups "1, 2, 3")
     `
-    const back_pads = `
-        (pad "1" smd custom (at -1.3 0 ${180 + p.rot}) (size 1 0.5) (layers "B.Cu" "B.Mask") (zone_connect 2) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_circle (center 0 0.25) (end -0.5 0.25) (width 0) (fill yes)) (gr_circle (center 0 -0.25) (end -0.5 -0.25) (width 0) (fill yes)) (gr_poly (pts (xy -0.55 0.75) (xy 0 0.75) (xy 0 -0.75) (xy -0.55 -0.75)) (width 0) (fill yes))) (tstamp be599d35-4169-44b8-8f27-88a614a6dfc0) ${p.P1})
-        (pad "2" smd rect (at 0 0 ${180 + p.rot}) (size 1 1.5) (layers "B.Cu" "B.Mask") (tstamp 34dba132-7bdf-4975-acad-366921c025ca) ${p.P2})
-        (pad "3" smd custom (at 1.3 0 ${180 + p.rot}) (size 1 0.5) (layers "B.Cu" "B.Mask") (zone_connect 2) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_circle (center 0 0.25) (end -0.5 0.25) (width 0) (fill yes)) (gr_circle (center 0 -0.25) (end -0.5 -0.25) (width 0) (fill yes)) (gr_poly (pts (xy 0 0.75) (xy 0.55 0.75) (xy 0.55 -0.75) (xy 0 -0.75)) (width 0) (fill yes))) (tstamp d97a03a6-c74d-4198-b92b-ac3f6141b593) ${p.P3})
-        (fp_poly (pts (xy -0.9 -0.2) (xy -0.4 -0.2) (xy -0.4 -0.6) (xy -0.9 -0.6)) (stroke (width 0) (type solid)) (fill solid) (layer "B.Cu") (tstamp 80b8d672-dfb9-4cb8-96b1-4ed040ccc8cb))
-        (fp_poly (pts (xy -0.9 0.6) (xy -0.4 0.6) (xy -0.4 0.2) (xy -0.9 0.2)) (stroke (width 0) (type solid)) (fill solid) (layer "B.Cu") (tstamp 2f38ffc3-6f97-436c-b498-a2e6c354a1d4))
-    `
     const back_silkscreen = `
         (fp_line (start -2.05 -0.3) (end -2.05 0.3) (stroke (width 0.12) (type solid)) (layer "B.SilkS") (tstamp fea3a642-27ae-43f6-8fed-01d6207bdad6))
         (fp_line (start -1.4 1) (end 1.4 1) (stroke (width 0.12) (type solid)) (layer "B.SilkS") (tstamp 70e695c8-8d5f-4722-be90-70108d9e9dc1))
@@ -74,6 +68,13 @@ module.exports = {
         (fp_arc (start -1.35 1) (mid -1.844975 0.794975) (end -2.05 0.3) (stroke (width 0.12) (type solid)) (layer "B.SilkS") (tstamp 05a3b91b-a910-4bbe-98b7-724375ab7665))
         (fp_arc (start 1.35 -1) (mid 1.844975 -0.794975) (end 2.05 -0.3) (stroke (width 0.12) (type solid)) (layer "B.SilkS") (tstamp b255caf6-42f0-4203-a5a5-a4e4dd945fcb))
         (fp_arc (start 2.05 0.3) (mid 1.844975 0.794975) (end 1.35 1) (stroke (width 0.12) (type solid)) (layer "B.SilkS") (tstamp e8fec510-7985-4d57-bd4d-971d9f3e0cf9))
+    `
+    const back_pads = `
+        (fp_poly (pts (xy -0.9 -0.2) (xy -0.4 -0.2) (xy -0.4 -0.6) (xy -0.9 -0.6)) (stroke (width 0) (type solid)) (fill solid) (layer "B.Cu") (tstamp 80b8d672-dfb9-4cb8-96b1-4ed040ccc8cb))
+        (fp_poly (pts (xy -0.9 0.6) (xy -0.4 0.6) (xy -0.4 0.2) (xy -0.9 0.2)) (stroke (width 0) (type solid)) (fill solid) (layer "B.Cu") (tstamp 2f38ffc3-6f97-436c-b498-a2e6c354a1d4))
+        (pad "1" smd custom (at -1.3 0 ${180 + p.rot}) (size 1 0.5) (layers "B.Cu" "B.Mask") (zone_connect 2) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_circle (center 0 0.25) (end -0.5 0.25) (width 0) (fill yes)) (gr_circle (center 0 -0.25) (end -0.5 -0.25) (width 0) (fill yes)) (gr_poly (pts (xy -0.55 0.75) (xy 0 0.75) (xy 0 -0.75) (xy -0.55 -0.75)) (width 0) (fill yes))) (tstamp be599d35-4169-44b8-8f27-88a614a6dfc0) ${p.P1})
+        (pad "2" smd rect (at 0 0 ${180 + p.rot}) (size 1 1.5) (layers "B.Cu" "B.Mask") (tstamp 34dba132-7bdf-4975-acad-366921c025ca) ${p.P2})
+        (pad "3" smd custom (at 1.3 0 ${180 + p.rot}) (size 1 0.5) (layers "B.Cu" "B.Mask") (zone_connect 2) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_circle (center 0 0.25) (end -0.5 0.25) (width 0) (fill yes)) (gr_circle (center 0 -0.25) (end -0.5 -0.25) (width 0) (fill yes)) (gr_poly (pts (xy 0 0.75) (xy 0.55 0.75) (xy 0.55 -0.75) (xy 0 -0.75)) (width 0) (fill yes))) (tstamp d97a03a6-c74d-4198-b92b-ac3f6141b593) ${p.P3})
     `
     const back_fabrication = `
     `
@@ -125,7 +126,7 @@ module.exports = {
     final += user_comments;
     final += user_eco1;
     final += user_eco2;
-
+    final += model;
     final += standard_closing;
 
     return final
