@@ -117,11 +117,14 @@ module.exports = {
     `
     const user_eco2 = `
     `
-    const front_model = `
-        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/Molex_Ezmate_Pico_Socket_2pin.step" (offset (xyz 0 0 1.6)) (scale (xyz 1 1 1)) (rotate (xyz -90 0 0)))
-    `
-    const back_model = `
-        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/Molex_Ezmate_Pico_Socket_2pin.step" (offset (xyz 0 0 -3.1)) (scale (xyz 1 1 1)) (rotate (xyz 90 0 180)))
+    let offset = "(xyz 0 0 1.6)"
+    let rotate = "(xyz -90 0 0)"
+    if (p.side == "B") {
+        offset = "(xyz 0 0 -3.1)"
+        rotate = "(xyz 90 0 180)"
+    }
+    const model = `
+        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/Molex_Ezmate_Pico_Socket_2pin.step" (offset ${offset}) (scale (xyz 1 1 1)) (rotate ${rotate}))
     `
     const standard_closing = `
             )
@@ -154,11 +157,7 @@ module.exports = {
     final += user_eco2;
 
     if (p.show_3d) {
-        if (p.side == "F") {
-            final += front_model;
-        } else {
-            final += back_model;
-        }
+        final += model;
     }
     final += standard_closing;
 

@@ -78,11 +78,14 @@ module.exports = {
     `
     const user_eco2 = `
     `
-    const front_model = `
-        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/2x4x3.5 Toucn Switch SMD v1.step" (offset (xyz 0 -0.2 0)) (scale (xyz 1 1 1)) (rotate (xyz -90 0 0)))
-    `
-    const back_model = `
-        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/2x4x3.5 Toucn Switch SMD v1.step" (offset (xyz 0 -0.2 -1.6)) (scale (xyz 1 1 1)) (rotate (xyz -90 180 0)))
+    let offset = "(xyz 0 -0.2 0)"
+    let rotate = "(xyz -90 0 0)"
+    if (p.side == "B") {
+        offset = "(xyz 0 -0.2 -1.6)"
+        rotate = "(xyz -90 180 0)"
+    }
+    const model = `
+        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/2x4x3.5 Toucn Switch SMD v1.step" (offset ${offset}) (scale (xyz 1 1 1)) (rotate ${rotate}))
     `
     const standard_closing = `
             )
@@ -117,11 +120,7 @@ module.exports = {
     final += user_eco2;
 
     if (p.show_3d) {
-        if (p.side == "F") {
-            final += front_model;
-        } else {
-            final += back_model;
-        }
+        final += model;
     }
 
     final += standard_closing;
