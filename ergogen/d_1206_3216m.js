@@ -4,8 +4,8 @@ module.exports = {
     side: 'F',          // delete if not needed
     reversible: false,  // delete if not needed
     show_3d: false,
-    P1: {type: 'net', value: undefined}, // change to undefined as needed
-    P2: {type: 'net', value: undefined}, // change to undefined as needed
+    from: {type: 'net', value: undefined}, // change to undefined as needed
+    to: {type: 'net', value: undefined}, // change to undefined as needed
   },
   body: p => {
     const standard_opening = `(
@@ -30,10 +30,10 @@ module.exports = {
         (fp_line (start 2.7 -0.75) (end 2.7 0.75) (stroke (width 0.15) (type solid)) (layer "F.SilkS") (uuid "c3036a2b-5290-49a6-8d2c-d10b6c24c7ba"))
     `
     const front_pads = `
-        (pad "1" smd rect (at -1.775 0 ${p.rot}) (size 1.3 0.95) (layers "F.Cu" "F.Paste" "F.Mask") (uuid "0ff96d88-f51c-4f22-b9a5-22edeed2021a") ${p.P1})
-        (pad "1" smd rect (at -1.2 0 ${p.rot}) (size 0.6 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (uuid "e32ecc25-c2d4-4744-8675-c28a902d403b") ${p.P1})
-        (pad "2" smd rect (at 1.2 0 ${p.rot}) (size 0.6 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (uuid "842bbd45-a048-4e78-a38f-5ccf718ed560") ${p.P2})
-        (pad "2" smd rect (at 1.775 0 ${p.rot}) (size 1.3 0.95) (layers "F.Cu" "F.Paste" "F.Mask") (uuid "de3de12e-fc6a-4167-b4e5-41fdc1a65df8") ${p.P2})
+        (pad "1" smd rect (at -1.775 0 ${p.rot}) (size 1.3 0.95) (layers "F.Cu" "F.Paste" "F.Mask") (uuid "0ff96d88-f51c-4f22-b9a5-22edeed2021a") ${p.to})
+        (pad "1" smd rect (at -1.2 0 ${p.rot}) (size 0.6 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (uuid "e32ecc25-c2d4-4744-8675-c28a902d403b") ${p.to})
+        (pad "2" smd rect (at 1.2 0 ${p.rot}) (size 0.6 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (uuid "842bbd45-a048-4e78-a38f-5ccf718ed560") ${p.from})
+        (pad "2" smd rect (at 1.775 0 ${p.rot}) (size 1.3 0.95) (layers "F.Cu" "F.Paste" "F.Mask") (uuid "de3de12e-fc6a-4167-b4e5-41fdc1a65df8") ${p.from})
     `
     const front_fabrication = `
         (property "Reference" "${p.ref}" (at 0.5 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "2562fb51-5ca0-4c16-a2e3-51668621502c") (effects (font (size 0.5 0.5) (thickness 0.125))))
@@ -49,8 +49,8 @@ module.exports = {
     const front_paste = `
     `
     const pads = `
-        (pad "1" thru_hole circle (at -0.889 0 ${p.rot}) (size 0.5 0.5) (drill 0.3) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (uuid "40edda35-ec11-4a6a-b5dc-2dec8e6c1803") ${p.P1})
-        (pad "2" thru_hole circle (at 0.889 0 ${p.rot}) (size 0.5 0.5) (drill 0.3) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (uuid "6e4da85d-6e6d-4c76-9640-7acd1a486392") ${p.P2})
+        (pad "1" thru_hole circle (at -0.889 0 ${p.rot}) (size 0.5 0.5) (drill 0.3) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (uuid "40edda35-ec11-4a6a-b5dc-2dec8e6c1803") ${p.to})
+        (pad "2" thru_hole circle (at 0.889 0 ${p.rot}) (size 0.5 0.5) (drill 0.3) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (uuid "6e4da85d-6e6d-4c76-9640-7acd1a486392") ${p.from})
     `
     const back_silkscreen = `
         (fp_line (start -2.7 -0.75) (end -2.7 0.75) (stroke (width 0.15) (type solid)) (layer "B.SilkS") (uuid "96f56b7f-9892-4a99-87f4-d7a1faf8ddd1"))
@@ -63,11 +63,11 @@ module.exports = {
         (fp_line (start 2.7 0.75) (end 2.7 -0.75) (stroke (width 0.15) (type solid)) (layer "B.SilkS") (uuid "2835045d-baae-46a1-b068-3514d49d31ba"))
     `
     const back_pads = `
-        (pad "1" smd rect (at -1.775 0 ${p.rot}) (size 1.3 0.95) (layers "B.Cu" "B.Paste" "B.Mask") (uuid "3506caa0-ba74-4cfd-bcdd-11a2b77e124e") ${p.P1})
-        (pad "1" smd rect (at -1.2 0 ${p.rot}) (size 0.6 0.4) (layers "B.Cu" "B.Paste" "B.Mask") (uuid "2b5aafce-274a-40c6-ae56-66eedc62aa41") ${p.P1})
-        (pad "2" smd rect (at 1.2 0 ${p.rot}) (size 0.6 0.4) (layers "B.Cu" "B.Paste" "B.Mask") (uuid "0c294e8f-67da-4073-9a65-7e3876aa6634") ${p.P2})
-        (pad "2" smd rect (at 1.775 0 ${p.rot}) (size 1.3 0.95) (layers "B.Cu" "B.Paste" "B.Mask") (uuid "a03215f3-66f4-4d89-8b4f-0648c1fc9077") ${p.P2})
-    `
+        (pad "1" smd rect (at -1.775 0 ${p.rot}) (size 1.3 0.95) (layers "B.Cu" "B.Paste" "B.Mask") (uuid "3506caa0-ba74-4cfd-bcdd-11a2b77e124e") ${p.to})
+        (pad "1" smd rect (at -1.2 0 ${p.rot}) (size 0.6 0.4) (layers "B.Cu" "B.Paste" "B.Mask") (uuid "2b5aafce-274a-40c6-ae56-66eedc62aa41") ${p.to})
+        (pad "2" smd rect (at 1.2 0 ${p.rot}) (size 0.6 0.4) (layers "B.Cu" "B.Paste" "B.Mask") (uuid "0c294e8f-67da-4073-9a65-7e3876aa6634") ${p.from})
+        (pad "2" smd rect (at 1.775 0 ${p.rot}) (size 1.3 0.95) (layers "B.Cu" "B.Paste" "B.Mask") (uuid "a03215f3-66f4-4d89-8b4f-0648c1fc9077") ${p.from})
+                                    `
     const back_fabrication = `
         (property "Reference" "${p.ref}" (at 0.5 0 ${180 + p.rot}) (layer "B.Fab") (hide yes) (uuid "2562fb51-5ca0-4c16-a2e3-51668621502c") (effects (font (size 0.5 0.5) (thickness 0.125))))
     `
@@ -100,7 +100,6 @@ module.exports = {
     `
     const standard_closing = `
             )
-
     `
     let final = standard_opening;
     if (p.reversible || p.side == "F") {

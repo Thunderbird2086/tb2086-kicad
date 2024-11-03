@@ -128,10 +128,8 @@ module.exports = {
     `
     const standard_closing = `
             )
-
     `
     let final = standard_opening;
-    final += pads;
     if (p.reversible || p.side == "F") {
        final += front_silkscreen;
        final += front_pads;
@@ -140,6 +138,8 @@ module.exports = {
        final += front_courtyard;
        final += front_paste;
     }
+
+    final += pads;
 
     if (p.reversible || p.side == "B") {
         final += back_silkscreen;
