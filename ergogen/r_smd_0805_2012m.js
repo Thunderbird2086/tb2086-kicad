@@ -4,8 +4,8 @@ module.exports = {
     side: 'F',          // delete if not needed
     reversible: false,  // delete if not needed
     show_3d: false,
-    P2: {type: 'net', value: undefined}, // change to undefined as needed
     P1: {type: 'net', value: undefined}, // change to undefined as needed
+    P2: {type: 'net', value: undefined}, // change to undefined as needed
   },
   body: p => {
     const standard_opening = `(
@@ -52,11 +52,11 @@ module.exports = {
         (descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
     `
     const back_silkscreen = `
+        (property "Reference" "${p.ref}" (at 0 -1.65 ${180 + p.rot}) (layer "B.SilkS") (hide yes) (uuid "ea8a26ea-3a6d-4dab-baac-2b7813101d69") (effects (font (size 1 1) (thickness 0.15))))
         (fp_line (start -0.227064 -0.735) (end 0.227064 -0.735) (stroke (width 0.12) (type solid)) (layer "B.SilkS") (uuid "3a8895b6-a1b9-431c-a8a9-cd38977e3396"))
         (fp_line (start -0.227064 0.735) (end 0.227064 0.735) (stroke (width 0.12) (type solid)) (layer "B.SilkS") (uuid "16b30b70-08b0-4df3-a3bd-f10bacbcb189"))
     `
     const back_pads = `
-        (property "Reference" "${p.ref}" (at 0 -1.65 ${180 + p.rot}) (layer "B.SilkS") (hide yes) (uuid "ea8a26ea-3a6d-4dab-baac-2b7813101d69") (effects (font (size 1 1) (thickness 0.15))))
         (pad "1" smd roundrect (at -1 0 ${180 + p.rot}) (size 1.2 1.4) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.208333) (uuid "a8dfb015-9e15-4834-8e95-f9d6591eb820") ${p.P1})
         (pad "2" smd roundrect (at 1 0 ${180 + p.rot}) (size 1.2 1.4) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.208333) (uuid "80533845-5781-46cd-a5d3-f7fb58976153") ${p.P2})
     `
@@ -65,6 +65,10 @@ module.exports = {
     const back_mask = `
     `
     const back_courtyard = `
+        (fp_line (start -1.85 -0.95) (end -1.85 0.95) (stroke (width 0.05) (type solid)) (layer "B.CrtYd") (uuid "fcd28434-59cf-49bb-89b9-0d7890aa36c3"))
+        (fp_line (start -1.85 0.95) (end 1.85 0.95) (stroke (width 0.05) (type solid)) (layer "B.CrtYd") (uuid "fb7f9e08-6671-447f-81cf-f72d524c5727"))
+        (fp_line (start 1.85 -0.95) (end -1.85 -0.95) (stroke (width 0.05) (type solid)) (layer "B.CrtYd") (uuid "5a8d599e-729e-4bc6-888e-445c2dc70a96"))
+        (fp_line (start 1.85 0.95) (end 1.85 -0.95) (stroke (width 0.05) (type solid)) (layer "B.CrtYd") (uuid "fd6e581f-e353-4364-9d31-1200cc1d9c79"))
     `
     const back_paste = `
     `
@@ -91,10 +95,8 @@ module.exports = {
     `
     const standard_closing = `
             )
-
     `
     let final = standard_opening;
-    final += pads;
     if (p.reversible || p.side == "F") {
        final += front_silkscreen;
        final += front_pads;
@@ -103,6 +105,8 @@ module.exports = {
        final += front_courtyard;
        final += front_paste;
     }
+
+    final += pads;
 
     if (p.reversible || p.side == "B") {
         final += back_silkscreen;

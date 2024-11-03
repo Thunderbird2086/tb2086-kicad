@@ -4,12 +4,12 @@ module.exports = {
     side: 'F',          // delete if not needed
     reversible: false,  // delete if not needed
     show_3d: false,
-    P2: {type: 'net', value: undefined}, // change to undefined as needed
     P1: {type: 'net', value: undefined}, // change to undefined as needed
+    P2: {type: 'net', value: undefined}, // change to undefined as needed
   },
   body: p => {
     const standard_opening = `(
-         footprint "C_0805_2012Metric_Pad1.20x1.40mm_HandSolder_rev"
+         footprint "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")
@@ -19,52 +19,55 @@ module.exports = {
         ${p.at /* parametric position */}
     `
     const front_silkscreen = `
-        (property "Reference" "${p.ref}" (at 0 -1.65 ${0 + p.rot}) (layer "F.SilkS") (hide yes) (uuid "ea8a26ea-3a6d-4dab-baac-2b7813101d69") (effects (font (size 1 1) (thickness 0.15))))
-        (fp_line (start -0.227064 -0.735) (end 0.227064 -0.735) (stroke (width 0.12) (type solid)) (layer "F.SilkS") (uuid "48271d98-12d9-4f33-af9f-2d7831085097"))
-        (fp_line (start -0.227064 0.735) (end 0.227064 0.735) (stroke (width 0.12) (type solid)) (layer "F.SilkS") (uuid "d034902c-e5b7-4c79-bf4e-2234fd7562ae"))
+        (property "Reference" "${p.ref}" (at 0 -1.68 ${0 + p.rot}) (layer "F.SilkS") (uuid "79648a8a-db92-4d15-88fe-c63b15560e19") (effects (font (size 1 1) (thickness 0.15))))
+        (fp_line (start -0.261252 -0.735) (end 0.261252 -0.735) (stroke (width 0.12) (type solid)) (layer "F.SilkS") (uuid "a3617ca4-f5db-44c3-9130-94b385c7e338"))
+        (fp_line (start -0.261252 0.735) (end 0.261252 0.735) (stroke (width 0.12) (type solid)) (layer "F.SilkS") (uuid "cb3d87f1-61a6-4f8a-bd8b-6cf6e1fafe83"))
     `
     const front_pads = `
-        (pad "1" smd roundrect (at -1 0 ${p.rot}) (size 1.2 1.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.208333) (uuid "4937d829-fe33-4310-b24e-1c4f5b5702fa") ${p.P1})
-        (pad "2" smd roundrect (at 1 0 ${p.rot}) (size 1.2 1.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.208333) (uuid "1bdfed4a-fb38-4162-b692-6c86bd617303") ${p.P2})
+        (pad "1" smd roundrect (at -1.0375 0 ${p.rot}) (size 1.175 1.45) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.212766) (uuid "5c952ec8-c980-4a94-a972-30f730128869") ${p.P1})
+        (pad "2" smd roundrect (at 1.0375 0 ${p.rot}) (size 1.175 1.45) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.212766) (uuid "26b8f07a-78fd-4334-a627-c22ac9be221b") ${p.P2})
     `
     const front_fabrication = `
-        (property "Value" "C_0805_2012Metric_Pad1.20x1.40mm_HandSolder_rev" (at 0 1.65 ${0 + p.rot}) (layer "F.Fab") (uuid "6264eead-45d6-41c5-8b9f-173ccc59d3cf") (effects (font (size 1 1) (thickness 0.15))))
-        (property "Footprint" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "e29b08d0-b671-47b8-b47f-c944be4ff4f5") (effects (font (size 1.27 1.27) (thickness 0.15))))
-        (property "Datasheet" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "4ebef76d-0f78-43cb-bcab-d8c6ef2eeb74") (effects (font (size 1.27 1.27) (thickness 0.15))))
-        (property "Description" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "fcd36899-0e75-4ea9-8e57-25267bc86013") (effects (font (size 1.27 1.27) (thickness 0.15))))
-        (fp_line (start -1 -0.625) (end 1 -0.625) (stroke (width 0.1) (type solid)) (layer "F.Fab") (uuid "f97d0d99-13fa-4988-85ec-df5e924cab3a"))
-        (fp_line (start -1 0.625) (end -1 -0.625) (stroke (width 0.1) (type solid)) (layer "F.Fab") (uuid "8a128ae7-eb37-424e-8c0e-2536ba19e311"))
-        (fp_line (start 1 -0.625) (end 1 0.625) (stroke (width 0.1) (type solid)) (layer "F.Fab") (uuid "a7969011-0845-48e1-9690-b137beca65d7"))
-        (fp_line (start 1 0.625) (end -1 0.625) (stroke (width 0.1) (type solid)) (layer "F.Fab") (uuid "fe9d62b8-c669-40f7-9f74-a73c83a94bab"))
-        (fp_text user "${p.ref}" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (uuid "2a12e1fe-6583-480f-b520-69f04005c491") (effects (font (size 0.5 0.5) (thickness 0.08))))
+        (property "Value" "C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (at 0 1.68 ${0 + p.rot}) (layer "F.Fab") (uuid "2faa6533-bd7f-4045-b3e8-f0563d8bdcb0") (effects (font (size 1 1) (thickness 0.15))))
+        (property "Footprint" "" (at 0 0 ${0 + p.rot}) (unlocked yes) (layer "F.Fab") (hide yes) (uuid "79815203-23b0-47aa-bcdc-d039fef07bb8") (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (property "Datasheet" "" (at 0 0 ${0 + p.rot}) (unlocked yes) (layer "F.Fab") (hide yes) (uuid "264a249e-86b6-49ab-bc67-944dc30fc0ae") (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (property "Description" "" (at 0 0 ${0 + p.rot}) (unlocked yes) (layer "F.Fab") (hide yes) (uuid "a611208d-250a-42ef-b7fa-e6f9e47411ee") (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (fp_line (start -1 -0.625) (end 1 -0.625) (stroke (width 0.1) (type solid)) (layer "F.Fab") (uuid "462dcbaa-110b-4c22-b113-3e85baeea0e0"))
+        (fp_line (start -1 0.625) (end -1 -0.625) (stroke (width 0.1) (type solid)) (layer "F.Fab") (uuid "c27546ee-1d07-4d96-bdd5-078fe9468528"))
+        (fp_line (start 1 -0.625) (end 1 0.625) (stroke (width 0.1) (type solid)) (layer "F.Fab") (uuid "7c9750b1-41ff-4bba-a611-82cfc4e49440"))
+        (fp_line (start 1 0.625) (end -1 0.625) (stroke (width 0.1) (type solid)) (layer "F.Fab") (uuid "bfbad6ed-9bbd-4a1a-bdfe-ee50245a621a"))
+        (fp_text user "${p.ref}" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (uuid "2aa51584-7f2e-4a4a-b57d-bfb466824e30") (effects (font (size 0.5 0.5) (thickness 0.08))))
     `
     const front_mask = `
     `
     const front_courtyard = `
-        (fp_line (start -1.85 -0.95) (end 1.85 -0.95) (stroke (width 0.05) (type solid)) (layer "F.CrtYd") (uuid "2682e825-0d85-467f-aecf-eb3fab925831"))
-        (fp_line (start -1.85 0.95) (end -1.85 -0.95) (stroke (width 0.05) (type solid)) (layer "F.CrtYd") (uuid "bb3b7d94-9d6d-4731-99fd-aafb11e8ce69"))
-        (fp_line (start 1.85 -0.95) (end 1.85 0.95) (stroke (width 0.05) (type solid)) (layer "F.CrtYd") (uuid "fa83aaae-a6ae-4d28-9a0c-5c24aa106cda"))
-        (fp_line (start 1.85 0.95) (end -1.85 0.95) (stroke (width 0.05) (type solid)) (layer "F.CrtYd") (uuid "49a5eb84-1cdf-4972-a826-169f72a58314"))
+        (fp_line (start -1.88 -0.98) (end 1.88 -0.98) (stroke (width 0.05) (type solid)) (layer "F.CrtYd") (uuid "f6be3644-2a54-4fbf-bf15-5b6eed6d8a56"))
+        (fp_line (start -1.88 0.98) (end -1.88 -0.98) (stroke (width 0.05) (type solid)) (layer "F.CrtYd") (uuid "c529675f-a8ed-44d1-80ae-ea250a6903d7"))
+        (fp_line (start 1.88 -0.98) (end 1.88 0.98) (stroke (width 0.05) (type solid)) (layer "F.CrtYd") (uuid "54dff31b-cb37-4ff9-b6c6-2a622ddda3ef"))
+        (fp_line (start 1.88 0.98) (end -1.88 0.98) (stroke (width 0.05) (type solid)) (layer "F.CrtYd") (uuid "48d7958a-7eb3-477d-82cc-d56aca09968e"))
     `
     const front_paste = `
     `
     const pads = `
-        (descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
+        (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     `
     const back_silkscreen = `
-        (fp_line (start -0.227064 -0.735) (end 0.227064 -0.735) (stroke (width 0.12) (type solid)) (layer "B.SilkS") (uuid "3a8895b6-a1b9-431c-a8a9-cd38977e3396"))
-        (fp_line (start -0.227064 0.735) (end 0.227064 0.735) (stroke (width 0.12) (type solid)) (layer "B.SilkS") (uuid "16b30b70-08b0-4df3-a3bd-f10bacbcb189"))
+        (fp_line (start 0.261252 -0.735) (end -0.261252 -0.735) (stroke (width 0.12) (type solid)) (layer "B.SilkS") (uuid "c02c5782-1520-487b-a2f3-37b45df816e0"))
+        (fp_line (start 0.261252 0.735) (end -0.261252 0.735) (stroke (width 0.12) (type solid)) (layer "B.SilkS") (uuid "d66402db-8a4f-4d49-9ebb-95ce35153779"))
     `
     const back_pads = `
-        (property "Reference" "${p.ref}" (at 0 -1.65 ${180 + p.rot}) (layer "B.SilkS") (hide yes) (uuid "ea8a26ea-3a6d-4dab-baac-2b7813101d69") (effects (font (size 1 1) (thickness 0.15))))
-        (pad "1" smd roundrect (at -1 0 ${180 + p.rot}) (size 1.2 1.4) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.208333) (uuid "a8dfb015-9e15-4834-8e95-f9d6591eb820") ${p.P1})
-        (pad "2" smd roundrect (at 1 0 ${180 + p.rot}) (size 1.2 1.4) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.208333) (uuid "80533845-5781-46cd-a5d3-f7fb58976153") ${p.P2})
+        (pad "1" smd roundrect (at -1.0375 0 ${p.rot}) (size 1.175 1.45) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.212766) (uuid "da966d1e-b61c-4bac-83f8-149d6bb9b80b") ${p.P1})
+        (pad "2" smd roundrect (at 1.0375 0 ${p.rot}) (size 1.175 1.45) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.212766) (uuid "90ea6aef-4ef2-4eb5-9ad8-e84fdd08e9f3") ${p.P2})
     `
     const back_fabrication = `
     `
     const back_mask = `
     `
     const back_courtyard = `
+        (fp_line (start -1.88 -0.98) (end -1.88 0.98) (stroke (width 0.05) (type solid)) (layer "B.CrtYd") (uuid "34a0ffc6-5552-4fd4-8cca-f84f50311cea"))
+        (fp_line (start -1.88 0.98) (end 1.88 0.98) (stroke (width 0.05) (type solid)) (layer "B.CrtYd") (uuid "950ba494-ae29-4889-a7cd-50bd8c637dc0"))
+        (fp_line (start 1.88 -0.98) (end -1.88 -0.98) (stroke (width 0.05) (type solid)) (layer "B.CrtYd") (uuid "f08b80f0-7d35-4a3e-a673-161ca78895bb"))
+        (fp_line (start 1.88 0.98) (end 1.88 -0.98) (stroke (width 0.05) (type solid)) (layer "B.CrtYd") (uuid "a0ab1d90-7df8-4038-97ee-9aaaed6bb367"))
     `
     const back_paste = `
     `
@@ -87,14 +90,12 @@ module.exports = {
     }
 
     const model = `
-        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/R_0805_2012Metric.step" (offset ${offset}) (scale (xyz 1 1 1)) (rotate ${rotate}))
+        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/C_0805_2012Metric.step" (offset ${offset}) (scale (xyz 1 1 1)) (rotate ${rotate}))
     `
     const standard_closing = `
             )
-
     `
     let final = standard_opening;
-    final += pads;
     if (p.reversible || p.side == "F") {
        final += front_silkscreen;
        final += front_pads;
@@ -103,6 +104,8 @@ module.exports = {
        final += front_courtyard;
        final += front_paste;
     }
+
+    final += pads;
 
     if (p.reversible || p.side == "B") {
         final += back_silkscreen;

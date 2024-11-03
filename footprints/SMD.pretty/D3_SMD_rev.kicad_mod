@@ -290,7 +290,7 @@
 		(layers "B.Cu" "B.Paste" "B.Mask")
 		(uuid "a03215f3-66f4-4d89-8b4f-0648c1fc9077")
 	)
-	(model "${KIPRJMOD}/tb2086-kicad/packages3D/D_1206_3216Metric.wrl"
+	(model "${KIPRJMOD}/tb2086-kicad/packages3D/D_1206_3216Metric.step"
 		(offset
 			(xyz 0 0 -1.6)
 		)
