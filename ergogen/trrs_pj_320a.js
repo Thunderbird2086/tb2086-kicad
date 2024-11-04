@@ -12,7 +12,7 @@ module.exports = {
   body: p => {
     let fp_name="TRRS-PJ-320A"
     if (p.reversible) {
-        fp_name = "TB2086_MISC:" + ${fp_name} + "-rev";
+        fp_name = "TB2086_MISC:" + fp_name + "-rev";
     }
 
     const standard_opening = `(

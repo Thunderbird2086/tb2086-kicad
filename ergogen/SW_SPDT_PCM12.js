@@ -11,7 +11,7 @@ module.exports = {
   body: p => {
     let fp_name="SW_SPDT_PCM12"
     if (p.reversible) {
-        fp_name = "TB2086_SMD:" + ${fp_name} + "_reversible";
+        fp_name = "TB2086_SMD:" + fp_name + "_reversible";
     }
 
     const standard_opening = `(
