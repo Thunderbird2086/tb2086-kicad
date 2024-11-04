@@ -9,8 +9,13 @@ module.exports = {
     MP: {type: 'net', value: 'MP'}, // undefined, // change to undefined as needed
   },
   body: p => {
+    let fp_name="SMT 2X4X3.5MM Tactile Tact Push Button"
+    if (p.reversible) {
+        fp_name = "TB2086_SMD:" + ${fp_name} + " rev";
+    }
+
     const standard_opening = `(
-         footprint "SMT 2X4X3.5MM Tactile Tact Push Button rev"
+         footprint "${fp_name}"
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")
@@ -30,7 +35,7 @@ module.exports = {
         (pad "MP" smd roundrect (at 2.3 0 ${p.rot}) (size 0.9 1.2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25) (thermal_bridge_angle 45) (uuid "80ca96e0-bbfb-4b1b-890f-945e0d0302c8") ${p.MP})
     `
     const front_fabrication = `
-        (property "Value" "SMT 2X4X3.5MM Tactile Tact Push Button rev" (at 0 1 ${0 + p.rot}) (unlocked yes) (layer "F.Fab") (uuid "2a5fb532-fee7-4dd4-b93b-464af078aab8") (effects (font (size 1 1) (thickness 0.15))))
+        (property "Value" "${fp_name}" (at 0 1 ${0 + p.rot}) (unlocked yes) (layer "F.Fab") (uuid "2a5fb532-fee7-4dd4-b93b-464af078aab8") (effects (font (size 1 1) (thickness 0.15))))
         (property "Footprint" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "838ca5b0-790e-4476-989d-ec162e65de18") (effects (font (size 1.27 1.27) (thickness 0.15))))
         (property "Datasheet" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "9666757b-77ba-4f27-8f88-4f80b938807b") (effects (font (size 1.27 1.27) (thickness 0.15))))
         (property "Description" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "29fdd4ad-b71a-439c-aaf8-45a3ea40cd0d") (effects (font (size 1.27 1.27) (thickness 0.15))))

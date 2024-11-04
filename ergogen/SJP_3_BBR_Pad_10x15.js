@@ -9,8 +9,13 @@ module.exports = {
     P1: {type: 'net', value: undefined}, // change to undefined as needed
   },
   body: p => {
+    let fp_name="SolderJumper-3_P1.3mm_Bridged2Bar12_RoundedPad1.0x1.5mm"
+    if (p.reversible) {
+        fp_name = "TB2086_MISC:" + ${fp_name} + "_rev";
+    }
+
     const standard_opening = `(
-         footprint "SolderJumper-3_P1.3mm_Bridged2Bar12_RoundedPad1.0x1.5mm_rev"
+         footprint "${fp_name}"
         (version 20221018)
         (generator pcbnew)
         (layer "F.Cu")
@@ -40,7 +45,7 @@ module.exports = {
         (pad "3" smd custom (at 1.3 0 ${p.rot}) (size 1 0.5) (layers "F.Cu" "F.Mask") (zone_connect 2) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_circle (center 0 0.25) (end 0.5 0.25) (width 0) (fill yes)) (gr_circle (center 0 -0.25) (end 0.5 -0.25) (width 0) (fill yes)) (gr_poly (pts (xy 0 0.75) (xy -0.55 0.75) (xy -0.55 -0.75) (xy 0 -0.75)) (width 0) (fill yes))) (tstamp 5c32e2f9-3879-4d68-83bb-b55bf9eca3f9) ${p.P3})
     `
     const front_fabrication = `
-        (fp_text value "SolderJumper-3_P1.3mm_Bridged2Bar12_RoundedPad1.0x1.5mm_rev" (at 0 1.9 ${p.rot}) (layer "F.Fab") (effects (font (size 1 1) (thickness 0.15))) (tstamp a31ee0f2-1d38-4b27-90f6-bbe48192db6e))
+        (fp_text value "${fp_name}" (at 0 1.9 ${p.rot}) (layer "F.Fab") (effects (font (size 1 1) (thickness 0.15))) (tstamp a31ee0f2-1d38-4b27-90f6-bbe48192db6e))
     `
     const front_mask = `
     `

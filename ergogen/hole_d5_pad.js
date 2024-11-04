@@ -5,7 +5,7 @@ module.exports = {
   },
   body: p => {
     const standard_opening = `(
-         footprint "MountingHole_5mm_Pad"
+         footprint "TP2086_MISC:MountingHole_5mm_Pad"
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")

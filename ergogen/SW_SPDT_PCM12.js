@@ -9,8 +9,13 @@ module.exports = {
     P3: {type: 'net', value: 'P3'}, // undefined, // change to undefined as needed
   },
   body: p => {
+    let fp_name="SW_SPDT_PCM12"
+    if (p.reversible) {
+        fp_name = "TB2086_SMD:" + ${fp_name} + "_reversible";
+    }
+
     const standard_opening = `(
-         footprint "SW_SPDT_PCM12_reversible"
+         footprint "${fp_name}"
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")

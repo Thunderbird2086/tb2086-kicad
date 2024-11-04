@@ -9,7 +9,7 @@ module.exports = {
   },
   body: p => {
     const standard_opening = `(
-         footprint "SW_choc_v1_v2_HS_1u_reversible"
+         footprint "TB2086_KEYSWITCH:SW_choc_v1_v2_HS_1u_reversible"
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")
@@ -19,7 +19,6 @@ module.exports = {
         ${p.at /* parametric position */}
     `
     const front_silkscreen = `
-        (property "Value" "SW_choc_v1_v2_HS_1u_reversible" (at 0 -6 ${180 + p.rot}) (layer "F.SilkS") (hide yes) (uuid "23931bb1-cfe5-48ac-af9c-5724097aec7d") (effects (font (size 1 1) (thickness 0.15))))
         (fp_line (start -2.3 7.475) (end -1.5 8.275) (stroke (width 0.12) (type solid)) (layer "F.SilkS") (uuid "8e7e3160-3652-4fa5-bf9c-9889e3c2ee1a"))
         (fp_line (start -1.5 3.625) (end -2.3 4.425) (stroke (width 0.12) (type solid)) (layer "F.SilkS") (uuid "d43462d7-f4a7-4298-b58a-edd62c076c0c"))
         (fp_line (start -1.5 3.625) (end -0.5 3.625) (stroke (width 0.12) (type solid)) (layer "F.SilkS") (uuid "74e0cfb5-d27b-4162-b81f-77550c087660"))

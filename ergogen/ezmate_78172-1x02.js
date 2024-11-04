@@ -9,8 +9,13 @@ module.exports = {
     P1: {type: 'net', value: undefined}, // change to undefined as needed
   },
   body: p => {
+    let fp_name="Molex_Pico-EZmate_78171-0002_1x02-1MP_P1.20mm_Vertical"
+    if (p.reversible) {
+        fp_name = "TB2086_MISC:" + ${fp_name} + "_rev";
+    }
+
     const standard_opening = `(
-         footprint "Molex_Pico-EZmate_78171-0002_1x02-1MP_P1.20mm_Vertical_rev"
+         footprint "${fp_name}"
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")
@@ -45,7 +50,7 @@ module.exports = {
         (pad "MP" smd roundrect (at 1.75 1.9 ${p.rot}) (size 0.7 0.8) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25) (uuid "e342a947-8208-4d6d-92fb-ef4f712280fe") ${p.MP})
     `
     const front_fabrication = `
-        (property "Value" "Molex_Pico-EZmate_78171-0002_1x02-1MP_P1.20mm_Vertical_rev" (at 0 3.72 ${0 + p.rot}) (layer "F.Fab") (uuid "6d62f44a-0582-4f43-9c00-53fc4f88ebae") (effects (font (size 1 1) (thickness 0.15))))
+        (property "Value" "${fp_name}" (at 0 3.72 ${0 + p.rot}) (layer "F.Fab") (uuid "6d62f44a-0582-4f43-9c00-53fc4f88ebae") (effects (font (size 1 1) (thickness 0.15))))
         (property "Footprint" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "607801c9-65f7-4d66-878d-e64f85043aa4") (effects (font (size 1.27 1.27) (thickness 0.15))))
         (property "Datasheet" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "18efc393-4b21-4549-b3ea-5a91d09516f4") (effects (font (size 1.27 1.27) (thickness 0.15))))
         (property "Description" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "dc70a801-77a6-4de3-b4f2-e16b36a94f4e") (effects (font (size 1.27 1.27) (thickness 0.15))))

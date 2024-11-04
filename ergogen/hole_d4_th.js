@@ -4,7 +4,7 @@ module.exports = {
   },
   body: p => {
     const standard_opening = `(
-         footprint "D4_Hole_TH_Outside"
+         footprint "TB2086_MISC:D4_Hole_TH_Outside"
         (version 20221018)
         (generator pcbnew)
         (layer "F.Cu")

@@ -8,8 +8,13 @@ module.exports = {
     to: {type: 'net', value: undefined},
   },
   body: p => {
+    let fp_name="LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder";
+    if (p.reversible) {
+        fp_name = "TB2086_SMD:" + ${fp_name} + "_rev";
+    }
+
     const standard_opening = `(
-         footprint "LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
+         footprint "${fp_name}"
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")
@@ -30,7 +35,7 @@ module.exports = {
         (pad "2" smd roundrect (at 1.025 0 ${p.rot}) (size 1.15 1.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.217391) (uuid "47fc1f0a-91d0-454b-97a3-2f6673f7bd08") ${p.from})
     `
     const front_fabrication = `
-        (property "Value" "LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" (at 0 1.65 ${0 + p.rot}) (layer "F.Fab") (uuid "f72ba3d1-160a-4eb3-8a73-ebecbaca6ac6") (effects (font (size 1 1) (thickness 0.15))))
+        (property "Value" "${fp_name}" (at 0 1.65 ${0 + p.rot}) (layer "F.Fab") (uuid "f72ba3d1-160a-4eb3-8a73-ebecbaca6ac6") (effects (font (size 1 1) (thickness 0.15))))
         (property "Footprint" "" (at 0 0 ${0 + p.rot}) (unlocked yes) (layer "F.Fab") (hide yes) (uuid "45286779-2601-427e-a6c3-a72b28358dd2") (effects (font (size 1.27 1.27) (thickness 0.15))))
         (property "Datasheet" "" (at 0 0 ${0 + p.rot}) (unlocked yes) (layer "F.Fab") (hide yes) (uuid "eff04925-ddaa-44a3-8d76-28eede66154b") (effects (font (size 1.27 1.27) (thickness 0.15))))
         (property "Description" "" (at 0 0 ${0 + p.rot}) (unlocked yes) (layer "F.Fab") (hide yes) (uuid "21999ced-8219-4305-80bc-6b1cff800cd5") (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -54,23 +59,23 @@ module.exports = {
     const pads = `
     `
     const back_silkscreen = `
-        (fp_line (start -1.86 -0.96) (end -1.86 0.96) (stroke (width 0.12) (type solid)) (layer "B.SilkS") (uuid "7a213dae-bf8b-457a-aa5d-d741655b89a6"))
-        (fp_line (start -1.86 0.96) (end 1 0.96) (stroke (width 0.12) (type solid)) (layer "B.SilkS") (uuid "2d3ebb92-c659-4813-b377-22bbbcb265da"))
-        (fp_line (start 1 -0.96) (end -1.86 -0.96) (stroke (width 0.12) (type solid)) (layer "B.SilkS") (uuid "129af557-676c-42ba-8df4-dadbe38bb4e5"))
+        (fp_line (start -1 -0.96) (end 1.86 -0.96) (stroke (width 0.12) (type solid)) (layer "B.SilkS") (uuid "ed3df01a-58e2-4dbf-9a25-e99196df6482"))
+        (fp_line (start 1.86 -0.96) (end 1.86 0.96) (stroke (width 0.12) (type solid)) (layer "B.SilkS") (uuid "110d3079-7d73-4e73-b2f9-11bdf0977e43"))
+        (fp_line (start 1.86 0.96) (end -1 0.96) (stroke (width 0.12) (type solid)) (layer "B.SilkS") (uuid "d7d0cd41-2c64-4900-b4e9-f7337bdae33c"))
     `
     const back_pads = `
-        (pad "1" smd roundrect (at -1.025 0 ${p.rot}) (size 1.15 1.4) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.217391) (uuid "639e9229-df16-48dc-afd1-4d76f90e7e30") ${p.to})
-        (pad "2" smd roundrect (at 1.025 0 ${p.rot}) (size 1.15 1.4) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.217391) (uuid "b6174783-516b-4c4b-86e1-9b097cb287cc") ${p.from})
+        (pad "1" smd roundrect (at 1.025 0 ${p.rot}) (size 1.15 1.4) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.217391) (uuid "f74cf48c-7cdb-49e9-a35b-1a3bdddbb4c5") ${p.P1})
+        (pad "2" smd roundrect (at -1.025 0 ${p.rot}) (size 1.15 1.4) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.217391) (uuid "faa58b50-c592-493e-ac5c-174bf1b699be") ${p.P2})
     `
     const back_fabrication = `
     `
     const back_mask = `
     `
     const back_courtyard = `
-        (fp_line (start -1.85 -0.95) (end -1.85 0.95) (stroke (width 0.05) (type solid)) (layer "B.CrtYd") (uuid "b4eee79f-3c5b-43e8-8405-c14b0dd38f2c"))
-        (fp_line (start -1.85 0.95) (end 1.85 0.95) (stroke (width 0.05) (type solid)) (layer "B.CrtYd") (uuid "335c308b-70ac-4979-bbaf-784001454343"))
-        (fp_line (start 1.85 -0.95) (end -1.85 -0.95) (stroke (width 0.05) (type solid)) (layer "B.CrtYd") (uuid "9bd90b4b-bd8d-4096-ad31-a70756cd634a"))
-        (fp_line (start 1.85 0.95) (end 1.85 -0.95) (stroke (width 0.05) (type solid)) (layer "B.CrtYd") (uuid "fbcd0b44-4a88-4d59-a2ac-91e0dbbbfb9a"))
+        (fp_line (start -1.85 -0.95) (end -1.85 0.95) (stroke (width 0.05) (type solid)) (layer "B.CrtYd") (uuid "a9a89462-99f3-4143-8d57-fc31d363574a"))
+        (fp_line (start -1.85 0.95) (end 1.85 0.95) (stroke (width 0.05) (type solid)) (layer "B.CrtYd") (uuid "e3935c07-b730-4206-b7b0-59229b188452"))
+        (fp_line (start 1.85 -0.95) (end -1.85 -0.95) (stroke (width 0.05) (type solid)) (layer "B.CrtYd") (uuid "7d287598-cfb2-4873-829e-04dd3e202136"))
+        (fp_line (start 1.85 0.95) (end 1.85 -0.95) (stroke (width 0.05) (type solid)) (layer "B.CrtYd") (uuid "9ed1de6e-5a69-4707-b974-d3f0492bdeb0"))
     `
     const back_paste = `
     `

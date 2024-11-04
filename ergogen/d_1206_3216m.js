@@ -8,8 +8,13 @@ module.exports = {
     to: {type: 'net', value: undefined}, // change to undefined as needed
   },
   body: p => {
+    let fp_name="D3_SMD";
+    if (p.reversible) {
+        fp_name += "_rev";
+    }
+
     const standard_opening = `(
-         footprint "D3_SMD_rev"
+         footprint "TB2086_SMD:${fp_name}"
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")
@@ -37,7 +42,7 @@ module.exports = {
     `
     const front_fabrication = `
         (property "Reference" "${p.ref}" (at 0.5 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "2562fb51-5ca0-4c16-a2e3-51668621502c") (effects (font (size 0.5 0.5) (thickness 0.125))))
-        (property "Value" "D" (at -0.6 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "c1cbeddd-9c8c-4667-af36-cd55c72a6cfe") (effects (font (size 0.5 0.5) (thickness 0.125))))
+        (property "Value" "${fp_name}" (at -0.6 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "c1cbeddd-9c8c-4667-af36-cd55c72a6cfe") (effects (font (size 0.5 0.5) (thickness 0.125))))
         (property "Footprint" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "22bca066-a11b-4cc6-ac76-86f6a86c2230") (effects (font (size 1.27 1.27) (thickness 0.15))))
         (property "Datasheet" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "f19ebf40-1249-4c12-b28c-0506e9cf6730") (effects (font (size 1.27 1.27) (thickness 0.15))))
         (property "Description" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "0d11619f-bb96-4abc-b598-b6e6ae1907bd") (effects (font (size 1.27 1.27) (thickness 0.15))))
