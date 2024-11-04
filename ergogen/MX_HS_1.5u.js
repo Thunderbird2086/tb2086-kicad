@@ -9,7 +9,7 @@ module.exports = {
   },
   body: p => {
     const standard_opening = `(
-         footprint "SW_MX_HS_1.5u_reversible"
+         footprint "TB2086_KEYSWITCH:SW_MX_HS_1.5u_reversible"
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")

@@ -8,8 +8,13 @@ module.exports = {
     P2: {type: 'net', value: undefined}, // change to undefined as needed
   },
   body: p => {
+    let fp_name="R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+    if (p.reversible) {
+        fp_name = "TB2086_SMD:" + ${fp_name} + "_rev";
+    }
+
     const standard_opening = `(
-         footprint "R_0805_2012Metric_Pad1.20x1.40mm_HandSolder_rev"
+         footprint "${fp_name}"
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")
@@ -28,7 +33,7 @@ module.exports = {
         (pad "2" smd roundrect (at 1 0 ${p.rot}) (size 1.2 1.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.208333) (uuid "1bdfed4a-fb38-4162-b692-6c86bd617303") ${p.P2})
     `
     const front_fabrication = `
-        (property "Value" "R_0805_2012Metric_Pad1.20x1.40mm_HandSolder_rev" (at 0 1.65 ${0 + p.rot}) (layer "F.Fab") (uuid "6264eead-45d6-41c5-8b9f-173ccc59d3cf") (effects (font (size 1 1) (thickness 0.15))))
+        (property "Value" "${fp_name}" (at 0 1.65 ${0 + p.rot}) (layer "F.Fab") (uuid "6264eead-45d6-41c5-8b9f-173ccc59d3cf") (effects (font (size 1 1) (thickness 0.15))))
         (property "Footprint" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "e29b08d0-b671-47b8-b47f-c944be4ff4f5") (effects (font (size 1.27 1.27) (thickness 0.15))))
         (property "Datasheet" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "4ebef76d-0f78-43cb-bcab-d8c6ef2eeb74") (effects (font (size 1.27 1.27) (thickness 0.15))))
         (property "Description" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "fcd36899-0e75-4ea9-8e57-25267bc86013") (effects (font (size 1.27 1.27) (thickness 0.15))))

@@ -1,4 +1,4 @@
-(footprint "D_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
+(footprint "D_0805_2012Metric_Pad1.15x1.40mm_HandSolder_rev"
 	(version 20240108)
 	(generator "pcbnew")
 	(generator_version "8.0")
@@ -16,7 +16,7 @@
 			)
 		)
 	)
-	(property "Value" "D_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
+	(property "Value" "D_0805_2012Metric_Pad1.15x1.40mm_HandSolder_rev"
 		(at 0 1.65 0)
 		(layer "F.Fab")
 		(uuid "823104e9-5f72-431e-87e6-754f557995bd")

@@ -10,8 +10,13 @@ module.exports = {
     B: {type: 'net', value: 'B'}, // undefined, // change to undefined as needed
   },
   body: p => {
+    let fp_name="TRRS-PJ-320A"
+    if (p.reversible) {
+        fp_name = "TB2086_MISC:" + ${fp_name} + "-rev";
+    }
+
     const standard_opening = `(
-         footprint "TRRS-PJ-320A-rev"
+         footprint "${fp_name}"
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")
@@ -30,7 +35,7 @@ module.exports = {
     `
     const front_fabrication = `
         (property "Reference" "${p.ref}" (at -0.85 4.95 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "c82d1e33-0f8a-4e7d-9d60-c12ce216083e") (effects (font (size 1 1) (thickness 0.15))))
-        (property "Value" "TRRS-PJ-320A-rev" (at 0 14 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "a03a5d5e-2da7-45ae-9c8c-db7cb2c071f2") (effects (font (size 1 1) (thickness 0.15))))
+        (property "Value" "${fp_name}" (at 0 14 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "a03a5d5e-2da7-45ae-9c8c-db7cb2c071f2") (effects (font (size 1 1) (thickness 0.15))))
         (property "Footprint" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "089d9085-97b8-4c02-8791-75e0a1bd8df8") (effects (font (size 1.27 1.27) (thickness 0.15))))
         (property "Datasheet" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "7c58da21-033e-4997-8064-f32422786723") (effects (font (size 1.27 1.27) (thickness 0.15))))
         (property "Description" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "7e182a65-87fc-444f-8def-959c17d2096a") (effects (font (size 1.27 1.27) (thickness 0.15))))

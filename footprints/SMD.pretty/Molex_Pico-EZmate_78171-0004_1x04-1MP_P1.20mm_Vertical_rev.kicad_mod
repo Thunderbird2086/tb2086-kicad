@@ -1,4 +1,4 @@
-(footprint "Molex_Pico-EZmate_78171-0004_1x04-1MP_P1.20mm_Vertical"
+(footprint "Molex_Pico-EZmate_78171-0004_1x04-1MP_P1.20mm_Vertical_rev"
 	(version 20240108)
 	(generator "pcbnew")
 	(generator_version "8.0")
@@ -17,7 +17,7 @@
 			)
 		)
 	)
-	(property "Value" "Molex_Pico-EZmate_78171-0004_1x04-1MP_P1.20mm_Vertical"
+	(property "Value" "Molex_Pico-EZmate_78171-0004_1x04-1MP_P1.20mm_Vertical_rev"
 		(at 0 3.72 0)
 		(layer "F.Fab")
 		(uuid "7d1af4ba-34a7-44ff-9318-c11f9f36a30e")

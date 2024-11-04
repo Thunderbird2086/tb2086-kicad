@@ -12,7 +12,7 @@ module.exports = {
   },
   body: p => {
     const standard_opening = `(
-         footprint "Nice!View_rev"
+         footprint "TB2086_MISC:Nice!View_rev"
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")

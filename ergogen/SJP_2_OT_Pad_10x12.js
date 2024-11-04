@@ -8,8 +8,13 @@ module.exports = {
     P1: {type: 'net', value: undefined}, // change to undefined as needed
   },
   body: p => {
+    let fp_name="SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.2mm"
+    if (p.reversible) {
+        fp_name = "TB2086_MISC:" + ${fp_name} + "_rev";
+    }
+
     const standard_opening = `(
-         footprint "SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.2mm_rev"
+         footprint "${fp_name}"
         (version 20221018)
         (generator pcbnew)
         (layer "F.Cu")
