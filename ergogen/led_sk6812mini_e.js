@@ -56,6 +56,7 @@ module.exports = {
         (pad "4" smd rect (at 3.075 -0.4 ${p.rot}) (size 0.25 0.82) (layers "B.Cu" "B.Paste" "B.Mask") (tstamp 22fd7df0-215f-43aa-99e1-365f69b00094) ${p.from})
     `
     const back_silkscreen = `
+        (fp_text value "${fp_name}" (at 0 -0.5 ${p.rot}) (layer "B.SilkS") hide (effects (font (size 1 1) (thickness 0.15))) (tstamp ee132152-743b-421a-941a-dcd0b807fc0f))
         (fp_line (start 3.9 0.4) (end 3.9 1.3) (stroke (width 0.12) (type default)) (layer "B.SilkS") (tstamp a2fd7e33-91b2-493d-9358-f3c06d6e1808))
     `
     const back_pads = `
