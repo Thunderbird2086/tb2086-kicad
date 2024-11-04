@@ -25,7 +25,7 @@ module.exports = {
         ${p.at /* parametric position */}
     `
     const front_silkscreen = `
-        (property "Reference" "${p.ref}" (at 0 -1.43 ${0 + p.rot}) (layer "F.SilkS") (uuid "52eb8879-7ec0-4312-b020-7c2c1fe8870d") (effects (font (size 1 1) (thickness 0.15))))
+        (property "Reference" "${p.ref}" (at 0 -1.43 ${0 + p.rot}) (layer "F.SilkS") (hide yes) (uuid "52eb8879-7ec0-4312-b020-7c2c1fe8870d") (effects (font (size 1 1) (thickness 0.15))))
         (fp_line (start -1.66 -0.735) (end -1.66 0.735) (stroke (width 0.12) (type solid)) (layer "F.SilkS") (uuid "6f648116-12cd-4451-9a05-2add4282059a"))
         (fp_line (start -1.66 0.735) (end 0.8 0.735) (stroke (width 0.12) (type solid)) (layer "F.SilkS") (uuid "5a3ecf82-3576-4d1a-b86a-2e9e677d1070"))
         (fp_line (start 0.8 -0.735) (end -1.66 -0.735) (stroke (width 0.12) (type solid)) (layer "F.SilkS") (uuid "155b9717-9c78-47d2-b944-45fea8f39df2"))
