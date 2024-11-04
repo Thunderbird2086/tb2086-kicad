@@ -10,7 +10,7 @@ module.exports = {
   body: p => {
     let fp_name="LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder";
     if (p.reversible) {
-        fp_name = "TB2086_SMD:" + ${fp_name} + "_rev";
+        fp_name = "TB2086_SMD:" + fp_name + "_rev";
     }
 
     const standard_opening = `(
@@ -64,8 +64,8 @@ module.exports = {
         (fp_line (start 1.86 0.96) (end -1 0.96) (stroke (width 0.12) (type solid)) (layer "B.SilkS") (uuid "d7d0cd41-2c64-4900-b4e9-f7337bdae33c"))
     `
     const back_pads = `
-        (pad "1" smd roundrect (at 1.025 0 ${p.rot}) (size 1.15 1.4) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.217391) (uuid "f74cf48c-7cdb-49e9-a35b-1a3bdddbb4c5") ${p.P1})
-        (pad "2" smd roundrect (at -1.025 0 ${p.rot}) (size 1.15 1.4) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.217391) (uuid "faa58b50-c592-493e-ac5c-174bf1b699be") ${p.P2})
+        (pad "1" smd roundrect (at 1.025 0 ${p.rot}) (size 1.15 1.4) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.217391) (uuid "f74cf48c-7cdb-49e9-a35b-1a3bdddbb4c5") ${p.to})
+        (pad "2" smd roundrect (at -1.025 0 ${p.rot}) (size 1.15 1.4) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.217391) (uuid "faa58b50-c592-493e-ac5c-174bf1b699be") ${p.from})
     `
     const back_fabrication = `
     `

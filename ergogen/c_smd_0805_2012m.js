@@ -10,7 +10,7 @@ module.exports = {
   body: p => {
     let fp_name="C_0805_2012Metric_Pad1.18x1.45mm_HandSolder";
     if (p.reversible) {
-        fp_name = "TB2086_SMD:" + ${fp_name} + "_rev";
+        fp_name = "TB2086_SMD:" + fp_name + "_rev";
     }
 
     const standard_opening = `(
