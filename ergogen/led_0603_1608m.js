@@ -59,6 +59,7 @@ module.exports = {
     const pads = `
     `
     const back_silkscreen = `
+        (property "Reference" "${p.ref}" (at 0 -1.43 ${0 + p.rot}) (layer "B.SilkS") (hide yes) (uuid "52eb8879-7ec0-4312-b020-7c2c1fe8870d") (effects (font (size 1 1) (thickness 0.15))))
         (fp_line (start -0.8 -0.735) (end 1.66 -0.735) (stroke (width 0.12) (type solid)) (layer "B.SilkS") (uuid "4727627f-0f75-4b4d-a044-0525d6e8d1c9"))
         (fp_line (start 1.66 -0.735) (end 1.66 0.735) (stroke (width 0.12) (type solid)) (layer "B.SilkS") (uuid "cf9a406d-71a8-44d3-a995-0b838ea7fd5a"))
         (fp_line (start 1.66 0.735) (end -0.8 0.735) (stroke (width 0.12) (type solid)) (layer "B.SilkS") (uuid "d57a3ccc-b6ea-41ec-be3c-d0c6a645bb0a"))
