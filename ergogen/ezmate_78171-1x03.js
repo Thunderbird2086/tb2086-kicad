@@ -126,11 +126,11 @@ module.exports = {
     let offset = "(xyz 1.25 -2.4 0)"
     let rotate = "(xyz 0 0 0)"
     if (p.side == "B") {
-        offset = "(xyz -1.25 -2.4 -1.8)"
+        offset = "(xyz -1.25 -2.4 -1.9)"
         rotate = "(xyz 0 180 0)"
     }
     const model = `
-        (model "\${TB2086_GLOBAL}/packages3D/781710003.step" (offset ${offset}) (scale (xyz 1 1 1)) (rotate ${rotate}))
+        (model "\${KIPRJMOD}/packages3D/781710003.step" (offset ${offset}) (scale (xyz 1 1 1)) (rotate ${rotate}))
     `
     const standard_closing = `
             )
