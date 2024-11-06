@@ -4,11 +4,11 @@ module.exports = {
     side: 'F',          // delete if not needed
     reversible: false,  // delete if not needed
     show_3d: false,     // delete if not needed
-    SCK: {type: 'net', value: 'SCK'}, // undefined, // change to undefined as needed
-    GND: {type: 'net', value: 'GND'}, // undefined, // change to undefined as needed
-    VCC: {type: 'net', value: 'VCC'}, // undefined, // change to undefined as needed
-    MOSI: {type: 'net', value: 'MOSI'}, // undefined, // change to undefined as needed
-    CS: {type: 'net', value: 'CS'}, // undefined, // change to undefined as needed
+    MOSI: {type: 'net', value: 'MOSI'},
+    SCK: {type: 'net', value: 'SCK'},
+    VCC: {type: 'net', value: 'VCC'},
+    GND: {type: 'net', value: 'GND'},
+    CS: {type: 'net', value: 'CS'},
   },
   body: p => {
     const standard_opening = `(
@@ -45,10 +45,10 @@ module.exports = {
         (pad "" smd custom (at 2.54 18.116 ${180 + p.rot}) (size 0.1 0.1) (layers "F.Cu" "F.Mask") (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_poly (pts (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)) (width 0) (fill yes))) (uuid "9ace31e5-4b64-4574-9232-b5f8ec12ad5c"))
         (pad "" smd custom (at 5.05 18.9 ${180 + p.rot}) (size 0.25 1) (layers "F.Cu") (zone_connect 0) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives ) (uuid "7da72731-0333-485b-b239-92e35821382e"))
         (pad "" smd custom (at 5.08 18.116 ${180 + p.rot}) (size 0.1 0.1) (layers "F.Cu" "F.Mask") (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_poly (pts (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)) (width 0) (fill yes))) (uuid "e907a81d-56b7-4d5f-ba6c-1359a3522fb9"))
-        (pad "CS" smd custom (at -5.08 17.1 ${180 + p.rot}) (size 1.2 0.5) (layers "F.Cu" "F.Mask") (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_poly (pts (xy -0.6 0) (xy 0.6 0) (xy 0.6 -1) (xy 0 -0.4) (xy -0.6 -1)) (width 0) (fill yes))) (uuid "9d14a800-3031-47ca-b39d-e87f84c3033a") ${p.CS})
-        (pad "GND" smd custom (at -2.54 17.1 ${180 + p.rot}) (size 1.2 0.5) (layers "F.Cu" "F.Mask") (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_poly (pts (xy -0.6 0) (xy 0.6 0) (xy 0.6 -1) (xy 0 -0.4) (xy -0.6 -1)) (width 0) (fill yes))) (uuid "5bb35970-3397-4f6b-aad9-3f25bad73f55") ${p.GND})
-        (pad "MOSI" smd custom (at 5.08 17.1 ${180 + p.rot}) (size 1.2 0.5) (layers "F.Cu" "F.Mask") (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_poly (pts (xy -0.6 0) (xy 0.6 0) (xy 0.6 -1) (xy 0 -0.4) (xy -0.6 -1)) (width 0) (fill yes))) (uuid "24db7f27-e131-486d-acbd-8f06e8f4955f") ${p.MOSI})
-        (pad "SCK" smd custom (at 2.54 17.1 ${180 + p.rot}) (size 1.2 0.5) (layers "F.Cu" "F.Mask") (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_poly (pts (xy -0.6 0) (xy 0.6 0) (xy 0.6 -1) (xy 0 -0.4) (xy -0.6 -1)) (width 0) (fill yes))) (uuid "106cdcab-f8ec-462c-90df-868c03370b8b") ${p.SCK})
+        (pad "1" smd custom (at 5.08 17.1 ${180 + p.rot}) (size 1.2 0.5) (layers "F.Cu" "F.Mask") (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_poly (pts (xy -0.6 0) (xy 0.6 0) (xy 0.6 -1) (xy 0 -0.4) (xy -0.6 -1)) (width 0) (fill yes))) (uuid "24db7f27-e131-486d-acbd-8f06e8f4955f") ${p.MOSI})
+        (pad "2" smd custom (at 2.54 17.1 ${180 + p.rot}) (size 1.2 0.5) (layers "F.Cu" "F.Mask") (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_poly (pts (xy -0.6 0) (xy 0.6 0) (xy 0.6 -1) (xy 0 -0.4) (xy -0.6 -1)) (width 0) (fill yes))) (uuid "106cdcab-f8ec-462c-90df-868c03370b8b") ${p.SCK})
+        (pad "4" smd custom (at -2.54 17.1 ${180 + p.rot}) (size 1.2 0.5) (layers "F.Cu" "F.Mask") (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_poly (pts (xy -0.6 0) (xy 0.6 0) (xy 0.6 -1) (xy 0 -0.4) (xy -0.6 -1)) (width 0) (fill yes))) (uuid "5bb35970-3397-4f6b-aad9-3f25bad73f55") ${p.GND})
+        (pad "5" smd custom (at -5.08 17.1 ${180 + p.rot}) (size 1.2 0.5) (layers "F.Cu" "F.Mask") (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_poly (pts (xy -0.6 0) (xy 0.6 0) (xy 0.6 -1) (xy 0 -0.4) (xy -0.6 -1)) (width 0) (fill yes))) (uuid "9d14a800-3031-47ca-b39d-e87f84c3033a") ${p.CS})
     `
     const front_fabrication = `
         (property "Reference" "${p.ref}" (at -0.02 24.47 ${180 + p.rot}) (layer "F.Fab") (hide yes) (uuid "831f2aee-c758-48c8-9ba3-540d2095bd3a") (effects (font (size 0.8128 0.8128) (thickness 0.15))))
@@ -89,7 +89,7 @@ module.exports = {
         (pad "" thru_hole circle (at -2.54 20 ${p.rot}) (size 1.397 1.397) (drill 0.8128) (layers "*.Cu" "*.Mask" "F.SilkS") (remove_unused_layers no) (uuid "ba5e81eb-418d-44df-9b40-dbc25932f48c"))
         (pad "" thru_hole circle (at 2.54 20 ${p.rot}) (size 1.397 1.397) (drill 0.8128) (layers "*.Cu" "*.Mask" "F.SilkS") (remove_unused_layers no) (uuid "86800f5a-28f2-46a7-8a41-a1a2747ec844"))
         (pad "" thru_hole circle (at 5.08 20 ${p.rot}) (size 1.397 1.397) (drill 0.8128) (layers "*.Cu" "*.Mask" "F.SilkS") (remove_unused_layers no) (uuid "72edefb6-7eb4-4511-83ca-a3e48b0ccd15"))
-        (pad "VCC" thru_hole circle (at 0 20 ${p.rot}) (size 1.397 1.397) (drill 0.8128) (layers "*.Cu" "*.Mask" "F.SilkS") (remove_unused_layers no) (uuid "9bf125f8-4a01-484f-8f79-cafb22e421c6") ${p.VCC})
+        (pad "3" thru_hole circle (at 0 20 ${p.rot}) (size 1.397 1.397) (drill 0.8128) (layers "*.Cu" "*.Mask" "F.SilkS") (remove_unused_layers no) (uuid "9bf125f8-4a01-484f-8f79-cafb22e421c6") ${p.VCC})
     `
     const back_silkscreen = `
         (fp_line (start -6.345 18.73) (end 6.355 18.73) (stroke (width 0.15) (type solid)) (layer "B.SilkS") (uuid "ac959784-9be0-453d-a837-060c28b2cd14"))
@@ -114,10 +114,10 @@ module.exports = {
         (pad "" smd custom (at 2.54 18.116 ${180 + p.rot}) (size 0.1 0.1) (layers "B.Cu" "B.Mask") (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_poly (pts (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)) (width 0) (fill yes))) (uuid "c4f7ef62-2934-4e62-b9c9-17d77240b81a"))
         (pad "" smd custom (at 5.05 18.9 ${180 + p.rot}) (size 0.25 1) (layers "B.Cu") (zone_connect 0) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives ) (uuid "d56f85f0-91ba-49d0-a2e8-fc18a2c3625d"))
         (pad "" smd custom (at 5.08 18.116 ${180 + p.rot}) (size 0.1 0.1) (layers "B.Cu" "B.Mask") (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_poly (pts (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)) (width 0) (fill yes))) (uuid "efcdcae9-4336-4afc-a493-a0545f41254a"))
-        (pad "CS" smd custom (at 5.08 17.1 ${180 + p.rot}) (size 1.2 0.5) (layers "B.Cu" "B.Mask") (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_poly (pts (xy -0.6 0) (xy 0.6 0) (xy 0.6 -1) (xy 0 -0.4) (xy -0.6 -1)) (width 0) (fill yes))) (uuid "48c0dba8-c0d4-4b62-9ccf-0a58584723dc") ${p.CS})
-        (pad "GND" smd custom (at 2.54 17.1 ${180 + p.rot}) (size 1.2 0.5) (layers "B.Cu" "B.Mask") (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_poly (pts (xy -0.6 0) (xy 0.6 0) (xy 0.6 -1) (xy 0 -0.4) (xy -0.6 -1)) (width 0) (fill yes))) (uuid "eae113c1-8874-4151-9ba4-67a07503b720") ${p.GND})
-        (pad "MOSI" smd custom (at -5.08 17.1 ${180 + p.rot}) (size 1.2 0.5) (layers "B.Cu" "B.Mask") (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_poly (pts (xy -0.6 0) (xy 0.6 0) (xy 0.6 -1) (xy 0 -0.4) (xy -0.6 -1)) (width 0) (fill yes))) (uuid "79823269-8086-4cd1-b706-0588312240ff") ${p.MOSI})
-        (pad "SCK" smd custom (at -2.54 17.1 ${180 + p.rot}) (size 1.2 0.5) (layers "B.Cu" "B.Mask") (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_poly (pts (xy -0.6 0) (xy 0.6 0) (xy 0.6 -1) (xy 0 -0.4) (xy -0.6 -1)) (width 0) (fill yes))) (uuid "214434cf-647d-420f-842e-7074755ff504") ${p.SCK})
+        (pad "1" smd custom (at -5.08 17.1 ${180 + p.rot}) (size 1.2 0.5) (layers "B.Cu" "B.Mask") (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_poly (pts (xy -0.6 0) (xy 0.6 0) (xy 0.6 -1) (xy 0 -0.4) (xy -0.6 -1)) (width 0) (fill yes))) (uuid "79823269-8086-4cd1-b706-0588312240ff") ${p.MOSI})
+        (pad "2" smd custom (at -2.54 17.1 ${180 + p.rot}) (size 1.2 0.5) (layers "B.Cu" "B.Mask") (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_poly (pts (xy -0.6 0) (xy 0.6 0) (xy 0.6 -1) (xy 0 -0.4) (xy -0.6 -1)) (width 0) (fill yes))) (uuid "214434cf-647d-420f-842e-7074755ff504") ${p.SCK})
+        (pad "4" smd custom (at 2.54 17.1 ${180 + p.rot}) (size 1.2 0.5) (layers "B.Cu" "B.Mask") (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_poly (pts (xy -0.6 0) (xy 0.6 0) (xy 0.6 -1) (xy 0 -0.4) (xy -0.6 -1)) (width 0) (fill yes))) (uuid "eae113c1-8874-4151-9ba4-67a07503b720") ${p.GND})
+        (pad "5" smd custom (at 5.08 17.1 ${180 + p.rot}) (size 1.2 0.5) (layers "B.Cu" "B.Mask") (clearance 0.1) (zone_connect 0) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_poly (pts (xy -0.6 0) (xy 0.6 0) (xy 0.6 -1) (xy 0 -0.4) (xy -0.6 -1)) (width 0) (fill yes))) (uuid "48c0dba8-c0d4-4b62-9ccf-0a58584723dc") ${p.CS})
     `
     const back_fabrication = `
         (fp_line (start -7.06 -16.17) (end -7.06 20.83) (stroke (width 0.15) (type solid)) (layer "B.Fab") (uuid "a0e0b81b-4218-41f4-86db-7a64110af104"))
@@ -169,7 +169,6 @@ module.exports = {
     `
     const standard_closing = `
             )
-
     `
     let final = standard_opening;
     final += front_silkscreen;
