@@ -38,11 +38,11 @@ module.exports = {
         (fp_arc (start 2.05 0.3) (mid 1.844975 0.794975) (end 1.35 1) (stroke (width 0.12) (type solid)) (layer "F.SilkS") (tstamp c55b15b1-d28e-468b-ae8a-1155f4c0a0cb))
     `
     const front_pads = `
-        (fp_poly (pts (xy -0.9 -0.6) (xy -0.4 -0.6) (xy -0.4 -0.2) (xy -0.9 -0.2)) (stroke (width 0) (type solid)) (fill solid) (layer "F.Cu") (tstamp 03b71dcb-729a-4483-b065-e6de03d5f2c6))
-        (fp_poly (pts (xy -0.9 0.2) (xy -0.4 0.2) (xy -0.4 0.6) (xy -0.9 0.6)) (stroke (width 0) (type solid)) (fill solid) (layer "F.Cu") (tstamp 0d6fcf97-8338-4515-824b-348958865365))
         (pad "1" smd custom (at -1.3 0 ${p.rot}) (size 1 0.5) (layers "F.Cu" "F.Mask") (zone_connect 2) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_circle (center 0 0.25) (end 0.5 0.25) (width 0) (fill yes)) (gr_circle (center 0 -0.25) (end 0.5 -0.25) (width 0) (fill yes)) (gr_poly (pts (xy 0.55 0.75) (xy 0 0.75) (xy 0 -0.75) (xy 0.55 -0.75)) (width 0) (fill yes))) (tstamp 2390a2fa-6c26-4034-b454-ad6a4b1c6410) ${p.P1})
         (pad "2" smd rect (at 0 0 ${p.rot}) (size 1 1.5) (layers "F.Cu" "F.Mask") (tstamp e081c470-9841-4614-a0bc-6cfd88dc7479) ${p.P2})
         (pad "3" smd custom (at 1.3 0 ${p.rot}) (size 1 0.5) (layers "F.Cu" "F.Mask") (zone_connect 2) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_circle (center 0 0.25) (end 0.5 0.25) (width 0) (fill yes)) (gr_circle (center 0 -0.25) (end 0.5 -0.25) (width 0) (fill yes)) (gr_poly (pts (xy 0 0.75) (xy -0.55 0.75) (xy -0.55 -0.75) (xy 0 -0.75)) (width 0) (fill yes))) (tstamp 5c32e2f9-3879-4d68-83bb-b55bf9eca3f9) ${p.P3})
+        (fp_poly (pts (xy -0.9 -0.6) (xy -0.4 -0.6) (xy -0.4 -0.2) (xy -0.9 -0.2)) (stroke (width 0) (type solid)) (fill solid) (layer "F.Cu") (tstamp 03b71dcb-729a-4483-b065-e6de03d5f2c6))
+        (fp_poly (pts (xy -0.9 0.2) (xy -0.4 0.2) (xy -0.4 0.6) (xy -0.9 0.6)) (stroke (width 0) (type solid)) (fill solid) (layer "F.Cu") (tstamp 0d6fcf97-8338-4515-824b-348958865365))
     `
     const front_fabrication = `
         (fp_text value "${fp_name}" (at 0 1.9 ${p.rot}) (layer "F.Fab") (effects (font (size 1 1) (thickness 0.15))) (tstamp a31ee0f2-1d38-4b27-90f6-bbe48192db6e))
@@ -104,7 +104,6 @@ module.exports = {
     `
     const standard_closing = `
             )
-
     `
     let final = standard_opening;
     if (p.reversible || p.side == "F") {
