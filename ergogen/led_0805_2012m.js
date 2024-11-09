@@ -104,7 +104,7 @@ module.exports = {
             )
     `
     let final = standard_opening;
-    final += reference;
+
     if (p.reversible || p.side == "F") {
        final += front_silkscreen;
        final += front_pads;
