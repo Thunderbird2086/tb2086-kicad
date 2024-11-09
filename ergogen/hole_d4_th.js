@@ -9,10 +9,10 @@ module.exports = {
         (generator pcbnew)
         (layer "F.Cu")
         (attr through_hole)
+        (fp_text reference "${p.ref}" (at 0 0.5 ${p.rot}) (layer "${p.side}.SilkS") hide (effects (font (size 1 1) (thickness 0.15))) (tstamp 58228c5c-3b5c-4e4e-8aea-d2ed44d16578))
         ${p.at /* parametric position */}
     `
     const front_silkscreen = `
-        (fp_text reference "${p.ref}" (at 0 0.5 ${p.rot}) (layer "F.SilkS") hide (effects (font (size 1 1) (thickness 0.15))) (tstamp 58228c5c-3b5c-4e4e-8aea-d2ed44d16578))
     `
     const front_pads = `
     `
@@ -54,7 +54,6 @@ module.exports = {
     `
     const standard_closing = `
             )
-
     `
     let final = standard_opening;
     final += front_silkscreen;

@@ -22,6 +22,7 @@ module.exports = {
         (descr "Resitance 3 pas")
         (tags "R")
         (attr through_hole)
+        (property "Reference" "${p.ref}" (at 0.5 0 ${0 + p.rot}) (layer "${p.side}.SilkS") (hide yes) (uuid "2562fb51-5ca0-4c16-a2e3-51668621502c") (effects (font (size 0.5 0.5) (thickness 0.125))))
         ${p.at /* parametric position */}
     `
     const front_silkscreen = `
@@ -41,7 +42,6 @@ module.exports = {
         (pad "2" smd rect (at 1.775 0 ${p.rot}) (size 1.3 0.95) (layers "F.Cu" "F.Paste" "F.Mask") (uuid "de3de12e-fc6a-4167-b4e5-41fdc1a65df8") ${p.from})
     `
     const front_fabrication = `
-        (property "Reference" "${p.ref}" (at 0.5 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "2562fb51-5ca0-4c16-a2e3-51668621502c") (effects (font (size 0.5 0.5) (thickness 0.125))))
         (property "Value" "${fp_name}" (at -0.6 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "c1cbeddd-9c8c-4667-af36-cd55c72a6cfe") (effects (font (size 0.5 0.5) (thickness 0.125))))
         (property "Footprint" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "22bca066-a11b-4cc6-ac76-86f6a86c2230") (effects (font (size 1.27 1.27) (thickness 0.15))))
         (property "Datasheet" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes) (uuid "f19ebf40-1249-4c12-b28c-0506e9cf6730") (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -74,7 +74,6 @@ module.exports = {
         (pad "2" smd rect (at 1.775 0 ${p.rot}) (size 1.3 0.95) (layers "B.Cu" "B.Paste" "B.Mask") (uuid "a03215f3-66f4-4d89-8b4f-0648c1fc9077") ${p.from})
                                     `
     const back_fabrication = `
-        (property "Reference" "${p.ref}" (at 0.5 0 ${180 + p.rot}) (layer "B.Fab") (hide yes) (uuid "2562fb51-5ca0-4c16-a2e3-51668621502c") (effects (font (size 0.5 0.5) (thickness 0.125))))
     `
     const back_mask = `
     `
