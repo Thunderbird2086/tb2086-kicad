@@ -8,9 +8,9 @@ module.exports = {
     to: {type: 'net', value: undefined},
   },
   body: p => {
-    let fp_name="LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder";
+    let fp_name="TB2086_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder";
     if (p.reversible) {
-        fp_name = "TB2086_SMD:" + fp_name + "_rev";
+        fp_name = fp_name + "_rev";
     }
 
     const standard_opening = `(
@@ -24,8 +24,10 @@ module.exports = {
         (attr smd)
         ${p.at /* parametric position */}
     `
+    const reference = `
+        (property "Reference" "${p.ref}" (at 0 -1.65 ${0 + p.rot}) (layer "${p.side}.SilkS") (hide yes) (uuid "adeadb62-c044-48e0-ac19-1f0e030ad34d") (effects (font (size 1 1) (thickness 0.15))))
+    `
     const front_silkscreen = `
-        (property "Reference" "${p.ref}" (at 0 -1.65 ${0 + p.rot}) (layer "F.SilkS") (hide yes) (uuid "adeadb62-c044-48e0-ac19-1f0e030ad34d") (effects (font (size 1 1) (thickness 0.15))))
         (fp_line (start -1.86 -0.96) (end -1.86 0.96) (stroke (width 0.12) (type solid)) (layer "F.SilkS") (uuid "b7185355-54f6-4d50-9e34-bcf67599e43d"))
         (fp_line (start -1.86 0.96) (end 1 0.96) (stroke (width 0.12) (type solid)) (layer "F.SilkS") (uuid "3164853b-4968-4482-b929-b2f8d547c21c"))
         (fp_line (start 1 -0.96) (end -1.86 -0.96) (stroke (width 0.12) (type solid)) (layer "F.SilkS") (uuid "5b530a33-9634-4ec2-b089-ebf9ef324dba"))
@@ -104,6 +106,7 @@ module.exports = {
             )
     `
     let final = standard_opening;
+    final += reference;
     if (p.reversible || p.side == "F") {
        final += front_silkscreen;
        final += front_pads;
