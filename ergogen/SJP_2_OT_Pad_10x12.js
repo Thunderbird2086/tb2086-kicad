@@ -75,7 +75,6 @@ module.exports = {
     `
     const standard_closing = `
             )
-
     `
     let final = standard_opening;
     if (p.reversible || p.side == "F") {
