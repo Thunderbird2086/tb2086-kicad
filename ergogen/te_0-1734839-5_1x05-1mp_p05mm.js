@@ -155,9 +155,6 @@ module.exports = {
 
     final += pads;
 
-    if (p.side == "B") {
-       final += back_reference;
-    }
     if (p.reversible || p.side == "B") {
         final += back_silkscreen;
         final += back_pads;
