@@ -22,10 +22,10 @@ module.exports = {
         (fp_poly (pts (xy 2.6924 1.35) (xy 2.6924 1.95) (xy 2.0924 1.95)) (stroke (width 0.1) (type solid)) (fill solid) (layer "F.SilkS") )
     `
     const front_pads = `
-        (pad "1" smd rect (at -1.4 -0.65 ${p.rot}) (size 1.5 1.3) (layers "F.Cu" "F.Paste" "F.Mask")  ${p.P1})
-        (pad "2" smd rect (at -0.95 0.9 ${p.rot}) (size 2.4 0.8) (layers "F.Cu" "F.Paste" "F.Mask")  ${p.P2})
-        (pad "3" smd rect (at 1.5 0.85 ${p.rot}) (size 1.3 0.9) (layers "F.Cu" "F.Paste" "F.Mask")  ${p.P3})
-        (pad "4" smd rect (at 1.05 -0.7 ${p.rot}) (size 2.2 1.2) (layers "F.Cu" "F.Paste" "F.Mask")  ${p.P4})
+        (pad "1" smd rect (at -1.4 -0.65 ${p.rot}) (size 1.5 1.3) (layers "F.Cu" "F.Paste" "F.Mask")  ${p.to})
+        (pad "2" smd rect (at -0.95 0.9 ${p.rot}) (size 2.4 0.8) (layers "F.Cu" "F.Paste" "F.Mask")  ${p.GND})
+        (pad "3" smd rect (at 1.5 0.85 ${p.rot}) (size 1.3 0.9) (layers "F.Cu" "F.Paste" "F.Mask")  ${p.from})
+        (pad "4" smd rect (at 1.05 -0.7 ${p.rot}) (size 2.2 1.2) (layers "F.Cu" "F.Paste" "F.Mask")  ${p.VCC})
     `
     const front_fabrication = `
         (fp_text reference "${p.ref}" (at 0 -2.75 ${p.rot}) (layer "F.Fab") hide (effects (font (size 1 1) (thickness 0.15))) )
@@ -48,19 +48,19 @@ module.exports = {
     const front_paste = `
     `
     const pads = `
-        (pad "1" thru_hole circle (at 0 -1.725 ${p.rot}) (size 0.4 0.4) (drill 0.3) (layers "*.Cu" "*.Mask")  ${p.P1})
-        (pad "2" thru_hole circle (at 0 0.9 ${p.rot}) (size 0.4 0.4) (drill 0.3) (layers "*.Cu" "*.Mask")  ${p.P2})
-        (pad "3" thru_hole circle (at 0 1.725 ${p.rot}) (size 0.4 0.4) (drill 0.3) (layers "*.Cu" "*.Mask")  ${p.P3})
-        (pad "4" thru_hole circle (at 0 -0.7 ${p.rot}) (size 0.4 0.4) (drill 0.3) (layers "*.Cu" "*.Mask")  ${p.P4})
+        (pad "1" thru_hole circle (at 0 -1.725 ${p.rot}) (size 0.4 0.4) (drill 0.3) (layers "*.Cu" "*.Mask")  ${p.to})
+        (pad "2" thru_hole circle (at 0 0.9 ${p.rot}) (size 0.4 0.4) (drill 0.3) (layers "*.Cu" "*.Mask")  ${p.GND})
+        (pad "3" thru_hole circle (at 0 1.725 ${p.rot}) (size 0.4 0.4) (drill 0.3) (layers "*.Cu" "*.Mask")  ${p.from})
+        (pad "4" thru_hole circle (at 0 -0.7 ${p.rot}) (size 0.4 0.4) (drill 0.3) (layers "*.Cu" "*.Mask")  ${p.VCC})
     `
     const back_silkscreen = `
         (fp_poly (pts (xy -2.6924 1.35) (xy -2.6924 1.95) (xy -2.0924 1.95)) (stroke (width 0.1) (type solid)) (fill solid) (layer "B.SilkS") )
     `
     const back_pads = `
-        (pad "1" smd rect (at 1.4 -0.65 ${p.rot}) (size 1.5 1.3) (layers "B.Cu" "B.Paste" "B.Mask")  ${p.P1})
-        (pad "2" smd rect (at 0.95 0.9 ${p.rot}) (size 2.4 0.8) (layers "B.Cu" "B.Paste" "B.Mask")  ${p.P2})
-        (pad "3" smd rect (at -1.5 0.85 ${p.rot}) (size 1.3 0.9) (layers "B.Cu" "B.Paste" "B.Mask")  ${p.P3})
-        (pad "4" smd rect (at -1.05 -0.7 ${p.rot}) (size 2.2 1.2) (layers "B.Cu" "B.Paste" "B.Mask")  ${p.P4})
+        (pad "1" smd rect (at 1.4 -0.65 ${p.rot}) (size 1.5 1.3) (layers "B.Cu" "B.Paste" "B.Mask")  ${p.to})
+        (pad "2" smd rect (at 0.95 0.9 ${p.rot}) (size 2.4 0.8) (layers "B.Cu" "B.Paste" "B.Mask")  ${p.GND})
+        (pad "3" smd rect (at -1.5 0.85 ${p.rot}) (size 1.3 0.9) (layers "B.Cu" "B.Paste" "B.Mask")  ${p.from})
+        (pad "4" smd rect (at -1.05 -0.7 ${p.rot}) (size 2.2 1.2) (layers "B.Cu" "B.Paste" "B.Mask")  ${p.VCC})
     `
     const back_fabrication = `
     `
