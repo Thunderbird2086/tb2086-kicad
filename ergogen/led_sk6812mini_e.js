@@ -34,8 +34,8 @@ module.exports = {
         (pad "2" smd rect (at -2.75 -0.85 ${p.rot}) (size 1.9 0.82) (layers "F.Cu" "F.Paste" "F.Mask")  ${p.to})
         (pad "3" smd rect (at 2.2 -0.4 ${p.rot}) (size 0.5 0.82) (layers "F.Cu" "F.Paste" "F.Mask")  ${p.GND})
         (pad "3" smd roundrect (at 2.75 -0.85 ${p.rot}) (size 1.9 0.82) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0) (chamfer_ratio 0.5) (chamfer top_right)  ${p.GND})
-        (pad "4" smd rect (at 2.75 0.85 ${p.rot}) (size 1.9 0.82) (layers "F.Cu" "F.Paste" "F.Mask")  ${p.P4})
-        (pad "4" smd rect (at 3.075 0.4 ${p.rot}) (size 0.25 0.82) (layers "F.Cu" "F.Paste" "F.Mask")  ${p.P4})
+        (pad "4" smd rect (at 2.75 0.85 ${p.rot}) (size 1.9 0.82) (layers "F.Cu" "F.Paste" "F.Mask")  ${p.from})
+        (pad "4" smd rect (at 3.075 0.4 ${p.rot}) (size 0.25 0.82) (layers "F.Cu" "F.Paste" "F.Mask")  ${p.from})
     `
     const front_fabrication = `
     `
@@ -49,7 +49,7 @@ module.exports = {
         (pad "1" thru_hole circle (at -2.2 0 ${p.rot}) (size 0.4 0.4) (drill 0.3) (layers "*.Cu" "*.Mask")  ${p.VCC})
         (pad "2" thru_hole circle (at -3.075 0 ${p.rot}) (size 0.4 0.4) (drill 0.3) (layers "*.Cu" "*.Mask")  ${p.to})
         (pad "3" thru_hole circle (at 2.2 0 ${p.rot}) (size 0.4 0.4) (drill 0.3) (layers "*.Cu" "*.Mask")  ${p.GND})
-        (pad "4" thru_hole circle (at 3.075 0 ${p.rot}) (size 0.4 0.4) (drill 0.3) (layers "*.Cu" "*.Mask")  ${p.P4})
+        (pad "4" thru_hole circle (at 3.075 0 ${p.rot}) (size 0.4 0.4) (drill 0.3) (layers "*.Cu" "*.Mask")  ${p.from})
     `
     const back_silkscreen = `
         (fp_line (start 3.9 0.4) (end 3.9 1.3) (stroke (width 0.12) (type default)) (layer "B.SilkS") )
