@@ -28,12 +28,12 @@ module.exports = {
         (fp_line (start 3.9 -1.325) (end 3.9 -0.425) (stroke (width 0.12) (type default)) (layer "F.SilkS") )
     `
     const front_pads = `
-        (pad "1" smd rect (at -2.75 0.85 ${p.rot}) (size 1.9 0.82) (layers "F.Cu" "F.Paste" "F.Mask")  ${p.P1})
-        (pad "1" smd rect (at -2.2 0.4 ${p.rot}) (size 0.5 0.82) (layers "F.Cu" "F.Paste" "F.Mask")  ${p.P1})
-        (pad "2" smd rect (at -3.075 -0.4 ${p.rot}) (size 0.25 0.82) (layers "F.Cu" "F.Paste" "F.Mask")  ${p.P2})
-        (pad "2" smd rect (at -2.75 -0.85 ${p.rot}) (size 1.9 0.82) (layers "F.Cu" "F.Paste" "F.Mask")  ${p.P2})
-        (pad "3" smd rect (at 2.2 -0.4 ${p.rot}) (size 0.5 0.82) (layers "F.Cu" "F.Paste" "F.Mask")  ${p.P3})
-        (pad "3" smd roundrect (at 2.75 -0.85 ${p.rot}) (size 1.9 0.82) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0) (chamfer_ratio 0.5) (chamfer top_right)  ${p.P3})
+        (pad "1" smd rect (at -2.75 0.85 ${p.rot}) (size 1.9 0.82) (layers "F.Cu" "F.Paste" "F.Mask")  ${p.VCC})
+        (pad "1" smd rect (at -2.2 0.4 ${p.rot}) (size 0.5 0.82) (layers "F.Cu" "F.Paste" "F.Mask")  ${p.VCC})
+        (pad "2" smd rect (at -3.075 -0.4 ${p.rot}) (size 0.25 0.82) (layers "F.Cu" "F.Paste" "F.Mask")  ${p.to})
+        (pad "2" smd rect (at -2.75 -0.85 ${p.rot}) (size 1.9 0.82) (layers "F.Cu" "F.Paste" "F.Mask")  ${p.to})
+        (pad "3" smd rect (at 2.2 -0.4 ${p.rot}) (size 0.5 0.82) (layers "F.Cu" "F.Paste" "F.Mask")  ${p.GND})
+        (pad "3" smd roundrect (at 2.75 -0.85 ${p.rot}) (size 1.9 0.82) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0) (chamfer_ratio 0.5) (chamfer top_right)  ${p.GND})
         (pad "4" smd rect (at 2.75 0.85 ${p.rot}) (size 1.9 0.82) (layers "F.Cu" "F.Paste" "F.Mask")  ${p.P4})
         (pad "4" smd rect (at 3.075 0.4 ${p.rot}) (size 0.25 0.82) (layers "F.Cu" "F.Paste" "F.Mask")  ${p.P4})
     `
@@ -46,23 +46,23 @@ module.exports = {
     const front_paste = `
     `
     const pads = `
-        (pad "1" thru_hole circle (at -2.2 0 ${p.rot}) (size 0.4 0.4) (drill 0.3) (layers "*.Cu" "*.Mask")  ${p.P1})
-        (pad "2" thru_hole circle (at -3.075 0 ${p.rot}) (size 0.4 0.4) (drill 0.3) (layers "*.Cu" "*.Mask")  ${p.P2})
-        (pad "3" thru_hole circle (at 2.2 0 ${p.rot}) (size 0.4 0.4) (drill 0.3) (layers "*.Cu" "*.Mask")  ${p.P3})
+        (pad "1" thru_hole circle (at -2.2 0 ${p.rot}) (size 0.4 0.4) (drill 0.3) (layers "*.Cu" "*.Mask")  ${p.VCC})
+        (pad "2" thru_hole circle (at -3.075 0 ${p.rot}) (size 0.4 0.4) (drill 0.3) (layers "*.Cu" "*.Mask")  ${p.to})
+        (pad "3" thru_hole circle (at 2.2 0 ${p.rot}) (size 0.4 0.4) (drill 0.3) (layers "*.Cu" "*.Mask")  ${p.GND})
         (pad "4" thru_hole circle (at 3.075 0 ${p.rot}) (size 0.4 0.4) (drill 0.3) (layers "*.Cu" "*.Mask")  ${p.P4})
     `
     const back_silkscreen = `
         (fp_line (start 3.9 0.4) (end 3.9 1.3) (stroke (width 0.12) (type default)) (layer "B.SilkS") )
     `
     const back_pads = `
-        (pad "1" smd rect (at -2.75 -0.85 ${p.rot}) (size 1.9 0.82) (layers "B.Cu" "B.Paste" "B.Mask")  ${p.P1})
-        (pad "1" smd rect (at -2.2 -0.4 ${p.rot}) (size 0.5 0.82) (layers "B.Cu" "B.Paste" "B.Mask")  ${p.P1})
-        (pad "2" smd rect (at -3.075 0.4 ${p.rot}) (size 0.25 0.82) (layers "B.Cu" "B.Paste" "B.Mask")  ${p.P2})
-        (pad "2" smd rect (at -2.75 0.85 ${p.rot}) (size 1.9 0.82) (layers "B.Cu" "B.Paste" "B.Mask")  ${p.P2})
-        (pad "3" smd rect (at 2.2 0.4 ${p.rot}) (size 0.5 0.82) (layers "B.Cu" "B.Paste" "B.Mask")  ${p.P3})
-        (pad "3" smd roundrect (at 2.75 0.85 ${p.rot}) (size 1.9 0.82) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0) (chamfer_ratio 0.5) (chamfer bottom_right)  ${p.P3})
-        (pad "4" smd rect (at 2.75 -0.85 ${p.rot}) (size 1.9 0.82) (layers "B.Cu" "B.Paste" "B.Mask")  ${p.P4})
-        (pad "4" smd rect (at 3.075 -0.4 ${p.rot}) (size 0.25 0.82) (layers "B.Cu" "B.Paste" "B.Mask")  ${p.P4})
+        (pad "1" smd rect (at -2.75 -0.85 ${p.rot}) (size 1.9 0.82) (layers "B.Cu" "B.Paste" "B.Mask")  ${p.VCC})
+        (pad "1" smd rect (at -2.2 -0.4 ${p.rot}) (size 0.5 0.82) (layers "B.Cu" "B.Paste" "B.Mask")  ${p.VCC})
+        (pad "2" smd rect (at -3.075 0.4 ${p.rot}) (size 0.25 0.82) (layers "B.Cu" "B.Paste" "B.Mask")  ${p.to})
+        (pad "2" smd rect (at -2.75 0.85 ${p.rot}) (size 1.9 0.82) (layers "B.Cu" "B.Paste" "B.Mask")  ${p.to})
+        (pad "3" smd rect (at 2.2 0.4 ${p.rot}) (size 0.5 0.82) (layers "B.Cu" "B.Paste" "B.Mask")  ${p.GND})
+        (pad "3" smd roundrect (at 2.75 0.85 ${p.rot}) (size 1.9 0.82) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0) (chamfer_ratio 0.5) (chamfer bottom_right)  ${p.GND})
+        (pad "4" smd rect (at 2.75 -0.85 ${p.rot}) (size 1.9 0.82) (layers "B.Cu" "B.Paste" "B.Mask")  ${p.from})
+        (pad "4" smd rect (at 3.075 -0.4 ${p.rot}) (size 0.25 0.82) (layers "B.Cu" "B.Paste" "B.Mask")  ${p.from})
     `
     const back_fabrication = `
     `
