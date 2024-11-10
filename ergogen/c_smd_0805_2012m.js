@@ -4,8 +4,8 @@ module.exports = {
     side: 'F',          // delete if not needed
     reversible: false,  // delete if not needed
     show_3d: false,
-    P1: {type: 'net', value: undefined}, // change to undefined as needed
-    P2: {type: 'net', value: undefined}, // change to undefined as needed
+    from: {type: 'net', value: undefined}, // change to undefined as needed
+    to: {type: 'net', value: undefined}, // change to undefined as needed
   },
   body: p => {
     let fp_name="C_0805_2012Metric_Pad1.18x1.45mm_HandSolder";
@@ -29,7 +29,7 @@ module.exports = {
         (fp_line (start -0.261252 0.735) (end 0.261252 0.735) (stroke (width 0.12) (type solid)) (layer "F.SilkS") )
     `
     const front_pads = `
-        (pad "1" smd roundrect (at -1.0375 0 ${p.rot}) (size 1.175 1.45) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.212766)  ${p.P1})
+        (pad "1" smd roundrect (at -1.0375 0 ${p.rot}) (size 1.175 1.45) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.212766)  ${p.from})
         (pad "2" smd roundrect (at 1.0375 0 ${p.rot}) (size 1.175 1.45) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.212766)  ${p.P2})
     `
     const front_fabrication = `
@@ -61,8 +61,8 @@ module.exports = {
         (fp_line (start 0.261252 0.735) (end -0.261252 0.735) (stroke (width 0.12) (type solid)) (layer "B.SilkS") )
     `
     const back_pads = `
-        (pad "1" smd roundrect (at -1.0375 0 ${p.rot}) (size 1.175 1.45) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.212766)  ${p.P1})
-        (pad "2" smd roundrect (at 1.0375 0 ${p.rot}) (size 1.175 1.45) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.212766)  ${p.P2})
+        (pad "1" smd roundrect (at -1.0375 0 ${p.rot}) (size 1.175 1.45) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.212766)  ${p.from})
+        (pad "2" smd roundrect (at 1.0375 0 ${p.rot}) (size 1.175 1.45) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.212766)  ${p.to})
     `
     const back_fabrication = `
     `
