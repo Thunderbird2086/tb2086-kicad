@@ -13,7 +13,7 @@ module.exports = {
   },
   body: p => {
     const standard_opening = `(
-         footprint "USB-C-6P-C-31-M-17"
+         footprint "TB2086_SMD:USB-C-6P-C-31-M-17"
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")

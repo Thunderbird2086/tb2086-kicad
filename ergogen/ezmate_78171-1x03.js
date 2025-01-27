@@ -14,6 +14,10 @@ module.exports = {
     if (p.reversible) {
         fp_name = "TB2086_MISC:" + fp_name + "_rev";
     }
+    else
+    {
+        fp_name = "Connector_Molex:" + fp_name;
+    }
 
     const standard_opening = `(
          footprint "${fp_name}"

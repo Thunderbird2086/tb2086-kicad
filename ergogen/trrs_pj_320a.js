@@ -10,9 +10,9 @@ module.exports = {
     B: {type: 'net', value: 'B'}, // undefined, // change to undefined as needed
   },
   body: p => {
-    let fp_name="TRRS-PJ-320A"
+    let fp_name="TB2086_MISC:TRRS-PJ-320A"
     if (p.reversible) {
-        fp_name = "TB2086_MISC:" + fp_name + "-rev";
+        fp_name += "-rev";
     }
 
     const standard_opening = `(

@@ -10,9 +10,9 @@ module.exports = {
     GND: {type: 'net', value: 'GND'},
   },
   body: p => {
-    let fp_name="LED_SK6812MINI-E";
+    let fp_name="TB2086_LED:LED_SK6812MINI-E";
     if (p.reversible) {
-        fp_name = "TB2086_LED:" + fp_name + "_rev";
+        fp_name += "_rev";
     }
 
     const standard_opening = `(

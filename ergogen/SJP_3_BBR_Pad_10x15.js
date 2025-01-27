@@ -9,9 +9,9 @@ module.exports = {
     P1: {type: 'net', value: undefined}, // change to undefined as needed
   },
   body: p => {
-    let fp_name="SolderJumper-3_P1.3mm_Bridged2Bar12_RoundedPad1.0x1.5mm"
+    let fp_name="TB2086_MISC:SolderJumper-3_P1.3mm_Bridged2Bar12_RoundedPad1.0x1.5mm"
     if (p.reversible) {
-        fp_name = "TB2086_MISC:" + fp_name + "_rev";
+        fp_name += "_rev";
     }
 
     const standard_opening = `(

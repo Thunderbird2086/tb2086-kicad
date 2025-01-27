@@ -9,7 +9,7 @@ module.exports = {
   },
   body: p => {
     const standard_opening = `(
-         footprint "LED_SK6812MINI_PLCC4_3.5x3.5mm_P1.75mm_rev_all"
+         footprint "TB2086_LED:LED_SK6812MINI_PLCC4_3.5x3.5mm_P1.75mm_rev_all"
         (version 20221018)
         (generator pcbnew)
         (layer "F.Cu")

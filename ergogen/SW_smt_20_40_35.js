@@ -9,9 +9,9 @@ module.exports = {
     MP: {type: 'net', value: 'MP'}, // undefined, // change to undefined as needed
   },
   body: p => {
-    let fp_name="SMT 2X4X3.5MM Tactile Tact Push Button"
+    let fp_name="TB2086_SMD:SMT 2X4X3.5MM Tactile Tact Push Button"
     if (p.reversible) {
-        fp_name = "TB2086_SMD:" + fp_name + " rev";
+        fp_name += " rev";
     }
 
     const standard_opening = `(

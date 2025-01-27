@@ -12,6 +12,10 @@ module.exports = {
     if (p.reversible) {
         fp_name = "TB2086_SMD:" + fp_name + "_rev";
     }
+    else
+    {
+        fp_name = "Diode_SMD:" + fp_name;
+    }
 
     const standard_opening = `(
          footprint "${fp_name}"

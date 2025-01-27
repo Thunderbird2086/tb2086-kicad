@@ -8,7 +8,7 @@ module.exports = {
     to: {type: 'net', value: undefined},
   },
   body: p => {
-    let fp_name="TB2086_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder";
+    let fp_name="TB2086_LED:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder";
     if (p.reversible) {
         fp_name = fp_name + "_rev";
     }
