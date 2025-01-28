@@ -9,13 +9,9 @@ module.exports = {
     P1: {type: 'net', value: undefined}, // change to undefined as needed
   },
   body: p => {
-    let fp_name="Molex_Pico-EZmate_78171-0002_1x02-1MP_P1.20mm_Vertical"
+    let fp_name="TB2086_MISC:Molex_Pico-EZmate_78171-0002_1x02-1MP_P1.20mm_Vertical"
     if (p.reversible) {
-        fp_name = "TB2086_MISC:" + fp_name + "_rev";
-    }
-    else
-    {
-        fp_name = "Connector_Molex:" + fp_name;
+        fp_name += "_rev";
     }
 
     const standard_opening = `(
