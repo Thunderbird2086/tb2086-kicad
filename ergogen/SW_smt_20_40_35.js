@@ -28,11 +28,13 @@ module.exports = {
     `
     const front_pads = `
         (pad "1" smd roundrect (at 1.1675 1.55 ${p.rot}) (size 1.15 1.3) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25) (thermal_bridge_angle 45)  ${p.P1})
-        (pad "1" smd roundrect (at 1.575 1.55 ${p.rot}) (size 1.15 0.5) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25) (thermal_bridge_angle 45)  ${p.P1})
-        (pad "2" smd roundrect (at -1.575 1.55 ${p.rot}) (size 1.15 0.5) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25) (thermal_bridge_angle 45)  ${p.P2})
         (pad "2" smd roundrect (at -1.1675 1.55 ${p.rot}) (size 1.15 1.3) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25) (thermal_bridge_angle 45)  ${p.P2})
         (pad "MP" smd roundrect (at -2.3 0 ${p.rot}) (size 0.9 1.2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25) (thermal_bridge_angle 45)  ${p.MP})
         (pad "MP" smd roundrect (at 2.3 0 ${p.rot}) (size 0.9 1.2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25) (thermal_bridge_angle 45)  ${p.MP})
+    `
+    const front_pads_rev = `
+        (pad "1" smd roundrect (at 1.575 1.55 ${p.rot}) (size 1.15 0.5) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25) (thermal_bridge_angle 45)  ${p.P1})
+        (pad "2" smd roundrect (at -1.575 1.55 ${p.rot}) (size 1.15 0.5) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25) (thermal_bridge_angle 45)  ${p.P2})
     `
     const front_fabrication = `
         (property "Value" "${fp_name}" (at 0 1 ${0 + p.rot}) (unlocked yes) (layer "F.Fab") (uuid "2a5fb532-fee7-4dd4-b93b-464af078aab8") (effects (font (size 1 1) (thickness 0.15))))
@@ -49,6 +51,8 @@ module.exports = {
     const front_paste = `
     `
     const pads = `
+    `
+    const pads_rev = `
         (pad "1" thru_hole circle (at 2.1 1.55 ${p.rot}) (size 0.5 0.5) (drill 0.3) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P1})
         (pad "2" thru_hole circle (at -2.1 1.55 ${p.rot}) (size 0.5 0.5) (drill 0.3) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P2})
     `
@@ -109,6 +113,8 @@ module.exports = {
     final += pads;
 
     if (p.reversible || p.side == "B") {
+        final += front_pads_rev;
+        final += pads_rev;
         final += back_silkscreen;
         final += back_pads;
         final += back_fabrication;

@@ -34,9 +34,11 @@ module.exports = {
         (pad "" smd rect (at 3.65 -0.78 ${p.rot}) (size 1.4 0.8) (layers "F.Cu" "F.Paste" "F.Mask") )
         (pad "" smd rect (at 3.65 1.43 ${p.rot}) (size 1.4 0.8) (layers "F.Cu" "F.Paste" "F.Mask") )
         (pad "1" smd rect (at -2.25 -1.43 ${p.rot}) (size 0.8 2) (layers "F.Cu" "F.Paste" "F.Mask")  ${p.P1})
-        (pad "2" smd roundrect (at 0.2 -1.43 ${p.rot}) (size 0.5 0.25) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25) (thermal_bridge_angle 45)  ${p.P2})
         (pad "2" smd rect (at 0.75 -1.43 ${p.rot}) (size 0.8 2) (layers "F.Cu" "F.Paste" "F.Mask")  ${p.P2})
         (pad "3" smd rect (at 2.25 -1.43 ${p.rot}) (size 0.8 2) (layers "F.Cu" "F.Paste" "F.Mask")  ${p.P3})
+    `
+    const front_pads_rev = `
+        (pad "2" smd roundrect (at 0.2 -1.43 ${p.rot}) (size 0.5 0.25) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25) (thermal_bridge_angle 45)  ${p.P2})
     `
     const front_fabrication = `
         (property "Footprint" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes)  (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -69,6 +71,8 @@ module.exports = {
     const front_paste = `
     `
     const pads = `
+    `
+    const pads_rev = `
         (pad "2" thru_hole circle (at 0 -1.43 ${p.rot}) (size 0.5 0.5) (drill 0.3) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P2})
     `
     const back_silkscreen = `
@@ -151,6 +155,8 @@ module.exports = {
     final += pads;
 
     if (p.reversible || p.side == "B") {
+        final += front_pads_rev;
+        final += pads_rev;
         final += back_silkscreen;
         final += back_pads;
         final += back_fabrication;
