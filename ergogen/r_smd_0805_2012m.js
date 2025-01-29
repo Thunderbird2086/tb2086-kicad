@@ -8,9 +8,9 @@ module.exports = {
     P2: {type: 'net', value: undefined}, // change to undefined as needed
   },
   body: p => {
-    let fp_name="R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+    let fp_name="TB2086_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
     if (p.reversible) {
-        fp_name = "TB2086_SMD:" + fp_name + "_rev";
+        fp_name += "_rev";
     }
 
     const standard_opening = `(

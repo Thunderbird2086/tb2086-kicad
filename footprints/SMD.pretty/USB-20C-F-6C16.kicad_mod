@@ -1,0 +1,215 @@
+(footprint "USB-20C-F-6C16"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 -0.5 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "541790a0-a44c-41fe-81ec-4e0b79f02472")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "USB-20C-F-6C16"
+		(at 0 1 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "37f95011-fb14-4027-b860-98c2283bf494")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Footprint" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "584669da-11ff-4fed-9f93-534e4bfb4b07")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2c5104a6-dc94-47e8-816d-10c633a0bd57")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "44156567-b97c-4120-bf8e-6699e731712d")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_line
+		(start -4.3 3.4)
+		(end -4.3 -2.8)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "aa30129a-3c0c-43c6-85fb-42e5ce638950")
+	)
+	(fp_line
+		(start -3.3 -2.8)
+		(end 3.3 -2.8)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "c9a8cc9e-6d47-431b-80d6-b94d9d21cf98")
+	)
+	(fp_line
+		(start 4.3 -2.8)
+		(end 4.3 3.4)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "790dede5-a6b4-4fdc-8860-62396c0a066d")
+	)
+	(fp_arc
+		(start -4.3 -2.8)
+		(mid -3.8 -3.3)
+		(end -3.3 -2.8)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "fd1cf38e-2b4a-481f-bec0-b8c199e071da")
+	)
+	(fp_arc
+		(start 3.3 -2.8)
+		(mid 3.8 -3.3)
+		(end 4.3 -2.8)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "55d3f3b0-e0c7-4da5-94df-f1d1afc9de98")
+	)
+	(fp_rect
+		(start -4.3 -2.8)
+		(end 4.3 3.4)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(fill none)
+		(layer "F.CrtYd")
+		(uuid "ed10c089-69ec-47d8-acc9-c9829df0fef3")
+	)
+	(pad "A5" smd roundrect
+		(at -0.5 -4.5)
+		(size 0.8 1.6)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(roundrect_rratio 0.25)
+		(uuid "2b87e2bd-cec0-43df-98ff-fcb38be69ec6")
+	)
+	(pad "A9" smd roundrect
+		(at 1.52 -4.5)
+		(size 0.8 1.6)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(roundrect_rratio 0.25)
+		(uuid "18cd8bcb-609f-4a0f-b10a-791602818c83")
+	)
+	(pad "A12" smd roundrect
+		(at 2.75 -4.5)
+		(size 0.9 1.6)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(roundrect_rratio 0.25)
+		(uuid "9bf34749-517a-4ad3-a173-7a358f81e83c")
+	)
+	(pad "B5" smd roundrect
+		(at 0.5 -4.5)
+		(size 0.8 1.6)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(roundrect_rratio 0.25)
+		(uuid "3f5c03f3-9a72-4766-9917-e94c5f8167de")
+	)
+	(pad "B9" smd roundrect
+		(at -1.52 -4.5)
+		(size 0.8 1.6)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(roundrect_rratio 0.25)
+		(uuid "92d06653-baab-40fb-b705-bcfc5fe3a37a")
+	)
+	(pad "B12" smd roundrect
+		(at -2.75 -4.5)
+		(size 0.9 1.6)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(roundrect_rratio 0.25)
+		(uuid "17d1f752-9acb-4107-8fdb-487c92438cc5")
+	)
+	(pad "S1" thru_hole oval
+		(at -5.575 -3)
+		(size 1.3 2.3)
+		(drill oval 0.6 1.6)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "4670774a-a29d-4a0c-8cd1-1d4da94fe92b")
+	)
+	(pad "S1" thru_hole oval
+		(at -5.575 0.8)
+		(size 1.3 2.5)
+		(drill oval 0.6 1.8)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "78fc74b9-0264-4c26-a563-f929da598d31")
+	)
+	(pad "S1" thru_hole oval
+		(at 5.575 -3)
+		(size 1.3 2.3)
+		(drill oval 0.6 1.6)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "876af0bc-6fa5-4dce-9d42-79d5a6aee173")
+	)
+	(pad "S1" thru_hole oval
+		(at 5.575 0.8)
+		(size 1.3 2.5)
+		(drill oval 0.6 1.8)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "2a6dc76d-1275-47c1-aabb-d819732c8985")
+	)
+	(model "${KIPRJMOD}/tb2086-kicad/packages3D/GCT_USB4105-GF-A.wrl"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

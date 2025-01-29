@@ -14,7 +14,11 @@ module.exports = {
   body: p => {
     let fp_name="TE_0-1734839-5_1x05-1MP_P0.5mm_Horizontal"
     if (p.reversible) {
-        fp_name = "TB2086_MISC:" + fp_name + "-rev";
+        fp_name = "TB2086_SMD:" + fp_name + "-rev";
+    }
+    else
+    {
+        fp_name = "Connector_FFC-FPC:" + fp_name;
     }
     const standard_opening = `(
          footprint "${fp_name}"
