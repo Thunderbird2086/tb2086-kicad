@@ -1,6 +1,7 @@
 module.exports = {
   params: {
     designator: 'L',
+    side: 'F',
     show_3d: false,
     from: {type: 'net', value: undefined},
     to: {type: 'net', value: undefined},
@@ -80,8 +81,16 @@ module.exports = {
     `
     const user_eco2 = `
     `
+
+    let offset = "(xyz 0 0 0)"
+    let rotate = "(xyz 0 0 0)"
+    if (p.side == "B") {
+        offset = "(xyz 0 0 -1.6)"
+        rotate = "(xyz 0 180 0)"
+    }
+
     const model = `
-        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/SK6812MINI.wrl" (offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
+        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/SK6812MINI.wrl" (offset ${offset}) (scale (xyz 1 1 1)) (rotate ${rotate}))
     `
     const standard_closing = `
             )
