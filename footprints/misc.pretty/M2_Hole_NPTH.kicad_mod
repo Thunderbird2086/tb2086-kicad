@@ -1,4 +1,4 @@
-(footprint "M2_Hole_TH_Outside"
+(footprint "M2_Hole_NPTH"
 	(version 20240108)
 	(generator "pcbnew")
 	(generator_version "8.0")
@@ -15,7 +15,7 @@
 			)
 		)
 	)
-	(property "Value" "M2_Hole_TH_Outside"
+	(property "Value" "M2_Hole_NPTH"
 		(at 0 -0.5 0)
 		(layer "F.Fab")
 		(hide yes)
@@ -31,7 +31,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "a67717fd-22b6-4a90-ab92-45726c107db4")
+		(uuid "b5bb36ff-21b8-4daf-8b4f-35a0b8b6f383")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -43,7 +43,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "15416ab8-ad87-4ed0-be76-883e60672a0c")
+		(uuid "80f9da75-f599-4366-aa3a-15996119d95b")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -55,7 +55,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "e9cf5312-fed6-42ba-bf09-ae44ec9379be")
+		(uuid "8d1c3943-20b9-4b02-8ac2-2da2a77d7983")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -64,12 +64,11 @@
 		)
 	)
 	(attr through_hole)
-	(pad "" thru_hole circle
+	(pad "" np_thru_hole circle
 		(at 0 0)
-		(size 4.5 4.5)
+		(size 2.3 2.3)
 		(drill 2.3)
-		(layers "*.Cu" "*.Mask")
-		(remove_unused_layers no)
+		(layers "*.Mask")
 		(uuid "7e38cba2-c66d-4f1e-b05d-38c926268529")
 	)
 )
