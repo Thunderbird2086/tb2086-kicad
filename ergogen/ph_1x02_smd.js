@@ -124,8 +124,16 @@ module.exports = {
     `
     const user_eco2 = `
     `
+
+    let offset = "(xyz 0 -4.5 0)"
+    let rotate = "(xyz 90 180 180)"
+    if (p.side == "B") {
+        offset = "(xyz 0 -4.5 -1.6)"
+        rotate = "(xyz 90 0 180)"
+    }
+
     const model = `
-        (model "\${KICAD8_3DMODEL_DIR}/Connector_JST.3dshapes/JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal.wrl" (offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
+        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/S2B-PH-SM4-TB.step" (offset ${offset}) (scale (xyz 1 1 1)) (rotate ${rotate}))
     `
     const standard_closing = `
             )
