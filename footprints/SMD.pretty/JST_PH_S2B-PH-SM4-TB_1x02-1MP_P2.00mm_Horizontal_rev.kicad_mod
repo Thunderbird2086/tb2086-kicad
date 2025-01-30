@@ -637,15 +637,15 @@
 		(roundrect_rratio 0.166667)
 		(uuid "b209afca-4938-4776-b57a-d1abda0e2a55")
 	)
-	(model "${KICAD8_3DMODEL_DIR}/Connector_JST.3dshapes/JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal.wrl"
+	(model "${TB2086_GLOBAL}/packages3D/S2B-PH-SM4-TB.step"
 		(offset
-			(xyz 0 0 0)
+			(xyz 0 -4.5 0)
 		)
 		(scale
 			(xyz 1 1 1)
 		)
 		(rotate
-			(xyz 0 0 0)
+			(xyz 90 180 180)
 		)
 	)
 )
