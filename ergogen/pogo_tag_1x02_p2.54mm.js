@@ -40,8 +40,15 @@ module.exports = {
     const back_silkscreen = `
     `
     const back_pads = `
+        (pad "1" smd circle (at -1.27 0 ${p.rot}) (size 0.9 0.9) (layers "B.Cu" "B.Paste" "B.Mask")  ${p.P1})
+        (pad "2" smd circle (at 1.27 0 ${p.rot}) (size 0.9 0.9) (layers "B.Cu" "B.Paste" "B.Mask")  ${p.P2})
     `
     const back_fabrication = `
+        (property "Value" "Tag_Pogopin_1x02_P2.54mm" (at 0 1.5 ${0 + p.rot}) (unlocked yes) (layer "B.Fab")  (effects (font (size 1 1) (thickness 0.15))))
+        (property "Footprint" "" (at 0 0 ${0 + p.rot}) (unlocked yes) (layer "B.Fab") (hide yes)  (effects (font (size 1 1) (thickness 0.15))))
+        (property "Datasheet" "" (at 0 0 ${0 + p.rot}) (unlocked yes) (layer "B.Fab") (hide yes)  (effects (font (size 1 1) (thickness 0.15))))
+        (property "Description" "" (at 0 0 ${0 + p.rot}) (unlocked yes) (layer "B.Fab") (hide yes)  (effects (font (size 1 1) (thickness 0.15))))
+        (fp_text user "\${REFERENCE}" (at 0 3 ${0 + p.rot}) (unlocked yes) (layer "B.Fab")  (effects (font (size 1 1) (thickness 0.15))))
     `
     const back_mask = `
     `
@@ -65,25 +72,36 @@ module.exports = {
             )
     `
     let final = standard_opening;
-    final += front_silkscreen;
-    final += front_pads;
-    final += front_fabrication;
-    final += front_mask;
-    final += front_courtyard;
-    final += front_paste;
+    if (p.reversible || p.side == "F") {
+        final += front_silkscreen;
+        final += front_pads;
+        final += front_fabrication;
+        final += front_mask;
+        final += front_courtyard;
+        final += front_paste;
+    }
+
     final += pads;
-    final += back_silkscreen;
-    final += back_pads;
-    final += back_fabrication;
-    final += back_mask;
-    final += back_courtyard;
-    final += back_paste;
+
+    if (p.reversible || p.side == "B") {
+        final += back_silkscreen;
+        final += back_pads;
+        final += back_fabrication;
+        final += back_mask;
+        final += back_courtyard;
+        final += back_paste;
+    }
+
     final += edge_cuts;
     final += user_drawing;
     final += user_comments;
     final += user_eco1;
     final += user_eco2;
-    final += model;
+
+    if (p.show_3d) {
+        final += model;
+    }
+
     final += standard_closing;
 
     return final
