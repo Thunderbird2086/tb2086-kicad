@@ -13,7 +13,7 @@ module.exports = {
     B9: {type: 'net', value: 'B9'}, // undefined}, // change to undefined as needed
   },
   body: p => {
-    let fp_name="TB2086_MISC:USB-20C-F-6C16"
+    let fp_name="TB2086_SMD:USB-20C-F-6C16"
     if (p.reversible) {
         fp_name += "_rev";
     }

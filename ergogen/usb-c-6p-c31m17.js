@@ -12,8 +12,12 @@ module.exports = {
     A9: {type: 'net', value: 'A9'}, // undefined}, // change to undefined as needed
   },
   body: p => {
+    let fp_name="TB2086_SMD:USB-C-6P-C-31-M-17"
+    if (p.reversible) {
+        fp_name += "_rev";
+    }
     const standard_opening = `(
-         footprint "TB2086_SMD:USB-C-6P-C-31-M-17"
+         footprint "${fp_name}"
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")
@@ -32,7 +36,7 @@ module.exports = {
         (pad "B12" smd roundrect (at -2.75 -3.18 ${p.rot}) (size 0.9 1.6) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25)  ${p.B12})
     `
     const front_fabrication = `
-        (property "Value" "USB-C-6P-C-31-M-17" (at 0 1 ${0 + p.rot}) (unlocked yes) (layer "F.Fab")  (effects (font (size 1 1) (thickness 0.15))))
+        (property "Value" "${fp_name}" (at 0 1 ${0 + p.rot}) (unlocked yes) (layer "F.Fab")  (effects (font (size 1 1) (thickness 0.15))))
         (property "Footprint" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes)  (effects (font (size 1.27 1.27) (thickness 0.15))))
         (property "Datasheet" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes)  (effects (font (size 1.27 1.27) (thickness 0.15))))
         (property "Description" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes)  (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -53,12 +57,19 @@ module.exports = {
     const back_silkscreen = `
     `
     const back_pads = `
+        (pad "A5" smd roundrect (at 0.5 -3.18 ${p.rot}) (size 0.8 1.6) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25)  ${p.A5})
+        (pad "A9" smd roundrect (at -1.52 -3.18 ${p.rot}) (size 0.8 1.6) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25)  ${p.A9})
+        (pad "A12" smd roundrect (at -2.75 -3.18 ${p.rot}) (size 0.9 1.6) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25)  ${p.A12})
+        (pad "B5" smd roundrect (at -0.5 -3.18 ${p.rot}) (size 0.8 1.6) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25)  ${p.B5})
+        (pad "B9" smd roundrect (at 1.52 -3.18 ${p.rot}) (size 0.8 1.6) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25)  ${p.B9})
+        (pad "B12" smd roundrect (at 2.75 -3.18 ${p.rot}) (size 0.9 1.6) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25)  ${p.B12})
     `
     const back_fabrication = `
     `
     const back_mask = `
     `
     const back_courtyard = `
+        (fp_rect (start -4.17 -3.4) (end 4.17 3.4) (stroke (width 0.12) (type default)) (fill none) (layer "B.CrtYd") )
     `
     const back_paste = `
     `
@@ -79,25 +90,37 @@ module.exports = {
             )
     `
     let final = standard_opening;
-    final += front_silkscreen;
-    final += front_pads;
-    final += front_fabrication;
-    final += front_mask;
-    final += front_courtyard;
-    final += front_paste;
+
+    if (p.reversible || p.side == "F") {
+        final += front_silkscreen;
+        final += front_pads;
+        final += front_fabrication;
+        final += front_mask;
+        final += front_courtyard;
+        final += front_paste;
+    }
+
     final += pads;
-    final += back_silkscreen;
-    final += back_pads;
-    final += back_fabrication;
-    final += back_mask;
-    final += back_courtyard;
-    final += back_paste;
+
+    if (p.reversible || p.side == "B") {
+        final += back_silkscreen;
+        final += back_pads;
+        final += back_fabrication;
+        final += back_mask;
+        final += back_courtyard;
+        final += back_paste;
+    }
+
     final += edge_cuts;
     final += user_drawing;
     final += user_comments;
     final += user_eco1;
     final += user_eco2;
-    final += model;
+
+    if (p.show_3d) {
+        final += model;
+    }
+
     final += standard_closing;
 
     return final
