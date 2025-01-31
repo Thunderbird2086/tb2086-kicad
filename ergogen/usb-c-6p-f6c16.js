@@ -13,7 +13,7 @@ module.exports = {
     B9: {type: 'net', value: 'B9'}, // undefined}, // change to undefined as needed
   },
   body: p => {
-    let fp_name="TB2086_MISC:USB-20C-F-6C16"
+    let fp_name="TB2086_SMD:USB-20C-F-6C16"
     if (p.reversible) {
         fp_name += "_rev";
     }
@@ -66,10 +66,15 @@ module.exports = {
         (pad "B12" smd roundrect (at 2.75 -4.5 ${p.rot}) (size 0.9 1.6) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25)  ${p.B12})
     `
     const back_fabrication = `
+        (property "Value" "${fp_name}" (at 0 1 ${0 + p.rot}) (unlocked yes) (layer "B.Fab")  (effects (font (size 1 1) (thickness 0.15))))
+        (property "Footprint" "" (at 0 0 ${0 + p.rot}) (layer "B.Fab") (hide yes)  (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (property "Datasheet" "" (at 0 0 ${0 + p.rot}) (layer "B.Fab") (hide yes)  (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (property "Description" "" (at 0 0 ${0 + p.rot}) (layer "B.Fab") (hide yes)  (effects (font (size 1.27 1.27) (thickness 0.15))))
     `
     const back_mask = `
     `
     const back_courtyard = `
+        (fp_rect (start -4.3 -2.8) (end 4.3 3.4) (stroke (width 0.12) (type default)) (fill none) (layer "B.CrtYd") )
     `
     const back_paste = `
     `
