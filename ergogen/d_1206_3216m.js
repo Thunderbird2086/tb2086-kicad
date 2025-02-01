@@ -22,7 +22,7 @@ module.exports = {
         (descr "Resitance 3 pas")
         (tags "R")
         (attr through_hole)
-        (property "Reference" "${p.ref}" (at 0.5 0 ${0 + p.rot}) (layer "${p.side}.SilkS") (hide yes)  (effects (font (size 0.5 0.5) (thickness 0.125))))
+        (property "Reference" "${p.ref}" (at 0.5 0 ${0 + p.rot}) (layer "${p.side}.SilkS") ${p.ref_hide} (effects (font (size 0.5 0.5) (thickness 0.125))))
         ${p.at /* parametric position */}
     `
     const front_silkscreen = `

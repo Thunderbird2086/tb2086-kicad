@@ -20,7 +20,7 @@ module.exports = {
         (generator_version "8.0")
         (layer "F.Cu")
         (tags "resistor handsolder")
-        (property "Reference" "${p.ref}" (at 0 -1.65 ${0 + p.rot}) (layer "${p.side}.SilkS") (hide yes) (effects (font (size 1 1) (thickness 0.15))))
+        (property "Reference" "${p.ref}" (at 0 -1.65 ${0 + p.rot}) (layer "${p.side}.SilkS") ${p.ref_hide} (effects (font (size 1 1) (thickness 0.15))))
         (attr smd)
         ${p.at /* parametric position */}
     `

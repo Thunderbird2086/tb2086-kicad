@@ -12,7 +12,7 @@ module.exports = {
         ${p.at /* parametric position */}
     `
     const front_silkscreen = `
-        (fp_text reference "${p.ref}" (at 0 0.5 ${p.rot}) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))) (tstamp 2587db10-d45b-4629-a7b4-972dbe5d188c))
+        (fp_text reference "${p.ref}" (at 0 0.5 ${p.rot}) (layer "F.SilkS") ${p.ref_hide} (effects (font (size 1 1) (thickness 0.15))) (tstamp 2587db10-d45b-4629-a7b4-972dbe5d188c))
     `
     const front_pads = `
     `

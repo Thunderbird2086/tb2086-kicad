@@ -21,7 +21,7 @@ module.exports = {
         (generator pcbnew)
         (layer "F.Cu")
         (attr through_hole)
-        (fp_text value "${fp_name}" (at 0 -0.5 ${p.rot}) (layer "${p.side}.SilkS") hide (effects (font (size 1 1) (thickness 0.15))) (tstamp ee132152-743b-421a-941a-dcd0b807fc0f))
+        (fp_text value "${fp_name}" (at 0 -0.5 ${p.rot}) (layer "${p.side}.SilkS") ${p.ref_hide} (effects (font (size 1 1) (thickness 0.15))) (tstamp ee132152-743b-421a-941a-dcd0b807fc0f))
         ${p.at /* parametric position */}
     `
     const front_silkscreen = `

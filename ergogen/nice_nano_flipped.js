@@ -34,7 +34,7 @@ module.exports = {
         (layer "F.Cu")
         (descr "Solder-jumper reversible Pro Micro footprint (unrouted)")
         (tags "promicro ProMicro reversible solder jumper")
-        (property "Reference" "${p.ref}" (at 0.254 -14.986 ${0 + p.rot}) (layer "${p.side}.SilkS") (hide yes)  (effects (font (size 1 1) (thickness 0.15))))
+        (property "Reference" "${p.ref}" (at 0.254 -14.986 ${0 + p.rot}) (layer "${p.side}.SilkS") ${p.ref_hide} (effects (font (size 1 1) (thickness 0.15))))
         (attr through_hole)
         ${p.at /* parametric position */}
     `
