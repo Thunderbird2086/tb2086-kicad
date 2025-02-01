@@ -28,7 +28,7 @@ module.exports = {
         (layer "F.Cu")
         (descr "TE FPC connector, 05 top-side contacts, 0.5mm pitch, SMT, https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Customer+Drawing%7F1734839%7FC%7Fpdf%7FEnglish%7FENG_CD_1734839_C_C_1734839.pdf%7F4-1734839-0")
         (tags "te fpc 1734839")
-        (property "Reference" "${p.ref}" (at 0 -3.1 ${0 + p.rot}) (layer "${p.side}.SilkS") (hide yes) (effects (font (size 1 1) (thickness 0.15))))
+        (property "Reference" "${p.ref}" (at 0 -3.1 ${0 + p.rot}) (layer "${p.side}.SilkS") ${p.ref_hide} (effects (font (size 1 1) (thickness 0.15))))
         (attr smd)
         ${p.at /* parametric position */}
     `

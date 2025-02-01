@@ -21,7 +21,7 @@ module.exports = {
         (generator_version "8.0")
         (layer "F.Cu")
         (tags "solder jumper open")
-        (property "Reference" "${p.ref}" (at 0 -1.8 ${0 + p.rot}) (layer "${p.side}.SilkS") (hide yes)  (effects (font (size 1 1) (thickness 0.15))))
+        (property "Reference" "${p.ref}" (at 0 -1.8 ${0 + p.rot}) (layer "${p.side}.SilkS") ${p.ref_hide} (effects (font (size 1 1) (thickness 0.15))))
         (attr exclude_from_pos_files exclude_from_bom)
         ${p.at /* parametric position */}
     `

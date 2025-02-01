@@ -21,7 +21,7 @@ module.exports = {
         (descr "SMD Solder Jumper, 1x1.5mm Triangular Pads, 0.3mm gap, open")
         (tags "solder jumper open")
         (attr exclude_from_pos_files exclude_from_bom)
-        (fp_text reference "${p.ref}" (at 0 -1.8 ${p.rot}) (layer "${p.side}.SilkS") hide (effects (font (size 1 1) (thickness 0.15))) )
+        (fp_text reference "${p.ref}" (at 0 -1.8 ${p.rot}) (layer "${p.side}.SilkS") ${p.ref_hide} (effects (font (size 1 1) (thickness 0.15))) )
         ${p.at /* parametric position */}
     `
     const front_silkscreen = `

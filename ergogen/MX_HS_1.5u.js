@@ -15,7 +15,7 @@ module.exports = {
         (generator_version "8.0")
         (layer "F.Cu")
         (descr "Footprint for Cherry MX style switches with Kailh hotswap socket")
-        (property "Reference" "${p.ref}" (at -4.4196 1.778 ${0 + p.rot}) (layer "${p.side}.SilkS") (hide yes)  (effects (font (size 1 1) (thickness 0.15))))
+        (property "Reference" "${p.ref}" (at -4.4196 1.778 ${0 + p.rot}) (layer "${p.side}.SilkS") ${p.ref_hide} (effects (font (size 1 1) (thickness 0.15))))
         (attr smd)
         ${p.at /* parametric position */}
     `

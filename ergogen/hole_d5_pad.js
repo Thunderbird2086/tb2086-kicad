@@ -12,7 +12,7 @@ module.exports = {
         (layer "F.Cu")
         (descr "Mounting Hole 5mm")
         (tags "mounting hole 5mm")
-        (property "Reference" "${p.ref}" (at 0 -6 ${0 + p.rot}) (layer "${p.side}.SilkS")  (effects (font (size 1 1) (thickness 0.15))))
+        (property "Reference" "${p.ref}" (at 0 -6 ${0 + p.rot}) (layer "${p.side}.SilkS") ${p.ref_hide} (effects (font (size 1 1) (thickness 0.15))))
         (attr exclude_from_pos_files exclude_from_bom)
         ${p.at /* parametric position */}
     `

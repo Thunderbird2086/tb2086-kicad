@@ -19,7 +19,7 @@ module.exports = {
         (layer "F.Cu")
         (descr "Nice!View ")
         (tags "CONN DEV")
-        (property "Reference" "${p.ref}" (at -0.02 24.47 ${180 + p.rot}) (layer "${p.side}.SilkS") (hide yes)  (effects (font (size 0.8128 0.8128) (thickness 0.15))))
+        (property "Reference" "${p.ref}" (at -0.02 24.47 ${180 + p.rot}) (layer "${p.side}.SilkS") ${p.ref_hide} (effects (font (size 0.8128 0.8128) (thickness 0.15))))
         (attr through_hole)
         ${p.at /* parametric position */}
     `

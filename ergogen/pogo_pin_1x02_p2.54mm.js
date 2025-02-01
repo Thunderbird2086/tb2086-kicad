@@ -12,7 +12,7 @@ module.exports = {
         (generator "pcbnew")
         (generator_version "8.0")
         (layer "F.Cu")
-        (property "Reference" "${p.ref}" (at 0 -1.81 ${0 + p.rot}) (unlocked yes) (layer "${p.side}.SilkS") (hide yes)  (effects (font (size 1 1) (thickness 0.1))))
+        (property "Reference" "${p.ref}" (at 0 -1.81 ${0 + p.rot}) (unlocked yes) (layer "${p.side}.SilkS") ${p.ref_hide} (effects (font (size 1 1) (thickness 0.1))))
         (attr smd)
         ${p.at /* parametric position */}
     `
