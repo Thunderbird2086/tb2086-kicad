@@ -254,7 +254,7 @@
 		(remove_unused_layers no)
 		(uuid "2a6dc76d-1275-47c1-aabb-d819732c8985")
 	)
-	(model "${KIPRJMOD}/tb2086-kicad/packages3D/GCT_USB4105-GF-A.wrl"
+	(model "${KIPRJMOD}/tb2086-kicad/packages3D/GCT_USB4510-03-1-A.wrl"
 		(offset
 			(xyz 0 0 0)
 		)

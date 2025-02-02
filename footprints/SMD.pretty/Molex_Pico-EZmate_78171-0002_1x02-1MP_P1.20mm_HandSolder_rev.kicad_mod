@@ -743,15 +743,15 @@
 		(roundrect_rratio 0.25)
 		(uuid "54c7370c-8315-4698-920b-5626ed00d888")
 	)
-	(model "${KICAD8_3DMODEL_DIR}/Connector_Molex.3dshapes/Molex_Pico-EZmate_78171-0002_1x02-1MP_P1.20mm_Vertical.wrl"
+	(model "${KIPRJMOD}/tb2086-kicad/packages3D/Molex_Ezmate_Pico_Socket_2pin.step"
 		(offset
-			(xyz 0 0 0)
+			(xyz 0 0 1.4)
 		)
 		(scale
 			(xyz 1 1 1)
 		)
 		(rotate
-			(xyz 0 0 0)
+			(xyz -90 0 0)
 		)
 	)
 )

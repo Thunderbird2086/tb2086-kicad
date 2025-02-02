@@ -9,7 +9,7 @@ module.exports = {
     P1: {type: 'net', value: 'P1'}, // undefined}, // change to undefined as needed
   },
   body: p => {
-    let fp_name="TB2086_MISC:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal"
+    let fp_name="TB2086_SMD:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal"
     if (p.reversible) {
         fp_name += "_rev";
     }
