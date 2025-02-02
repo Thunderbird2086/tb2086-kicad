@@ -4,9 +4,9 @@ module.exports = {
     side: 'F',          // delete if not needed
     reversible: false,  // delete if not needed
     show_3d: false,     // delete if not needed
-    P3: {type: 'net', undefined}, // change to undefined as needed
-    P1: {type: 'net', undefined}, // change to undefined as needed
-    P2: {type: 'net', undefined}, // change to undefined as needed
+    P3: {type: 'net', value: undefined}, // change to undefined as needed
+    P1: {type: 'net', value: undefined}, // change to undefined as needed
+    P2: {type: 'net', value: undefined}, // change to undefined as needed
   },
   body: p => {
     let fp_name="TB2086_MISC:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm"
