@@ -265,13 +265,13 @@
 	)
 	(model "${KIPRJMOD}/tb2086-kicad/packages3D/R_0805_2012Metric.step"
 		(offset
-			(xyz 0 0 -1.6)
+			(xyz 0 0 0)
 		)
 		(scale
 			(xyz 1 1 1)
 		)
 		(rotate
-			(xyz 0 180 0)
+			(xyz 0 0 0)
 		)
 	)
 )
