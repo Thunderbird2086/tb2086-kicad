@@ -1,15 +1,21 @@
 module.exports = {
   params: {
     designator: 'S',    // change it accordingly
-    side: 'F',          // delete if not needed
+    side: 'B',          // delete if not needed
     reversible: false,  // delete if not needed
     show_3d: false,     // delete if not needed
     P2: {type: 'net', value: undefined}, // change to undefined as needed
     P1: {type: 'net', value: undefined}, // change to undefined as needed
   },
   body: p => {
+    let fp_name = "TB2086_KEYSWITCH:SW_MX_HS_1.5u"
+
+    if (p.reversible) {
+        fp_name += "_reversible"
+    }
+
     const standard_opening = `(
-         footprint "TB2086_KEYSWITCH:SW_MX_HS_1.5u_reversible"
+         footprint "${fp_name}"
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")
@@ -152,26 +158,39 @@ module.exports = {
     const standard_closing = `
             )
     `
+
     let final = standard_opening;
-    final += front_silkscreen;
-    final += front_pads;
-    final += front_fabrication;
-    final += front_mask;
-    final += front_courtyard;
-    final += front_paste;
+
+    if (p.reversible || p.side == "F") {
+        final += front_silkscreen;
+        final += front_pads;
+        final += front_fabrication;
+        final += front_mask;
+        final += front_courtyard;
+        final += front_paste;
+    }
+
     final += pads;
-    final += back_silkscreen;
-    final += back_pads;
-    final += back_fabrication;
-    final += back_mask;
-    final += back_courtyard;
-    final += back_paste;
+
+    if (p.reversible || p.side == "B") {
+        final += back_silkscreen;
+        final += back_pads;
+        final += back_fabrication;
+        final += back_mask;
+        final += back_courtyard;
+        final += back_paste;
+    }
+
     final += edge_cuts;
     final += user_drawing;
     final += user_comments;
     final += user_eco1;
     final += user_eco2;
-    final += model;
+
+    if (p.show_3d) {
+        final += model;
+    }
+
     final += standard_closing;
 
     return final
