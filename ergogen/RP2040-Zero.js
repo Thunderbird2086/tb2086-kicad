@@ -28,7 +28,8 @@ module.exports = {
     GND: {type: 'net', value: 'GND'},
   },
   body: p => {
-    let fp_name="TB2086_MISC:RP2040-Zero"
+    let fp_name = "TB2086_MISC:RP2040-Zero"
+    let mirror = ""
     if (p.side == "B") {
         fp_name += "_flip";
         mirror = "(justify mirror)"

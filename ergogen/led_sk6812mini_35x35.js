@@ -9,8 +9,13 @@ module.exports = {
     GND: {type: 'net', value: 'GND'},
   },
   body: p => {
+    let fp_name="TB2086_LED:LED_SK6812MINI_PLCC4_3.5x3.5mm_P1.75mm";
+    if (p.reversible) {
+        fp_name += "_rev_all";
+    }
+
     const standard_opening = `(
-         footprint "TB2086_LED:LED_SK6812MINI_PLCC4_3.5x3.5mm_P1.75mm_rev_all"
+         footprint "${fp_name}"
         (version 20221018)
         (generator pcbnew)
         (layer "F.Cu")
@@ -96,25 +101,38 @@ module.exports = {
             )
     `
     let final = standard_opening;
-    final += front_silkscreen;
-    final += front_pads;
-    final += front_fabrication;
-    final += front_mask;
-    final += front_courtyard;
-    final += front_paste;
-    final += pads;
-    final += back_silkscreen;
-    final += back_pads;
-    final += back_fabrication;
-    final += back_mask;
-    final += back_courtyard;
-    final += back_paste;
+    if (p.reversible || p.side == "F") {
+       final += front_silkscreen;
+       final += front_pads;
+       final += front_fabrication;
+       final += front_mask;
+       final += front_courtyard;
+       final += front_paste;
+    }
+
+    if (p.reversible) {
+        final += pads;
+    }
+
+    if (p.reversible || p.side == "B") {
+        final += back_silkscreen;
+        final += back_pads;
+        final += back_fabrication;
+        final += back_mask;
+        final += back_courtyard;
+        final += back_paste;
+    }
+
     final += edge_cuts;
     final += user_drawing;
     final += user_comments;
     final += user_eco1;
     final += user_eco2;
-    final += model;
+
+    if (p.show_3d) {
+        final += model;
+    }
+
     final += standard_closing;
 
     return final
