@@ -76,6 +76,16 @@
 		(uuid "1612f260-2092-4f6d-bac7-c68023975b50")
 	)
 	(fp_line
+		(start 8.000001 -11.950001)
+		(end -8.000001 -11.950001)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "4a9baba1-9cb6-4871-b3c2-be4e3113228d")
+	)
+	(fp_line
 		(start 8.000001 11.950001)
 		(end 6.2 11.95)
 		(stroke
@@ -84,6 +94,17 @@
 		)
 		(layer "F.SilkS")
 		(uuid "ec2a7b48-349c-4a36-8a46-71038cd632a9")
+	)
+	(fp_arc
+		(start -9.107693 -11.211539)
+		(mid -8.665641 -11.748461)
+		(end -8.000001 -11.950001)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "55c16afa-495b-4351-a77c-1ffd49b47f6d")
 	)
 	(fp_arc
 		(start -8.000001 11.950001)
@@ -95,6 +116,17 @@
 		)
 		(layer "F.SilkS")
 		(uuid "a2215d19-9075-4d40-951b-49cd3f14f2df")
+	)
+	(fp_arc
+		(start 8.000001 -11.950001)
+		(mid 8.665641 -11.748461)
+		(end 9.107693 -11.211539)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "dad1d50a-b321-4d6c-87f4-20e81b9e079c")
 	)
 	(fp_arc
 		(start 9.107693 11.211539)
@@ -359,38 +391,6 @@
 		)
 		(layer "Edge.Cuts")
 		(uuid "7f31ada6-3c63-4917-a841-5bf14e6257fe")
-	)
-	(fp_line
-		(start 8.000001 -11.950001)
-		(end -8.000001 -11.950001)
-		(stroke
-			(width 0.15)
-			(type default)
-		)
-		(layer "Margin")
-		(uuid "4a9baba1-9cb6-4871-b3c2-be4e3113228d")
-	)
-	(fp_arc
-		(start -9.107693 -11.211539)
-		(mid -8.665641 -11.748461)
-		(end -8.000001 -11.950001)
-		(stroke
-			(width 0.15)
-			(type default)
-		)
-		(layer "Margin")
-		(uuid "55c16afa-495b-4351-a77c-1ffd49b47f6d")
-	)
-	(fp_arc
-		(start 8.000001 -11.950001)
-		(mid 8.665641 -11.748461)
-		(end 9.107693 -11.211539)
-		(stroke
-			(width 0.15)
-			(type default)
-		)
-		(layer "Margin")
-		(uuid "dad1d50a-b321-4d6c-87f4-20e81b9e079c")
 	)
 	(fp_text user "USB"
 		(at 0 -10.37 0)
