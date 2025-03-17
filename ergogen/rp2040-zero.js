@@ -75,7 +75,8 @@ module.exports = {
     front_silkscreen[2] = ``
     front_silkscreen[3] = `
         (fp_line (start -8.000001 11.950001) (end -6.2 11.95) (stroke (width 0.15) (type default)) (layer "F.SilkS") )
-        (fp_line (start 8.000001 -11.950001) (end -8.000001 -11.950001) (stroke (width 0.15) (type default)) (layer "F.SilkS") )
+        (fp_line (start -5.000001 -11.950001) (end -8.000001 -11.950001) (stroke (width 0.15) (type default)) (layer "F.SilkS") )
+        (fp_line (start 8.000001 -11.950001) (end 5.000001 -11.950001) (stroke (width 0.15) (type default)) (layer "F.SilkS") )
         (fp_line (start 8.000001 11.950001) (end 6.2 11.95) (stroke (width 0.15) (type default)) (layer "F.SilkS") )
         (fp_arc (start -9.107693 -11.211539) (mid -8.665641 -11.748461) (end -8.000001 -11.950001) (stroke (width 0.15) (type default)) (layer "F.SilkS") )
         (fp_arc (start -8.000001 11.950001) (mid -8.665641 11.748461) (end -9.107693 11.211539) (stroke (width 0.15) (type default)) (layer "F.SilkS") )
@@ -215,8 +216,8 @@ module.exports = {
     `
     back_silkscreen[2] = `
         (fp_line (start -8.000001 11.950001) (end -6.2 11.95) (stroke (width 0.15) (type default)) (layer "B.SilkS") )
-        (fp_line (start -4.5 -11.95) (end -8 -11.95) (stroke (width 0.15) (type default)) (layer "B.SilkS") )
-        (fp_line (start 8.000001 -11.950001) (end 4.500001 -11.950001) (stroke (width 0.15) (type default)) (layer "B.SilkS") )
+        (fp_line (start -5 -11.95) (end -8 -11.95) (stroke (width 0.15) (type default)) (layer "B.SilkS") )
+        (fp_line (start 8.000001 -11.950001) (end 5.000001 -11.950001) (stroke (width 0.15) (type default)) (layer "B.SilkS") )
         (fp_line (start 8.000001 11.950001) (end 6.2 11.95) (stroke (width 0.15) (type default)) (layer "B.SilkS") )
         (fp_arc (start -9.107693 -11.211539) (mid -8.665641 -11.748461) (end -8.000001 -11.950001) (stroke (width 0.15) (type default)) (layer "B.SilkS") )
         (fp_arc (start -8.000001 11.950001) (mid -8.665641 11.748461) (end -9.107693 11.211539) (stroke (width 0.15) (type default)) (layer "B.SilkS") )
