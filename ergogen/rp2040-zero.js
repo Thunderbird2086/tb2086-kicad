@@ -307,7 +307,6 @@ module.exports = {
         (fp_line (start -5.500232 -9.749946) (end -5.057768 -9.750053) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
         (fp_line (start -4.557768 -10.250053) (end -4.557768 -12.950053) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
         (fp_line (start 4.557768 -10.250053) (end 4.557768 -12.950053) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
-        (fp_line (start 5.5 -11.75) (end -5.5 -11.75) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
         (fp_line (start 5.5 8.5) (end -5.5 8.5) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
         (fp_line (start 5.500232 -9.749946) (end 5.057768 -9.750053) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
         (fp_line (start 6.5 -8.75) (end 6.5 7.5) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
