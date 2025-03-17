@@ -29,22 +29,25 @@ module.exports = {
     P13: {type: 'net', value: 'P13'},
   },
   body: p => {
-    fp_name_tail = ``
-    idx = 0
+    let fp_name_tail = ``
+    let idx = 0
 
-    offset_3d = `(offset (xyz 0 0 0))`
-    rot_3d = `(rotate (xyz -90 0 0))`
-    if (flip) {
+    let offset_3d = `(offset (xyz 0 0 0))`
+    let rot_3d = `(rotate (xyz -90 0 0))`
+
+    if (p.flip) {
         fp_name_tail += `_flip`
         idx = 1
-        offset_3d = `(xyz 0 0 -1.6)`
-        rot_3d = `(xyz -90 180 0)`
+        offset_3d = `(offset (xyz 0 0 -1.6))`
+        rot_3d = `(rotate (xyz -90 180 0))`
     }
-    if (edgecut) {
+    if (p.edgecut) {
         fp_name_tail += `_edgecut`
         idx += 2
-        if (flip) {
-            offset_3d = `(xyz 0 0 1.1)`
+        if (p.flip) {
+            offset_3d = `(offset (xyz 0 0 1.6))`
+        } else {
+            offset_3d = `(offset (xyz 0 0 -3.2))`
         }
     }
 
@@ -54,7 +57,7 @@ module.exports = {
         (generator "pcbnew")
         (generator_version "8.0")
         (layer "F.Cu")
-        (property "Reference" "${p.ref}" (at 0 -2.75 ${0 + p.rot}) (unlocked yes) (layer "${p.side}.SilkS") ${p.ref_hide}  (effects (font (size 1 1) (thickness 0.15))))
+        (property "Reference" "${p.ref}" (at 0 -2.75 ${0 + p.rot}) (unlocked yes) (layer "F.SilkS") ${p.ref_hide}  (effects (font (size 1 1) (thickness 0.15))))
         (attr through_hole)
         ${p.at /* parametric position */}
     `
@@ -303,7 +306,6 @@ module.exports = {
         (fp_line (start -5.500232 -9.749946) (end -4.557768 -9.750053) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
         (fp_line (start -4.057768 -10.250053) (end -4.057768 -12.950053) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
         (fp_line (start 4.057768 -10.250053) (end 4.057768 -12.950053) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
-        (fp_line (start 5.5 -11.75) (end -5.5 -11.75) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
         (fp_line (start 5.5 8.5) (end -5.5 8.5) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
         (fp_line (start 5.500232 -9.749946) (end 4.557768 -9.750053) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
         (fp_line (start 6.5 -8.75) (end 6.5 7.5) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
@@ -316,7 +318,7 @@ module.exports = {
         (fp_arc (start 5.5 -9.75) (mid 6.207107 -9.457107) (end 6.5 -8.75) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
         (fp_arc (start 6.5 7.5) (mid 6.207107 8.207107) (end 5.5 8.5) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
     `
-    edge_cuts[3] = edge_cuts[0]
+    edge_cuts[3] = edge_cuts[2]
 
 
     const user_drawing = `
@@ -369,7 +371,11 @@ module.exports = {
     final += user_comments;
     final += user_eco1;
     final += user_eco2;
-    final += model;
+
+    if (p.show_3d) {
+        final += model;
+    }
+
     final += standard_closing;
 
     return final
