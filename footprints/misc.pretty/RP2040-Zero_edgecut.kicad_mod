@@ -762,7 +762,7 @@
 	)
 	(model "${TB2086_GLOBAL}/packages3D/RP2040-ZERO-WAVESHARE.step"
 		(offset
-			(xyz 0 0 0)
+			(xyz 0 0 -2.9)
 		)
 		(scale
 			(xyz 1 1 1)
