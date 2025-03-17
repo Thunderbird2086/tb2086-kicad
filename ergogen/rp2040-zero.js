@@ -45,9 +45,9 @@ module.exports = {
         fp_name_tail += `_edgecut`
         idx += 2
         if (p.flip) {
-            offset_3d = `(offset (xyz 0 0 1.6))`
+            offset_3d = `(offset (xyz 0 0 1.1))`
         } else {
-            offset_3d = `(offset (xyz 0 0 -3.2))`
+            offset_3d = `(offset (xyz 0 0 -2.9))`
         }
     }
 
