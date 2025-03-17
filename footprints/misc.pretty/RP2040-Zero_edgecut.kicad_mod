@@ -285,16 +285,6 @@
 		(uuid "b6774e30-8409-4ca2-b6c0-21cd16615363")
 	)
 	(fp_line
-		(start 5.5 -11.75)
-		(end -5.5 -11.75)
-		(stroke
-			(width 0.05)
-			(type default)
-		)
-		(layer "Edge.Cuts")
-		(uuid "8bfe290b-cacf-4b68-9647-243e879c5160")
-	)
-	(fp_line
 		(start 5.5 8.5)
 		(end -5.5 8.5)
 		(stroke
