@@ -1,15 +1,21 @@
 module.exports = {
   params: {
     designator: 'S',    // change it accordingly
-    side: 'F',          // delete if not needed
+    side: 'B',          // delete if not needed
     reversible: false,  // delete if not needed
     show_3d: false,     // delete if not needed
     P2: {type: 'net', value: undefined}, // change to undefined as needed
     P1: {type: 'net', value: undefined}, // change to undefined as needed
   },
   body: p => {
+    let fp_name = "TB2086_KEYSWITCH:SW_MX_HS_1u"
+
+    if (p.reversible) {
+        fp_name += "_reversible"
+    }
+
     const standard_opening = `(
-         footprint "TB2086_KEYSWITCH:SW_MX_HS_1u_reversible"
+         footprint "${fp_name}"
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")
@@ -33,7 +39,9 @@ module.exports = {
     `
     const front_pads = `
         (pad "1" smd roundrect (at 6.535 -2.54 ${p.rot}) (size 4.2 2.5) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.1)  ${p.P1})
+        (pad "1" thru_hole circle (at 3.81 -2.54 ${p.rot}) (size 3.3 3.3) (drill 3) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P1})
         (pad "2" smd roundrect (at -5.265 -5.08 ${p.rot}) (size 4.2 2.5) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.1)  ${p.P2})
+        (pad "2" thru_hole circle (at -2.54 -5.08 ${p.rot}) (size 3.3 3.3) (drill 3) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P2})
     `
     const front_fabrication = `
         (property "Value" "SW_MX_HS_1u_reversible" (at 0 -8 ${0 + p.rot}) (layer "F.Fab") (hide yes)  (effects (font (size 1 1) (thickness 0.15))))
@@ -67,10 +75,6 @@ module.exports = {
         (pad "" np_thru_hole circle (at -5.08 0 ${p.rot}) (size 1.75 1.75) (drill 1.75) (layers "*.Mask") )
         (pad "" np_thru_hole circle (at 0 0 ${p.rot}) (size 3.9878 3.9878) (drill 3.9878) (layers "*.Cu" "*.Mask") )
         (pad "" np_thru_hole circle (at 5.08 0 ${p.rot}) (size 1.75 1.75) (drill 1.75) (layers "*.Mask") )
-        (pad "1" thru_hole circle (at 2.590176 -5.06978 ${p.rot}) (size 3.3 3.3) (drill 3) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P1})
-        (pad "1" thru_hole circle (at 3.81 -2.54 ${p.rot}) (size 3.3 3.3) (drill 3) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P1})
-        (pad "2" thru_hole circle (at -3.759824 -2.52978 ${p.rot}) (size 3.3 3.3) (drill 3) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P2})
-        (pad "2" thru_hole circle (at -2.54 -5.08 ${p.rot}) (size 3.3 3.3) (drill 3) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P2})
     `
     const back_silkscreen = `
         (fp_line (start -6.035 -3.94) (end -6.035 -4.74) (stroke (width 0.15) (type solid)) (layer "B.SilkS") )
@@ -86,7 +90,9 @@ module.exports = {
     `
     const back_pads = `
         (pad "1" smd roundrect (at 5.315176 -5.06978 ${p.rot}) (size 4.2 2.5) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.1)  ${p.P1})
+        (pad "1" thru_hole circle (at 2.590176 -5.06978 ${p.rot}) (size 3.3 3.3) (drill 3) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P1})
         (pad "2" smd roundrect (at -6.484824 -2.52978 ${p.rot}) (size 4.2 2.5) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.1)  ${p.P2})
+        (pad "2" thru_hole circle (at -3.759824 -2.52978 ${p.rot}) (size 3.3 3.3) (drill 3) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P2})
     `
     const back_fabrication = `
         (fp_text user "${p.ref}" (at 4.3688 1.778 ${0 + p.rot}) (layer "B.Fab")  (effects (font (size 1 1) (thickness 0.15)) (justify mirror)))
@@ -153,25 +159,37 @@ module.exports = {
             )
     `
     let final = standard_opening;
-    final += front_silkscreen;
-    final += front_pads;
-    final += front_fabrication;
-    final += front_mask;
-    final += front_courtyard;
-    final += front_paste;
+
+    if (p.reversible || p.side == "F") {
+        final += front_silkscreen;
+        final += front_pads;
+        final += front_fabrication;
+        final += front_mask;
+        final += front_courtyard;
+        final += front_paste;
+    }
+
     final += pads;
-    final += back_silkscreen;
-    final += back_pads;
-    final += back_fabrication;
-    final += back_mask;
-    final += back_courtyard;
-    final += back_paste;
+
+    if (p.reversible || p.side == "B") {
+        final += back_silkscreen;
+        final += back_pads;
+        final += back_fabrication;
+        final += back_mask;
+        final += back_courtyard;
+        final += back_paste;
+    }
+
     final += edge_cuts;
     final += user_drawing;
     final += user_comments;
     final += user_eco1;
     final += user_eco2;
-    final += model;
+
+    if (p.show_3d) {
+        final += model;
+    }
+
     final += standard_closing;
 
     return final

@@ -1,15 +1,21 @@
 module.exports = {
   params: {
     designator: 'S',    // change it accordingly
-    side: 'F',          // delete if not needed
+    side: 'B',          // delete if not needed
     reversible: false,  // delete if not needed
     show_3d: false,     // delete if not needed
     P2: {type: 'net', value: undefined}, // change to undefined as needed
     P1: {type: 'net', value: undefined}, // change to undefined as needed
   },
   body: p => {
+    let fp_name = "TB2086_KEYSWITCH:SW_choc_v1_v2_HS_1u"
+
+    if (p.reversible) {
+        fp_name += "_reversible"
+    }
+
     const standard_opening = `(
-         footprint "TB2086_KEYSWITCH:SW_choc_v1_v2_HS_1u_reversible"
+         footprint "${fp_name}"
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")
@@ -29,8 +35,10 @@ module.exports = {
         (fp_arc (start 7.25 5.325) (mid 7.015685 5.890685) (end 6.45 6.125) (stroke (width 0.12) (type solid)) (layer "F.SilkS") )
     `
     const front_pads = `
+        (pad "1" thru_hole circle (at 5 3.75 ${p.rot}) (size 3.3 3.3) (drill 3) (layers "*.Cu" "F.Mask") (remove_unused_layers no)  ${p.P1})
         (pad "1" smd roundrect (at 7.112 3.75 ${p.rot}) (size 3.85 2.6) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.1)  ${p.P1})
         (pad "2" smd roundrect (at -2.045 5.95 ${p.rot}) (size 3.1 2.6) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.1)  ${p.P2})
+        (pad "" np_thru_hole circle (at -5 -5.15 ${180 + p.rot}) (size 1.6 1.6) (drill 1.6) (layers "F&B.Cu" "*.Mask") )
     `
     const front_fabrication = `
         (property "Footprint" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes)  (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -69,10 +77,13 @@ module.exports = {
     const front_paste = `
     `
     const pads = `
-        (pad "1" thru_hole circle (at -5 3.75 ${p.rot}) (size 3.3 3.3) (drill 3) (layers "*.Cu" "B.Mask") (remove_unused_layers no)  ${p.P1})
-        (pad "1" thru_hole circle (at 0 3.3 ${p.rot}) (size 0.5 0.5) (drill 0.3) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P1})
-        (pad "1" thru_hole circle (at 5 3.75 ${p.rot}) (size 3.3 3.3) (drill 3) (layers "*.Cu" "F.Mask") (remove_unused_layers no)  ${p.P1})
+        (pad "" np_thru_hole circle (at 5.5 0 ${180 + p.rot}) (size 1.7 1.7) (drill 1.7) (layers "F&B.Cu" "*.Mask") )
+        (pad "" np_thru_hole circle (at -5.5 0 ${180 + p.rot}) (size 1.7 1.7) (drill 1.7) (layers "F&B.Cu" "*.Mask") )
+        (pad "" np_thru_hole circle (at 0 0 ${180 + p.rot}) (size 5 5) (drill 5) (layers "F&B.Cu" "*.Mask") )
         (pad "2" thru_hole circle (at 0 5.95 ${p.rot}) (size 3.3 3.3) (drill 3) (layers "*.Cu" "B.Mask") (remove_unused_layers no)  ${p.P2})
+    `
+    const pads_reversible = `
+        (pad "1" thru_hole circle (at 0 3.3 ${p.rot}) (size 0.5 0.5) (drill 0.3) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P1})
     `
     const back_silkscreen = `
         (fp_line (start -7.504 1.475) (end -7.504 2.175) (stroke (width 0.12) (type solid)) (layer "B.SilkS") )
@@ -84,13 +95,10 @@ module.exports = {
         (fp_arc (start -6.45 6.125) (mid -7.015685 5.890685) (end -7.25 5.325) (stroke (width 0.12) (type solid)) (layer "B.SilkS") )
     `
     const back_pads = `
-        (pad "" np_thru_hole circle (at -5.5 0 ${180 + p.rot}) (size 1.7 1.7) (drill 1.7) (layers "F&B.Cu" "*.Mask") )
-        (pad "" np_thru_hole circle (at -5 -5.15 ${180 + p.rot}) (size 1.6 1.6) (drill 1.6) (layers "F&B.Cu" "*.Mask") )
-        (pad "" np_thru_hole circle (at 0 0 ${180 + p.rot}) (size 5 5) (drill 5) (layers "F&B.Cu" "*.Mask") )
-        (pad "" np_thru_hole circle (at 5 -5.15 ${180 + p.rot}) (size 1.6 1.6) (drill 1.6) (layers "F&B.Cu" "*.Mask") )
-        (pad "" np_thru_hole circle (at 5.5 0 ${180 + p.rot}) (size 1.7 1.7) (drill 1.7) (layers "F&B.Cu" "*.Mask") )
+        (pad "1" thru_hole circle (at -5 3.75 ${p.rot}) (size 3.3 3.3) (drill 3) (layers "*.Cu" "B.Mask") (remove_unused_layers no)  ${p.P1})
         (pad "1" smd roundrect (at -7.112 3.75 ${p.rot}) (size 3.85 2.6) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.1)  ${p.P1})
         (pad "2" smd roundrect (at 2.045 5.95 ${p.rot}) (size 3.1 2.6) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.1)  ${p.P2})
+        (pad "" np_thru_hole circle (at 5 -5.15 ${180 + p.rot}) (size 1.6 1.6) (drill 1.6) (layers "F&B.Cu" "*.Mask") )
     `
     const back_fabrication = `
     `
@@ -166,25 +174,40 @@ module.exports = {
             )
     `
     let final = standard_opening;
-    final += front_silkscreen;
-    final += front_pads;
-    final += front_fabrication;
-    final += front_mask;
-    final += front_courtyard;
-    final += front_paste;
+
+    if (p.reversible || p.side == "F") {
+        final += front_silkscreen;
+        final += front_pads;
+        final += front_fabrication;
+        final += front_mask;
+        final += front_courtyard;
+        final += front_paste;
+    }
+
     final += pads;
-    final += back_silkscreen;
-    final += back_pads;
-    final += back_fabrication;
-    final += back_mask;
-    final += back_courtyard;
-    final += back_paste;
+    if (p.reversible) {
+        final += pads_reversible;
+    }
+
+    if (p.reversible || p.side == "B") {
+        final += back_silkscreen;
+        final += back_pads;
+        final += back_fabrication;
+        final += back_mask;
+        final += back_courtyard;
+        final += back_paste;
+    }
+
     final += edge_cuts;
     final += user_drawing;
     final += user_comments;
     final += user_eco1;
     final += user_eco2;
-    final += model;
+
+    if (p.show_3d) {
+        final += model;
+    }
+
     final += standard_closing;
 
     return final
