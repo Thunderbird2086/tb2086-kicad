@@ -52,7 +52,7 @@ module.exports = {
     }
 
     const standard_opening = `(
-         footprint "RP2040-Zero${fp_name_tail}"
+         footprint "TB2086_MCU:RP2040-Zero${fp_name_tail}"
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")
@@ -305,16 +305,16 @@ module.exports = {
     edge_cuts[2] = `
         (fp_line (start -6.5 7.5) (end -6.5 -8.75) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
         (fp_line (start -5.500232 -9.749946) (end -5.057768 -9.750053) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
-        (fp_line (start -4.557768 -10.250053) (end -4.557768 -12.950053) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
-        (fp_line (start 4.557768 -10.250053) (end 4.557768 -12.950053) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
+        (fp_line (start -4.557768 -10.250053) (end -4.557768 -11.950053) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
+        (fp_line (start 4.557768 -10.250053) (end 4.557768 -11.950053) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
         (fp_line (start 5.5 8.5) (end -5.5 8.5) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
         (fp_line (start 5.500232 -9.749946) (end 5.057768 -9.750053) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
         (fp_line (start 6.5 -8.75) (end 6.5 7.5) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
         (fp_arc (start -6.5 -8.75) (mid -6.207107 -9.457107) (end -5.5 -9.75) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
         (fp_arc (start -5.5 8.5) (mid -6.207107 8.207107) (end -6.5 7.5) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
-        (fp_arc (start -5.057768 -13.450053) (mid -4.704217 -13.303604) (end -4.557768 -12.950053) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
+        (fp_arc (start -5.057768 -12.450053) (mid -4.704217 -12.303604) (end -4.557768 -11.950053) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
         (fp_arc (start -4.557768 -10.250053) (mid -4.704215 -9.8965) (end -5.057768 -9.750053) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
-        (fp_arc (start 4.557768 -12.950053) (mid 4.704218 -13.303602) (end 5.057768 -13.450053) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
+        (fp_arc (start 4.557768 -11.950053) (mid 4.704218 -12.303602) (end 5.057768 -12.450053) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
         (fp_arc (start 5.057768 -9.750053) (mid 4.704217 -9.8965) (end 4.557768 -10.250053) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
         (fp_arc (start 5.5 -9.75) (mid 6.207107 -9.457107) (end 6.5 -8.75) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
         (fp_arc (start 6.5 7.5) (mid 6.207107 8.207107) (end 5.5 8.5) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
@@ -342,7 +342,7 @@ module.exports = {
     `
 
     const model = `
-        (model "\${TB2086_GLOBAL}/packages3D/RP2040-ZERO-WAVESHARE.step" ${offset_3d} (scale (xyz 1 1 1)) ${rot_3d})
+        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/RP2040-ZERO-WAVESHARE.step" ${offset_3d} (scale (xyz 1 1 1)) ${rot_3d})
     `
     const standard_closing = `
             )
