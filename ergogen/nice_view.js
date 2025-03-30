@@ -25,7 +25,7 @@ module.exports = {
         (layer "F.Cu")
         (descr "Nice!View ")
         (tags "CONN DEV")
-        (property "Reference" "${p.ref}" (at -0.02 24.47 ${180 + p.rot}) (layer "${p.side}.SilkS") ${p.ref_hide} (effects (font (size 0.8128 0.8128) (thickness 0.15))))
+        (property "Reference" "${p.ref}" (at -0.02 24.47 ${180 + p.rot}) (layer "F.SilkS") ${p.ref_hide} (effects (font (size 0.8128 0.8128) (thickness 0.15))))
         (attr through_hole)
         ${p.at /* parametric position */}
     `
@@ -100,11 +100,11 @@ module.exports = {
         (pad "3" thru_hole circle (at 0 20 ${p.rot}) (size 1.397 1.397) (drill 0.8128) (layers "*.Cu" "*.Mask" "F.SilkS") (remove_unused_layers no)  ${p.VCC})
     `
     const back_silkscreen = `
-        (fp_text user "GND" (at 2.54 16.27 ${0 + p.rot}) (unlocked yes) (layer "B.SilkS")  (effects (font (size 0.5 0.5) (thickness 0.125) (bold yes)) (justify bottom mirror)))
+        (fp_text user "GND" (at 2.54 18.07 ${0 + p.rot}) (unlocked yes) (layer "B.SilkS")  (effects (font (size 0.5 0.5) (thickness 0.125) (bold yes)) (justify bottom mirror)))
         (fp_text user "VCC" (at 0 18.07 ${0 + p.rot}) (unlocked yes) (layer "B.SilkS")  (effects (font (size 0.5 0.5) (thickness 0.125) (bold yes)) (justify bottom mirror)))
-        (fp_text user "CS" (at 5.08 16.27 ${0 + p.rot}) (unlocked yes) (layer "B.SilkS")  (effects (font (size 0.5 0.5) (thickness 0.125) (bold yes)) (justify bottom mirror)))
-        (fp_text user "SDA" (at -5.08 16.27 ${0 + p.rot}) (unlocked yes) (layer "B.SilkS")  (effects (font (size 0.5 0.5) (thickness 0.125) (bold yes)) (justify bottom mirror)))
-        (fp_text user "SCL" (at -2.54 16.27 ${0 + p.rot}) (unlocked yes) (layer "B.SilkS")  (effects (font (size 0.5 0.5) (thickness 0.125) (bold yes)) (justify bottom mirror)))
+        (fp_text user "CS" (at 5.08 18.07 ${0 + p.rot}) (unlocked yes) (layer "B.SilkS")  (effects (font (size 0.5 0.5) (thickness 0.125) (bold yes)) (justify bottom mirror)))
+        (fp_text user "SDA" (at -5.08 18.07 ${0 + p.rot}) (unlocked yes) (layer "B.SilkS")  (effects (font (size 0.5 0.5) (thickness 0.125) (bold yes)) (justify bottom mirror)))
+        (fp_text user "SCL" (at -2.54 18.07 ${0 + p.rot}) (unlocked yes) (layer "B.SilkS")  (effects (font (size 0.5 0.5) (thickness 0.125) (bold yes)) (justify bottom mirror)))
     `
     const rev_back_silkscreen = `
         (fp_line (start -6.345 18.73) (end 6.355 18.73) (stroke (width 0.15) (type solid)) (layer "B.SilkS") )
@@ -190,7 +190,6 @@ module.exports = {
         final += rev_front_pads;
     }
 
-    final += front_pads;
     final += front_fabrication;
     if (p.reversible) {
         final += rev_front_mask;

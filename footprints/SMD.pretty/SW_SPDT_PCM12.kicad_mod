@@ -269,6 +269,20 @@
 		(layers "F.Cu" "F.Paste" "F.Mask")
 		(uuid "945bbbdd-f2ff-40aa-a0a2-9fd36fb5b871")
 	)
+	(pad "" np_thru_hole circle
+		(at -1.5 0.33)
+		(size 0.8 0.8)
+		(drill 0.8)
+		(layers "F&B.Cu" "*.Mask")
+		(uuid "961ecee6-731d-41ae-bae6-f79e67737624")
+	)
+	(pad "" np_thru_hole circle
+		(at 1.5 0.33)
+		(size 0.8 0.8)
+		(drill 0.8)
+		(layers "F&B.Cu" "*.Mask")
+		(uuid "8a8d216a-c2f8-4c06-9083-d82b40650087")
+	)
 	(pad "" smd rect
 		(at 3.65 -0.78)
 		(size 1.4 0.8)
