@@ -4,24 +4,24 @@ module.exports = {
     side: 'F',
     edgecut: false,
     show_3d: false,
-    P1: {type: 'net', value: 'P1'}, // undefined},
-    P2: {type: 'net', value: 'P2'}, // undefined},
-    P3: {type: 'net', value: 'P3'}, // undefined},
-    P4: {type: 'net', value: 'P4'}, // undefined},
-    P5: {type: 'net', value: 'P5'}, // undefined},
-    P6: {type: 'net', value: 'P6'}, // undefined},
-    P7: {type: 'net', value: 'P7'}, // undefined},
-    P8: {type: 'net', value: 'P8'}, // undefined},
-    P9: {type: 'net', value: 'P9'}, // undefined},
-    P10: {type: 'net', value: 'P10'}, // undefined},
-    P11: {type: 'net', value: 'P11'}, // undefined},
-    P12: {type: 'net', value: 'P12'}, // undefined},
-    P13: {type: 'net', value: 'P13'}, // undefined},
-    P14: {type: 'net', value: 'P14'}, // undefined},
+    P002: {type: 'net', value: 'P002'}, // undefined},
+    P003: {type: 'net', value: 'P003'}, // undefined},
+    P028: {type: 'net', value: 'P028'}, // undefined},
+    P029: {type: 'net', value: 'P029'}, // undefined},
+    P004: {type: 'net', value: 'P004'}, // undefined},
+    P005: {type: 'net', value: 'P005'}, // undefined},
+    P111: {type: 'net', value: 'P111'}, // undefined},
+    VCC5: {type: 'net', value: 'VCC5'}, // undefined},
+    GND: {type: 'net', value: 'GND'}, // undefined},
+    VCC3: {type: 'net', value: 'VCC3'}, // undefined},
+    P115: {type: 'net', value: 'P115'}, // undefined},
+    P114: {type: 'net', value: 'P114'}, // undefined},
+    P113: {type: 'net', value: 'P113'}, // undefined},
+    P112: {type: 'net', value: 'P112'}, // undefined},
     P15: {type: 'net', value: 'P15'}, // undefined},
-    P16: {type: 'net', value: 'P16'}, // undefined},
-    P17: {type: 'net', value: 'P17'}, // undefined},
-    P18: {type: 'net', value: 'P18'}, // undefined},
+    BAT_P: {type: 'net', value: 'BAT_P'}, // undefined},
+    P009: {type: 'net', value: 'P009'}, // undefined},
+    P010: {type: 'net', value: 'P010'}, // undefined},
     P19: {type: 'net', value: 'P19'}, // undefined},
     P20: {type: 'net', value: 'P20'}, // undefined},
     P21: {type: 'net', value: 'P21'}, // undefined},
@@ -63,24 +63,24 @@ module.exports = {
     const front_pads = `
     `
     const front_pads_non_edgecut = `
-        (pad "1" smd roundrect (at -8.92 -7.62 ${p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P1})
-        (pad "2" smd roundrect (at -8.92 -5.08 ${p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P2})
-        (pad "3" smd roundrect (at -8.92 -2.54 ${p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P3})
-        (pad "4" smd roundrect (at -8.92 0 ${p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P4})
-        (pad "5" smd roundrect (at -8.92 2.54 ${p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P5})
-        (pad "6" smd roundrect (at -8.92 5.08 ${p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P6})
-        (pad "7" smd roundrect (at -8.92 7.62 ${p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P7})
-        (pad "8" smd roundrect (at 8.92 -7.62 ${180 + p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P8})
-        (pad "9" smd roundrect (at 8.92 -5.08 ${180 + p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P9})
-        (pad "10" smd roundrect (at 8.92 -2.539999 ${180 + p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P10})
-        (pad "11" smd roundrect (at 8.92 0 ${180 + p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P11})
-        (pad "12" smd roundrect (at 8.92 2.54 ${180 + p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P12})
-        (pad "13" smd roundrect (at 8.92 5.08 ${p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P13})
-        (pad "14" smd roundrect (at 8.92 7.62 ${p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P14})
+        (pad "1" smd roundrect (at -8.92 -7.62 ${p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P002})
+        (pad "2" smd roundrect (at -8.92 -5.08 ${p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P003})
+        (pad "3" smd roundrect (at -8.92 -2.54 ${p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P028})
+        (pad "4" smd roundrect (at -8.92 0 ${p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P029})
+        (pad "5" smd roundrect (at -8.92 2.54 ${p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P004})
+        (pad "6" smd roundrect (at -8.92 5.08 ${p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P005})
+        (pad "7" smd roundrect (at -8.92 7.62 ${p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P111})
+        (pad "8" smd roundrect (at 8.92 -7.62 ${180 + p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.VCC5})
+        (pad "9" smd roundrect (at 8.92 -5.08 ${180 + p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.GND})
+        (pad "10" smd roundrect (at 8.92 -2.539999 ${180 + p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.VCC3})
+        (pad "11" smd roundrect (at 8.92 0 ${180 + p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P115})
+        (pad "12" smd roundrect (at 8.92 2.54 ${180 + p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P114})
+        (pad "13" smd roundrect (at 8.92 5.08 ${p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P113})
+        (pad "14" smd roundrect (at 8.92 7.62 ${p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P112})
         (pad "15" smd roundrect (at -4.445001 -2.2225 ${p.rot}) (size 2.5 1.35) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P15})
-        (pad "16" smd roundrect (at -4.445002 -0.3175 ${p.rot}) (size 2.5 1.35) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P16})
-        (pad "17" smd roundrect (at 3.81 9.2075 ${90 + p.rot}) (size 2.5 1.35) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P17})
-        (pad "18" smd roundrect (at 5.715 9.2075 ${90 + p.rot}) (size 2.5 1.35) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P18})
+        (pad "16" smd roundrect (at -4.445002 -0.3175 ${p.rot}) (size 2.5 1.35) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.BAT_P})
+        (pad "17" smd roundrect (at 3.81 9.2075 ${90 + p.rot}) (size 2.5 1.35) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P009})
+        (pad "18" smd roundrect (at 5.715 9.2075 ${90 + p.rot}) (size 2.5 1.35) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P010})
     `
     const front_fabrication = `
         (property "Value" "${fp_name}" (at 0 6.985 ${0 + p.rot}) (unlocked yes) (layer "F.Fab")  (effects (font (size 1 1) (thickness 0.15))))
@@ -96,26 +96,26 @@ module.exports = {
     `
     const pads = `
         (descr "Footprint for Seeduino Xiao nRF52840 controllers, through hole and castellated pads")
-        (pad "1" thru_hole circle (at -7.62 -7.62 ${p.rot}) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P1})
-        (pad "2" thru_hole circle (at -7.62 -5.08 ${p.rot}) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P2})
-        (pad "3" thru_hole circle (at -7.62 -2.54 ${p.rot}) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P3})
-        (pad "4" thru_hole circle (at -7.62 0 ${p.rot}) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P4})
-        (pad "5" thru_hole circle (at -7.62 2.54 ${p.rot}) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P5})
-        (pad "6" thru_hole circle (at -7.62 5.08 ${p.rot}) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P6})
-        (pad "7" thru_hole circle (at -7.62 7.62 ${p.rot}) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P7})
-        (pad "8" thru_hole circle (at 7.62 -7.62 ${180 + p.rot}) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P8})
-        (pad "9" thru_hole roundrect (at 7.62 -5.08 ${180 + p.rot}) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (roundrect_rratio 0.25)  ${p.P9})
-        (pad "10" thru_hole circle (at 7.62 -2.54 ${180 + p.rot}) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P10})
-        (pad "11" thru_hole circle (at 7.62 0 ${180 + p.rot}) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P11})
-        (pad "12" thru_hole circle (at 7.62 2.54 ${180 + p.rot}) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P12})
-        (pad "13" thru_hole circle (at 7.62 5.08 ${p.rot}) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P13})
-        (pad "14" thru_hole circle (at 7.62 7.62 ${p.rot}) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P14})
+        (pad "1" thru_hole circle (at -7.62 -7.62 ${p.rot}) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P002})
+        (pad "2" thru_hole circle (at -7.62 -5.08 ${p.rot}) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P003})
+        (pad "3" thru_hole circle (at -7.62 -2.54 ${p.rot}) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P028})
+        (pad "4" thru_hole circle (at -7.62 0 ${p.rot}) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P029})
+        (pad "5" thru_hole circle (at -7.62 2.54 ${p.rot}) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P004})
+        (pad "6" thru_hole circle (at -7.62 5.08 ${p.rot}) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P005})
+        (pad "7" thru_hole circle (at -7.62 7.62 ${p.rot}) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P111})
+        (pad "8" thru_hole circle (at 7.62 -7.62 ${180 + p.rot}) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.VCC5})
+        (pad "9" thru_hole roundrect (at 7.62 -5.08 ${180 + p.rot}) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (roundrect_rratio 0.25)  ${p.GND})
+        (pad "10" thru_hole circle (at 7.62 -2.54 ${180 + p.rot}) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.VCC3})
+        (pad "11" thru_hole circle (at 7.62 0 ${180 + p.rot}) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P115})
+        (pad "12" thru_hole circle (at 7.62 2.54 ${180 + p.rot}) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P114})
+        (pad "13" thru_hole circle (at 7.62 5.08 ${p.rot}) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P113})
+        (pad "14" thru_hole circle (at 7.62 7.62 ${p.rot}) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P112})
     `
     const pads_non_edgecut = `
         (pad "15" thru_hole roundrect (at -4.445001 -2.2225 ${p.rot}) (size 1.8 1.35) (drill 1.05) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (roundrect_rratio 0.25)  ${p.P15})
-        (pad "16" thru_hole roundrect (at -4.445002 -0.3175 ${p.rot}) (size 1.8 1.35) (drill 1.05) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (roundrect_rratio 0.25)  ${p.P16})
-        (pad "17" thru_hole roundrect (at 3.81 9.2075 ${90 + p.rot}) (size 1.8 1.35) (drill 1.05) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (roundrect_rratio 0.25)  ${p.P17})
-        (pad "18" thru_hole roundrect (at 5.715 9.2075 ${90 + p.rot}) (size 1.8 1.35) (drill 1.05) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (roundrect_rratio 0.25)  ${p.P18})
+        (pad "16" thru_hole roundrect (at -4.445002 -0.3175 ${p.rot}) (size 1.8 1.35) (drill 1.05) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (roundrect_rratio 0.25)  ${p.BAT_P})
+        (pad "17" thru_hole roundrect (at 3.81 9.2075 ${90 + p.rot}) (size 1.8 1.35) (drill 1.05) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (roundrect_rratio 0.25)  ${p.P009})
+        (pad "18" thru_hole roundrect (at 5.715 9.2075 ${90 + p.rot}) (size 1.8 1.35) (drill 1.05) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (roundrect_rratio 0.25)  ${p.P010})
         (pad "19" thru_hole circle (at -1.27 -8.5725 ${180 + p.rot}) (size 1.8 1.8) (drill 1.05) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P19})
         (pad "20" thru_hole circle (at 1.27 -8.5725 ${180 + p.rot}) (size 1.8 1.8) (drill 1.05) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P20})
         (pad "21" thru_hole circle (at -1.27 -6.0325 ${180 + p.rot}) (size 1.8 1.8) (drill 1.05) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P21})
@@ -135,20 +135,20 @@ module.exports = {
     const back_pads = `
     `
     const back_pads_edgecut = `
-        (pad "1" smd roundrect (at -8.92 -7.62 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.P1})
-        (pad "2" smd roundrect (at -8.92 -5.08 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.P2})
-        (pad "3" smd roundrect (at -8.92 -2.54 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.P3})
-        (pad "4" smd roundrect (at -8.92 0 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.P4})
-        (pad "5" smd roundrect (at -8.92 2.54 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.P5})
-        (pad "6" smd roundrect (at -8.92 5.08 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.P6})
-        (pad "7" smd roundrect (at -8.92 7.62 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.P7})
-        (pad "8" smd roundrect (at 8.92 -7.62 ${180 + p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.P8})
-        (pad "9" smd roundrect (at 8.92 -5.08 ${180 + p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.P9})
-        (pad "10" smd roundrect (at 8.92 -2.539999 ${180 + p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.P10})
-        (pad "11" smd roundrect (at 8.92 0 ${180 + p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.P11})
-        (pad "12" smd roundrect (at 8.92 2.54 ${180 + p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.P12})
-        (pad "13" smd roundrect (at 8.92 5.08 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.P13})
-        (pad "14" smd roundrect (at 8.92 7.62 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.P14})
+        (pad "1" smd roundrect (at -8.92 -7.62 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.P002})
+        (pad "2" smd roundrect (at -8.92 -5.08 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.P003})
+        (pad "3" smd roundrect (at -8.92 -2.54 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.P028})
+        (pad "4" smd roundrect (at -8.92 0 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.P029})
+        (pad "5" smd roundrect (at -8.92 2.54 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.P004})
+        (pad "6" smd roundrect (at -8.92 5.08 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.P005})
+        (pad "7" smd roundrect (at -8.92 7.62 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.P111})
+        (pad "8" smd roundrect (at 8.92 -7.62 ${180 + p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.VCC5})
+        (pad "9" smd roundrect (at 8.92 -5.08 ${180 + p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GND})
+        (pad "10" smd roundrect (at 8.92 -2.539999 ${180 + p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.VCC3})
+        (pad "11" smd roundrect (at 8.92 0 ${180 + p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.P115})
+        (pad "12" smd roundrect (at 8.92 2.54 ${180 + p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.P114})
+        (pad "13" smd roundrect (at 8.92 5.08 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.P113})
+        (pad "14" smd roundrect (at 8.92 7.62 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.P112})
     `
     const back_fabrication = `
     `
