@@ -87,8 +87,10 @@ module.exports = {
         (pad "" smd rect (at 3.65 1.43 ${p.rot}) (size 1.4 0.8) (layers "B.Cu" "B.Paste" "B.Mask") )
         (pad "1" smd rect (at 2.25 -1.43 ${p.rot}) (size 0.8 2) (layers "B.Cu" "B.Paste" "B.Mask")  ${p.P1})
         (pad "2" smd rect (at -0.75 -1.43 ${p.rot}) (size 0.8 2) (layers "B.Cu" "B.Paste" "B.Mask")  ${p.P2})
-        (pad "2" smd roundrect (at -0.25 -1.43 ${p.rot}) (size 0.5 0.25) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25) (thermal_bridge_angle 45)  ${p.P2})
         (pad "3" smd rect (at -2.25 -1.43 ${p.rot}) (size 0.8 2) (layers "B.Cu" "B.Paste" "B.Mask")  ${p.P3})
+    `
+    const back_pads_rev = `
+        (pad "2" smd roundrect (at -0.25 -1.43 ${p.rot}) (size 0.5 0.25) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25) (thermal_bridge_angle 45)  ${p.P2})
     `
     const back_fabrication = `
         (fp_line (start -3.35 -1) (end 3.35 -1) (stroke (width 0.1) (type solid)) (layer "B.Fab") )
@@ -154,9 +156,13 @@ module.exports = {
 
     final += pads;
 
-    if (p.reversible || p.side == "B") {
+    if (p.reversible) {
         final += front_pads_rev;
         final += pads_rev;
+        final += back_pads_rev;
+    }
+
+    if (p.reversible || p.side == "B") {
         final += back_silkscreen;
         final += back_pads;
         final += back_fabrication;
