@@ -18,14 +18,14 @@ module.exports = {
     P114: {type: 'net', value: 'P114'}, // undefined},
     P113: {type: 'net', value: 'P113'}, // undefined},
     P112: {type: 'net', value: 'P112'}, // undefined},
-    P15: {type: 'net', value: 'P15'}, // undefined},
+    BAT_N: {type: 'net', value: 'P15'}, // undefined},
     BAT_P: {type: 'net', value: 'BAT_P'}, // undefined},
     P009: {type: 'net', value: 'P009'}, // undefined},
     P010: {type: 'net', value: 'P010'}, // undefined},
-    P19: {type: 'net', value: 'P19'}, // undefined},
-    P20: {type: 'net', value: 'P20'}, // undefined},
-    P21: {type: 'net', value: 'P21'}, // undefined},
-    P22: {type: 'net', value: 'P22'}, // undefined},
+    DIO: {type: 'net', value: 'DIO'}, // undefined},
+    CLK: {type: 'net', value: 'CLK'}, // undefined},
+    RST: {type: 'net', value: 'RST'}, // undefined},
+    GND: {type: 'net', value: 'P22'}, // undefined},
   },
   body: p => {
     let fp_name = 'TB2086_MCU:Xiao_nRF52840'
@@ -116,9 +116,9 @@ module.exports = {
         (pad "16" thru_hole roundrect (at -4.445002 -0.3175 ${p.rot}) (size 1.8 1.35) (drill 1.05) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (roundrect_rratio 0.25)  ${p.BAT_P})
         (pad "17" thru_hole roundrect (at 3.81 9.2075 ${90 + p.rot}) (size 1.8 1.35) (drill 1.05) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (roundrect_rratio 0.25)  ${p.P009})
         (pad "18" thru_hole roundrect (at 5.715 9.2075 ${90 + p.rot}) (size 1.8 1.35) (drill 1.05) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (roundrect_rratio 0.25)  ${p.P010})
-        (pad "19" thru_hole circle (at -1.27 -8.5725 ${180 + p.rot}) (size 1.8 1.8) (drill 1.05) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P19})
-        (pad "20" thru_hole circle (at 1.27 -8.5725 ${180 + p.rot}) (size 1.8 1.8) (drill 1.05) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P20})
-        (pad "21" thru_hole circle (at -1.27 -6.0325 ${180 + p.rot}) (size 1.8 1.8) (drill 1.05) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P21})
+        (pad "19" thru_hole circle (at -1.27 -8.5725 ${180 + p.rot}) (size 1.8 1.8) (drill 1.05) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.DIO})
+        (pad "20" thru_hole circle (at 1.27 -8.5725 ${180 + p.rot}) (size 1.8 1.8) (drill 1.05) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.CLK})
+        (pad "21" thru_hole circle (at -1.27 -6.0325 ${180 + p.rot}) (size 1.8 1.8) (drill 1.05) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.RST})
         (pad "22" thru_hole roundrect (at 1.27 -6.0325 ${180 + p.rot}) (size 1.8 1.8) (drill 1.05) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (roundrect_rratio 0.25)  ${p.P22})
     `
     const back_silkscreen_non_edgecut = `
