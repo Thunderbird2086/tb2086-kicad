@@ -74,6 +74,8 @@ module.exports = {
     const back_mask = `
     `
     const back_courtyard = `
+        (fp_rect (start -2.25 -0.9) (end 2.25 2.1) (stroke (width 0.12) (type default)) (fill none) (layer "B.CrtYd") )
+        (fp_rect (start -1.85 -2.1) (end 1.85 -0.9) (stroke (width 0.12) (type default)) (fill none) (layer "B.CrtYd") )
     `
     const back_paste = `
     `
