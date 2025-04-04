@@ -8,7 +8,7 @@ module.exports = {
     to: {type: 'net', value: undefined}, // change to undefined as needed
   },
   body: p => {
-    let fp_name="D3_SMD";
+    let fp_name="TB2086_SMD:D3_SMD";
     if (p.reversible) {
         fp_name += "_rev";
     }

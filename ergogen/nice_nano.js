@@ -27,7 +27,7 @@ module.exports = {
   },
   body: p => {
     const standard_opening = `(
-         footprint "TB2086_MISC:ProMicro-dn-rev-unrouted"
+         footprint "TB2086_MCU:ProMicro-dn-rev-unrouted"
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")

@@ -27,7 +27,7 @@ module.exports = {
   },
   body: p => {
     const standard_opening = `(
-         footprint "TP2086_MISC:ProMicro-dn-mirror-rev-unrouted"
+         footprint "TP2086_MCU:ProMicro-dn-mirror-rev-unrouted"
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")
