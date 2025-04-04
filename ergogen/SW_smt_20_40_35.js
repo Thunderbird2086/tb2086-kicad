@@ -119,6 +119,7 @@ module.exports = {
         final += pads_rev;
         final += back_pads_rev;
     }
+
     if (p.reversible || p.side == "B") {
         final += back_silkscreen;
         final += back_pads;
