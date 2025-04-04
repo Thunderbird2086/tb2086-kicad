@@ -61,11 +61,13 @@ module.exports = {
     `
     const back_pads = `
         (pad "1" smd roundrect (at 1.1675 1.55 ${p.rot}) (size 1.15 1.3) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25) (thermal_bridge_angle 45)  ${p.P1})
-        (pad "1" smd roundrect (at 1.575 1.55 ${p.rot}) (size 1.15 0.5) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25) (thermal_bridge_angle 45)  ${p.P1})
-        (pad "2" smd roundrect (at -1.575 1.55 ${p.rot}) (size 1.15 0.5) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25) (thermal_bridge_angle 45)  ${p.P2})
         (pad "2" smd roundrect (at -1.1675 1.55 ${p.rot}) (size 1.15 1.3) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25) (thermal_bridge_angle 45)  ${p.P2})
         (pad "MP" smd roundrect (at -2.3 0 ${p.rot}) (size 0.9 1.2) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25) (thermal_bridge_angle 45)  ${p.MP})
         (pad "MP" smd roundrect (at 2.3 0 ${p.rot}) (size 0.9 1.2) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25) (thermal_bridge_angle 45)  ${p.MP})
+    `
+    const back_pads_rev = `
+        (pad "1" smd roundrect (at 1.575 1.55 ${p.rot}) (size 1.15 0.5) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25) (thermal_bridge_angle 45)  ${p.P1})
+        (pad "2" smd roundrect (at -1.575 1.55 ${p.rot}) (size 1.15 0.5) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25) (thermal_bridge_angle 45)  ${p.P2})
     `
     const back_fabrication = `
     `
@@ -112,9 +114,12 @@ module.exports = {
 
     final += pads;
 
-    if (p.reversible || p.side == "B") {
+    if (p.reversible) {
         final += front_pads_rev;
         final += pads_rev;
+        final += back_pads_rev;
+    }
+    if (p.reversible || p.side == "B") {
         final += back_silkscreen;
         final += back_pads;
         final += back_fabrication;

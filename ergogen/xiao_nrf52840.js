@@ -126,11 +126,11 @@ module.exports = {
         (fp_text user "BAT+" (at 0.754999 0.2825 ${0 + p.rot}) (unlocked yes) (layer "B.SilkS")  (effects (font (size 1 1) (thickness 0.15)) (justify left bottom mirror)))
     `
     const back_silkscreen_edgecut = `
-        (fp_arc (start -9.055742 -8.816738) (mid -8.302299 -10.116834) (end -6.890001 -10.63) (stroke (width 0.15) (type default)) (layer "B.SilkS") )
-        (fp_arc (start -6.89 10.6775) (mid -8.302299 10.164335) (end -9.055742 8.864239) (stroke (width 0.15) (type default)) (layer "B.SilkS") )
-        (fp_arc (start 6.889999 -10.63) (mid 8.302298 -10.116835) (end 9.05574 -8.816738) (stroke (width 0.15) (type default)) (layer "B.SilkS") )
-        (fp_arc (start 9.05574 8.864238) (mid 8.302298 10.164335) (end 6.889999 10.6775) (stroke (width 0.15) (type default)) (layer "B.SilkS") )
-        (fp_text user "1" (at -7.62 -8.82 ${0 + p.rot}) (layer "B.SilkS")  (effects (font (size 1 1) (thickness 0.15)) (justify bottom mirror)))
+        (fp_arc (start -9.055738 -8.816734) (mid -8.657466 -9.739979) (end -7.889996 -10.389588) (stroke (width 0.12) (type default)) (layer "B.SilkS") )
+        (fp_arc (start -7.43 10.68) (mid -8.543799 10.029131) (end -9.122419 8.876145) (stroke (width 0.15) (type default)) (layer "B.SilkS") )
+        (fp_arc (start 7.889998 -10.389592) (mid 8.657468 -9.739983) (end 9.05574 -8.816738) (stroke (width 0.12) (type default)) (layer "B.SilkS") )
+        (fp_arc (start 9.10598 8.87321) (mid 8.522438 10.027435) (end 7.4 10.67) (stroke (width 0.15) (type default)) (layer "B.SilkS") )
+        (fp_circle (center -8.47 -9.32) (end -8.17 -9.32) (stroke (width 0.12) (type solid)) (fill solid) (layer "B.SilkS") )
     `
     const back_pads = `
     `
@@ -161,13 +161,13 @@ module.exports = {
     const edge_cuts = `
     `
     const edge_cuts_edgecut = `
-        (fp_line (start -6.5 9.678) (end -6.499768 -10.410053) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
-        (fp_line (start 5.5 10.678) (end -5.5 10.678) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
-        (fp_line (start 6.5 9.678) (end 6.499768 -10.410053) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
-        (fp_arc (start -6.999768 -10.910053) (mid -6.646216 -10.763605) (end -6.499768 -10.410053) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
-        (fp_arc (start -5.5 10.678) (mid -6.207107 10.385107) (end -6.5 9.678) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
-        (fp_arc (start 6.499768 -10.410053) (mid 6.646218 -10.763603) (end 6.999768 -10.910053) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
-        (fp_arc (start 6.5 9.678) (mid 6.207107 10.385107) (end 5.5 10.678) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
+        (fp_line (start -7.62 9.678) (end -7.619768 -10.410053) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
+        (fp_line (start 6.62 10.678) (end -6.62 10.678) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
+        (fp_line (start 7.62 9.678) (end 7.619768 -10.410053) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
+        (fp_arc (start -8.119768 -10.910053) (mid -7.766216 -10.763605) (end -7.619768 -10.410053) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
+        (fp_arc (start -6.62 10.678) (mid -7.327107 10.385107) (end -7.62 9.678) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
+        (fp_arc (start 7.619768 -10.410053) (mid 7.766218 -10.763602) (end 8.119768 -10.910053) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
+        (fp_arc (start 7.62 9.678) (mid 7.327107 10.385107) (end 6.62 10.678) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
     `
     const user_drawing = `
     `
