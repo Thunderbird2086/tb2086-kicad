@@ -61,17 +61,21 @@ module.exports = {
     `
     const back_pads = `
         (pad "1" smd roundrect (at 1.1675 1.55 ${p.rot}) (size 1.15 1.3) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25) (thermal_bridge_angle 45)  ${p.P1})
-        (pad "1" smd roundrect (at 1.575 1.55 ${p.rot}) (size 1.15 0.5) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25) (thermal_bridge_angle 45)  ${p.P1})
-        (pad "2" smd roundrect (at -1.575 1.55 ${p.rot}) (size 1.15 0.5) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25) (thermal_bridge_angle 45)  ${p.P2})
         (pad "2" smd roundrect (at -1.1675 1.55 ${p.rot}) (size 1.15 1.3) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25) (thermal_bridge_angle 45)  ${p.P2})
         (pad "MP" smd roundrect (at -2.3 0 ${p.rot}) (size 0.9 1.2) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25) (thermal_bridge_angle 45)  ${p.MP})
         (pad "MP" smd roundrect (at 2.3 0 ${p.rot}) (size 0.9 1.2) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25) (thermal_bridge_angle 45)  ${p.MP})
+    `
+    const back_pads_rev = `
+        (pad "1" smd roundrect (at 1.575 1.55 ${p.rot}) (size 1.15 0.5) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25) (thermal_bridge_angle 45)  ${p.P1})
+        (pad "2" smd roundrect (at -1.575 1.55 ${p.rot}) (size 1.15 0.5) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25) (thermal_bridge_angle 45)  ${p.P2})
     `
     const back_fabrication = `
     `
     const back_mask = `
     `
     const back_courtyard = `
+        (fp_rect (start -2.25 -0.9) (end 2.25 2.1) (stroke (width 0.12) (type default)) (fill none) (layer "B.CrtYd") )
+        (fp_rect (start -1.85 -2.1) (end 1.85 -0.9) (stroke (width 0.12) (type default)) (fill none) (layer "B.CrtYd") )
     `
     const back_paste = `
     `
@@ -112,9 +116,13 @@ module.exports = {
 
     final += pads;
 
-    if (p.reversible || p.side == "B") {
+    if (p.reversible) {
         final += front_pads_rev;
         final += pads_rev;
+        final += back_pads_rev;
+    }
+
+    if (p.reversible || p.side == "B") {
         final += back_silkscreen;
         final += back_pads;
         final += back_fabrication;
