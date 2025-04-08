@@ -18,14 +18,14 @@ module.exports = {
     P114: {type: 'net', value: 'P114'}, // undefined},
     P113: {type: 'net', value: 'P113'}, // undefined},
     P112: {type: 'net', value: 'P112'}, // undefined},
-    BAT_N: {type: 'net', value: 'P15'}, // undefined},
+    BAT_N: {type: 'net', value: 'BAT_N'}, // undefined},
     BAT_P: {type: 'net', value: 'BAT_P'}, // undefined},
     P009: {type: 'net', value: 'P009'}, // undefined},
     P010: {type: 'net', value: 'P010'}, // undefined},
     DIO: {type: 'net', value: 'DIO'}, // undefined},
     CLK: {type: 'net', value: 'CLK'}, // undefined},
     RST: {type: 'net', value: 'RST'}, // undefined},
-    GND: {type: 'net', value: 'P22'}, // undefined},
+    //GND: {type: 'net', value: 'GND'}, // undefined},
   },
   body: p => {
     let fp_name = 'TB2086_MCU:Xiao_nRF52840'
@@ -77,7 +77,7 @@ module.exports = {
         (pad "12" smd roundrect (at 8.92 2.54 ${180 + p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P114})
         (pad "13" smd roundrect (at 8.92 5.08 ${p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P113})
         (pad "14" smd roundrect (at 8.92 7.62 ${p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P112})
-        (pad "15" smd roundrect (at -4.445001 -2.2225 ${p.rot}) (size 2.5 1.35) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P15})
+        (pad "15" smd roundrect (at -4.445001 -2.2225 ${p.rot}) (size 2.5 1.35) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.BAT_N})
         (pad "16" smd roundrect (at -4.445002 -0.3175 ${p.rot}) (size 2.5 1.35) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.BAT_P})
         (pad "17" smd roundrect (at 3.81 9.2075 ${90 + p.rot}) (size 2.5 1.35) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P009})
         (pad "18" smd roundrect (at 5.715 9.2075 ${90 + p.rot}) (size 2.5 1.35) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.P010})
@@ -112,14 +112,14 @@ module.exports = {
         (pad "14" thru_hole circle (at 7.62 7.62 ${p.rot}) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P112})
     `
     const pads_non_edgecut = `
-        (pad "15" thru_hole roundrect (at -4.445001 -2.2225 ${p.rot}) (size 1.8 1.35) (drill 1.05) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (roundrect_rratio 0.25)  ${p.P15})
+        (pad "15" thru_hole roundrect (at -4.445001 -2.2225 ${p.rot}) (size 1.8 1.35) (drill 1.05) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (roundrect_rratio 0.25)  ${p.BAT_N})
         (pad "16" thru_hole roundrect (at -4.445002 -0.3175 ${p.rot}) (size 1.8 1.35) (drill 1.05) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (roundrect_rratio 0.25)  ${p.BAT_P})
         (pad "17" thru_hole roundrect (at 3.81 9.2075 ${90 + p.rot}) (size 1.8 1.35) (drill 1.05) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (roundrect_rratio 0.25)  ${p.P009})
         (pad "18" thru_hole roundrect (at 5.715 9.2075 ${90 + p.rot}) (size 1.8 1.35) (drill 1.05) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (roundrect_rratio 0.25)  ${p.P010})
         (pad "19" thru_hole circle (at -1.27 -8.5725 ${180 + p.rot}) (size 1.8 1.8) (drill 1.05) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.DIO})
         (pad "20" thru_hole circle (at 1.27 -8.5725 ${180 + p.rot}) (size 1.8 1.8) (drill 1.05) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.CLK})
         (pad "21" thru_hole circle (at -1.27 -6.0325 ${180 + p.rot}) (size 1.8 1.8) (drill 1.05) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.RST})
-        (pad "22" thru_hole roundrect (at 1.27 -6.0325 ${180 + p.rot}) (size 1.8 1.8) (drill 1.05) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (roundrect_rratio 0.25)  ${p.P22})
+        (pad "22" thru_hole roundrect (at 1.27 -6.0325 ${180 + p.rot}) (size 1.8 1.8) (drill 1.05) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (roundrect_rratio 0.25)  ${p.GND})
     `
     const back_silkscreen_non_edgecut = `
         (fp_text user "BAT-" (at 0.754999 -1.6225 ${0 + p.rot}) (unlocked yes) (layer "B.SilkS")  (effects (font (size 1 1) (thickness 0.15)) (justify left bottom mirror)))
