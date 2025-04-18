@@ -14,7 +14,7 @@ module.exports = {
     }
 
     const standard_opening = `(
-         footprint "TB2086_SMD:${fp_name}"
+         footprint "${fp_name}"
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")
