@@ -18,7 +18,7 @@ module.exports = {
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")
-        (layer "F.Cu")
+        (layer "${p.side}.Cu")
         (descr "Resitance 3 pas")
         (tags "R")
         (attr through_hole)

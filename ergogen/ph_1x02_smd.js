@@ -18,7 +18,7 @@ module.exports = {
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")
-        (layer "F.Cu")
+        (layer "${p.side}.Cu")
         (descr "JST PH series connector, S2B-PH-SM4-TB (http://www.jst-mfg.com/product/pdf/eng/ePH.pdf), generated with kicad-footprint-generator")
         (tags "connector JST PH horizontal")
         (property "Reference" "${p.ref}" (at 0 -5.8 ${0 + p.rot}) (layer "${p.side}.SilkS") ${p.ref_hide} (effects (font (size 1 1) (thickness 0.15))))

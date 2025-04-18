@@ -21,7 +21,7 @@ module.exports = {
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")
-        (layer "F.Cu")
+        (layer "${p.side}.Cu")
         (descr "Molex Pico-EZmate series connector, 78171-0004 (http://www.molex.com/pdm_docs/sd/781710002_sd.pdf), generated with kicad-footprint-generator")
         (tags "connector Molex Pico-EZmate side entry")
         (property "Reference" "${p.ref}" (at 0.56 -3.98 ${0 + p.rot}) (layer "${p.side}.SilkS") ${p.ref_hide} (effects (font (size 1 1) (thickness 0.15))))

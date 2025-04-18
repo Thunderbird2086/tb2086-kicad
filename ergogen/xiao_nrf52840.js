@@ -37,7 +37,7 @@ module.exports = {
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")
-        (layer "F.Cu")
+        (layer "${p.side}.Cu")
         (property "Reference" "${p.ref}" (at -6.5 11.65 ${0 + p.rot}) (layer "${p.side}.SilkS") ${p.ref_hide}  (effects (font (size 1 1) (thickness 0.15)) (justify right)))
         (attr through_hole exclude_from_pos_files exclude_from_bom)
         ${p.at /* parametric position */}

@@ -20,7 +20,7 @@ module.exports = {
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")
-        (layer "F.Cu")
+        (layer "${p.side}.Cu")
         (attr through_hole)
         ${p.at /* parametric position */}
     `
