@@ -18,7 +18,7 @@ module.exports = {
          footprint "${fp_name}"
         (version 20221018)
         (generator pcbnew)
-        (layer "F.Cu")
+        (layer "${p.side}.Cu")
         (descr "https://cdn-shop.adafruit.com/product-files/2686/SK6812MINI_REV.01-1-2.pdf")
         (tags "LED RGB NeoPixel Mini")
         (attr smd)

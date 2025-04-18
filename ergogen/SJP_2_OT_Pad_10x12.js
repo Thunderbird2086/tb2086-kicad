@@ -17,7 +17,7 @@ module.exports = {
          footprint "${fp_name}"
         (version 20221018)
         (generator pcbnew)
-        (layer "F.Cu")
+        (layer "${p.side}.Cu")
         (descr "SMD Solder Jumper, 1x1.5mm Triangular Pads, 0.3mm gap, open")
         (tags "solder jumper open")
         (attr exclude_from_pos_files exclude_from_bom)

@@ -31,7 +31,7 @@ module.exports = {
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")
-        (layer "F.Cu")
+        (layer "${p.side}.Cu")
         (descr "Solder-jumper reversible Pro Micro footprint (unrouted)")
         (tags "promicro ProMicro reversible solder jumper")
         (property "Reference" "${p.ref}" (at 0.254 -14.986 ${0 + p.rot}) (layer "${p.side}.SilkS") ${p.ref_hide} (effects (font (size 1 1) (thickness 0.15))))

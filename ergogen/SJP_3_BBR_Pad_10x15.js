@@ -18,7 +18,7 @@ module.exports = {
          footprint "${fp_name}"
         (version 20221018)
         (generator pcbnew)
-        (layer "F.Cu")
+        (layer "${p.side}.Cu")
         (tags "net tie solder jumper bridged")
         (attr exclude_from_pos_files exclude_from_bom)
         (fp_text reference "${p.ref}" (at 0 -1.8 ${p.rot}) (layer "${p.side}.SilkS") ${p.ref_hide} (effects (font (size 1 1) (thickness 0.15))) )
