@@ -180,12 +180,8 @@ module.exports = {
     `
     const user_eco2 = `
     `
-    let offset = 'offset (xyz 0 0 0)'
-    if (p.edgecut) {
-        offset = 'offset (xyz 0 0 -3)'
-    }
     const model = `
-        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/xiao_rp2040.step" (${offset}) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
+        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/xiao_rp2040.step" ((xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
     `
     const standard_closing = `
             )

@@ -94,16 +94,8 @@ module.exports = {
     `
     const user_eco2 = `
     `
-
-    let offset = "(xyz 0 0 0)"
-    let rotate = "(xyz 0 0 0)"
-    if (p.side == "B") {
-        offset = "(xyz 0 0 -1.6)"
-        rotate = "(xyz 0 180 0)"
-    }
-
     const model = `
-        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/LED_0603_1608Metric.step" (offset ${offset}) (scale (xyz 1 1 1)) (rotate ${rotate}))
+        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/LED_0603_1608Metric.step" (offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
     `
     const standard_closing = `
             )
