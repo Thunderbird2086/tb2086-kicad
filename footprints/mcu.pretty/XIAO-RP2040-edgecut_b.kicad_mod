@@ -235,17 +235,6 @@
 		(layer "B.Fab")
 		(uuid "a45a327e-f036-4877-8d89-39f4f4b0c715")
 	)
-	(fp_circle
-		(center -7.804 -9.426)
-		(end -7.804 -9.68)
-		(stroke
-			(width 0.5)
-			(type solid)
-		)
-		(fill solid)
-		(layer "B.Fab")
-		(uuid "f1bda1b0-c6a9-4930-b2ed-d175257d4cca")
-	)
 	(pad "1" smd roundrect
 		(at -8.455 -7.62 180)
 		(size 2.432 1.524)
