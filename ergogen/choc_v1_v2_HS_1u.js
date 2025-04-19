@@ -19,7 +19,7 @@ module.exports = {
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")
-        (layer "${p.side}.Cu")
+        (layer "F.Cu")
         (descr "Hotswap footprint for Kailh Choc v2 style switches")
         (property "Reference" "${p.ref}" (at 0 -2.75 ${180 + p.rot}) (layer "${p.side}.SilkS") ${p.ref_hide}  (effects (font (size 1 1) (thickness 0.15))))
         (attr smd)
