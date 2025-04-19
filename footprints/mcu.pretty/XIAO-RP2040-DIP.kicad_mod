@@ -492,7 +492,7 @@
 		(thermal_bridge_angle 45)
 		(uuid "6b725fd4-d6f0-46bf-b3e0-7ec07cc05622")
 	)
-	(model "${TB2086_GLOBAL}/packages3D/xiao_rp2040.step"
+	(model "${KIPRJMOD}/tb2086-kicad/packages3D/xiao_rp2040.step"
 		(offset
 			(xyz 0 0 0)
 		)

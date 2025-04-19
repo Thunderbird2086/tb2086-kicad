@@ -454,7 +454,7 @@
 		(remove_unused_layers no)
 		(uuid "c6d1af47-da13-4409-9ab1-55d358cc57eb")
 	)
-	(model "${TB2086_GLOBAL}/packages3D/xiao_rp2040.step"
+	(model "${KIPRJMOD}/tb2086-kicad/packages3D/xiao_rp2040.step"
 		(offset
 			(xyz 0 0 1.2)
 		)
