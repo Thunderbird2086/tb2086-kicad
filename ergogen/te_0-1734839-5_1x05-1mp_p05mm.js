@@ -131,14 +131,8 @@ module.exports = {
     `
     const user_eco2 = `
     `
-    let offset = "(xyz 0 -3.3 1)"
-    let rotate = "(xyz 90 180 180)"
-    if (p.side == "B") {
-        offset = "(xyz 0 -3.1 -0.6)"
-        rotate = "(xyz 90 0 180)"
-    }
     const model = `
-        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/c-1734839-5-c-3d.step" (offset ${offset}) (scale (xyz 1 1 1)) (rotate ${rotate}))
+        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/c-1734839-5-c-3d.step" (offset (xyz 0 -3.3 1)) (scale (xyz 1 1 1)) (rotate (xyz 90 180 180)))
     `
     const standard_closing = `
             )

@@ -19,7 +19,7 @@ module.exports = {
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")
-        (layer "${p.side}.Cu")
+        (layer "F.Cu")
         (descr "Footprint for Cherry MX style switches with Kailh hotswap socket")
         (property "Reference" "${p.ref}" (at -4.4196 1.778 ${0 + p.rot}) (layer "${p.side}.SilkS") ${p.ref_hide} (effects (font (size 1 1) (thickness 0.15))))
         (attr smd)

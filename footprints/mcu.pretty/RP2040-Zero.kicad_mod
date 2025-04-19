@@ -677,7 +677,7 @@
 		(roundrect_rratio 0.25)
 		(uuid "5a154f92-b5ad-4424-afd8-14e473f28bb1")
 	)
-	(model "${TB2086_GLOBAL}/packages3D/RP2040-ZERO-WAVESHARE.step"
+	(model "${KIPRJMOD}/tb2086-kicad/packages3D/RP2040-ZERO-WAVESHARE.step"
 		(offset
 			(xyz 0 0 0)
 		)

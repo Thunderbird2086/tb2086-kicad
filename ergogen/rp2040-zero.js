@@ -1,7 +1,7 @@
 module.exports = {
   params: {
     designator: 'MCU',
-    flip: false,
+    side: 'F',
     edgecut: false,
     show_3d: false,
     v3v3: {type: 'net', value: 'v3v3'},
@@ -32,23 +32,9 @@ module.exports = {
     let fp_name_tail = ``
     let idx = 0
 
-    let offset_3d = `(offset (xyz 0 0 0))`
-    let rot_3d = `(rotate (xyz -90 0 0))`
-
-    if (p.flip) {
-        fp_name_tail += `_flip`
-        idx = 1
-        offset_3d = `(offset (xyz 0 0 -1.6))`
-        rot_3d = `(rotate (xyz -90 180 0))`
-    }
     if (p.edgecut) {
         fp_name_tail += `_edgecut`
         idx += 2
-        if (p.flip) {
-            offset_3d = `(offset (xyz 0 0 1.1))`
-        } else {
-            offset_3d = `(offset (xyz 0 0 -2.9))`
-        }
     }
 
     const standard_opening = `(
@@ -56,7 +42,7 @@ module.exports = {
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")
-        (layer "F.Cu")
+        (layer "${p.side}.Cu")
         (property "Reference" "${p.ref}" (at 0 -2.75 ${0 + p.rot}) (unlocked yes) (layer "F.SilkS") ${p.ref_hide}  (effects (font (size 1 1) (thickness 0.15))))
         (attr through_hole)
         ${p.at /* parametric position */}
@@ -342,7 +328,7 @@ module.exports = {
     `
 
     const model = `
-        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/RP2040-ZERO-WAVESHARE.step" ${offset_3d} (scale (xyz 1 1 1)) ${rot_3d})
+        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/RP2040-ZERO-WAVESHARE.step" (offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz -90 0 0))
     `
     const standard_closing = `
             )
