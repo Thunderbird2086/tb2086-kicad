@@ -1,6 +1,6 @@
 module.exports = {
   params: {
-    designator: 'J',    // change it accordingly
+    designator: 'USB',    // change it accordingly
     side: 'F',          // delete if not needed
     reversible: false,  // delete if not needed
     show_3d: false,     // delete if not needed
@@ -45,7 +45,7 @@ module.exports = {
     const front_mask = `
     `
     const front_courtyard = `
-        (fp_rect (start -4.3 -2.8) (end 4.3 3.4) (stroke (width 0.12) (type default)) (fill none) (layer "F.CrtYd") )
+        (fp_rect (start -4.62 -2.8) (end 4.62 3.4) (stroke (width 0.12) (type default)) (fill none) (layer "F.CrtYd") )
     `
     const front_paste = `
     `
@@ -74,16 +74,16 @@ module.exports = {
     const back_mask = `
     `
     const back_courtyard = `
-        (fp_rect (start -4.3 -2.8) (end 4.3 3.4) (stroke (width 0.12) (type default)) (fill none) (layer "B.CrtYd") )
+        (fp_rect (start -4.62 -2.8) (end 4.62 3.4) (stroke (width 0.12) (type default)) (fill none) (layer "B.CrtYd") )
     `
     const back_paste = `
     `
     const edge_cuts = `
-        (fp_line (start -4.3 3.4) (end -4.3 -2.8) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
-        (fp_line (start -3.3 -2.8) (end 3.3 -2.8) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
-        (fp_line (start 4.3 -2.8) (end 4.3 3.4) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
-        (fp_arc (start -4.3 -2.8) (mid -3.8 -3.3) (end -3.3 -2.8) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
-        (fp_arc (start 3.3 -2.8) (mid 3.8 -3.3) (end 4.3 -2.8) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
+        (fp_line (start -4.62 3.4) (end -4.62 -2.8) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
+        (fp_line (start -3.62 -2.8) (end 3.62 -2.8) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
+        (fp_line (start 4.62 -2.8) (end 4.62 3.4) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
+        (fp_arc (start -4.62 -2.8) (mid -4.12 -3.3) (end -3.62 -2.8) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
+        (fp_arc (start 3.62 -2.8) (mid 4.12 -3.3) (end 4.62 -2.8) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
     `
     const user_drawing = `
     `
