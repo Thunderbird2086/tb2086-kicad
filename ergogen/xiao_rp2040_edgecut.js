@@ -20,7 +20,7 @@ module.exports = {
   },
   body: p => {
     const standard_opening = `(
-         footprint "TP2086_MCU::XIAO-RP2040-edgecut"
+         footprint "TB2086_MCU:XIAO-RP2040-edgecut"
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")
@@ -44,13 +44,13 @@ module.exports = {
         (pad "5" smd roundrect (at 8.455 2.54 ${180 + p.rot}) (size 2.432 1.524) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.1) (thermal_bridge_angle 45)  ${p.P5})
         (pad "6" smd roundrect (at 8.455 5.08 ${180 + p.rot}) (size 2.432 1.524) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.1) (thermal_bridge_angle 45)  ${p.P6})
         (pad "7" smd roundrect (at 8.455 7.62 ${180 + p.rot}) (size 2.432 1.524) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.1) (thermal_bridge_angle 45)  ${p.P7})
-        (pad "8" smd roundrect (at -8.455 7.62 ${p.rot}) (size 2.432 1.524) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.1) (thermal_bridge_angle 45)  ${p.P8})
-        (pad "9" smd roundrect (at -8.455 5.08 ${p.rot}) (size 2.432 1.524) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.1) (thermal_bridge_angle 45)  ${p.P9})
-        (pad "10" smd roundrect (at -8.455 2.54 ${p.rot}) (size 2.432 1.524) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.1) (thermal_bridge_angle 45)  ${p.P10})
+        (pad "8" smd roundrect (at -8.455 -7.62 ${p.rot}) (size 2.432 1.524) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.1) (thermal_bridge_angle 45)  ${p.P8})
+        (pad "9" smd roundrect (at -8.455 -5.08 ${p.rot}) (size 2.432 1.524) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.1) (thermal_bridge_angle 45)  ${p.P9})
+        (pad "10" smd roundrect (at -8.455 -2.54 ${p.rot}) (size 2.432 1.524) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.1) (thermal_bridge_angle 45)  ${p.P10})
         (pad "11" smd roundrect (at -8.455 0 ${p.rot}) (size 2.432 1.524) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.1) (thermal_bridge_angle 45)  ${p.P11})
-        (pad "12" smd roundrect (at -8.455 -2.54 ${p.rot}) (size 2.432 1.524) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.1) (thermal_bridge_angle 45)  ${p.P12})
-        (pad "13" smd roundrect (at -8.455 -5.08 ${p.rot}) (size 2.432 1.524) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.1) (thermal_bridge_angle 45)  ${p.P13})
-        (pad "14" smd roundrect (at -8.455 -7.62 ${p.rot}) (size 2.432 1.524) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.1) (thermal_bridge_angle 45)  ${p.P14})
+        (pad "12" smd roundrect (at -8.455 2.54 ${p.rot}) (size 2.432 1.524) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.1) (thermal_bridge_angle 45)  ${p.P12})
+        (pad "13" smd roundrect (at -8.455 5.08 ${p.rot}) (size 2.432 1.524) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.1) (thermal_bridge_angle 45)  ${p.P13})
+        (pad "14" smd roundrect (at -8.455 7.62 ${p.rot}) (size 2.432 1.524) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.1) (thermal_bridge_angle 45)  ${p.P14})
     `
     const front_fabrication = `
         (property "Value" "XIAO-RP2040-edgecut" (at 0 0 ${0 + p.rot}) (unlocked yes) (layer "F.Fab")  (effects (font (size 0.635 0.635) (thickness 0.1016))))
@@ -75,13 +75,13 @@ module.exports = {
         (pad "5" thru_hole circle (at 7.62 2.54 ${180 + p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P5})
         (pad "6" thru_hole circle (at 7.62 5.08 ${180 + p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P6})
         (pad "7" thru_hole circle (at 7.62 7.62 ${180 + p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P7})
-        (pad "8" thru_hole circle (at -7.62 7.62 ${p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P8})
-        (pad "9" thru_hole circle (at -7.62 5.08 ${p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P9})
-        (pad "10" thru_hole circle (at -7.62 2.54 ${p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P10})
+        (pad "8" thru_hole circle (at -7.62 -7.62 ${p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P8})
+        (pad "9" thru_hole circle (at -7.62 -5.08 ${p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P9})
+        (pad "10" thru_hole circle (at -7.62 -2.54 ${p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P10})
         (pad "11" thru_hole circle (at -7.62 0 ${p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P11})
-        (pad "12" thru_hole circle (at -7.62 -2.54 ${p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P12})
-        (pad "13" thru_hole circle (at -7.62 -5.08 ${p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P13})
-        (pad "14" thru_hole circle (at -7.62 -7.62 ${p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P14})
+        (pad "12" thru_hole circle (at -7.62 2.54 ${p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P12})
+        (pad "13" thru_hole circle (at -7.62 5.08 ${p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P13})
+        (pad "14" thru_hole circle (at -7.62 7.62 ${p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P14})
     `
     const pads_back = `
         (pad "1" thru_hole circle (at -7.62 -7.62 ${180 + p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P1})
@@ -91,13 +91,13 @@ module.exports = {
         (pad "5" thru_hole circle (at -7.62 2.54 ${180 + p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P5})
         (pad "6" thru_hole circle (at -7.62 5.08 ${180 + p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P6})
         (pad "7" thru_hole circle (at -7.62 7.62 ${180 + p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P7})
-        (pad "8" thru_hole circle (at 7.62 7.62 ${p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P8})
-        (pad "9" thru_hole circle (at 7.62 5.08 ${p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P9})
-        (pad "10" thru_hole circle (at 7.62 2.54 ${p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P10})
+        (pad "8" thru_hole circle (at 7.62 -7.62 ${p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P8})
+        (pad "9" thru_hole circle (at 7.62 -5.08 ${p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P9})
+        (pad "10" thru_hole circle (at 7.62 -2.54 ${p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P10})
         (pad "11" thru_hole circle (at 7.62 0 ${p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P11})
-        (pad "12" thru_hole circle (at 7.62 -2.54 ${p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P12})
-        (pad "13" thru_hole circle (at 7.62 -5.08 ${p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P13})
-        (pad "14" thru_hole circle (at 7.62 -7.62 ${p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P14})
+        (pad "12" thru_hole circle (at 7.62 2.54 ${p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P12})
+        (pad "13" thru_hole circle (at 7.62 5.08 ${p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P13})
+        (pad "14" thru_hole circle (at 7.62 7.62 ${p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P14})
     `
     const back_silkscreen = `
         (fp_arc (start -9.045737 -8.869234) (mid -8.647465 -9.792479) (end -7.879995 -10.442088) (stroke (width 0.12) (type default)) (layer "B.SilkS") )
@@ -114,13 +114,13 @@ module.exports = {
         (pad "5" smd roundrect (at -8.455 2.54 ${180 + p.rot}) (size 2.432 1.524) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.1) (thermal_bridge_angle 45)  ${p.P5})
         (pad "6" smd roundrect (at -8.455 5.08 ${180 + p.rot}) (size 2.432 1.524) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.1) (thermal_bridge_angle 45)  ${p.P6})
         (pad "7" smd roundrect (at -8.455 7.62 ${180 + p.rot}) (size 2.432 1.524) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.1) (thermal_bridge_angle 45)  ${p.P7})
-        (pad "8" smd roundrect (at 8.455 7.62 ${p.rot}) (size 2.432 1.524) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.1) (thermal_bridge_angle 45)  ${p.P8})
-        (pad "9" smd roundrect (at 8.455 5.08 ${p.rot}) (size 2.432 1.524) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.1) (thermal_bridge_angle 45)  ${p.P9})
-        (pad "10" smd roundrect (at 8.455 2.54 ${p.rot}) (size 2.432 1.524) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.1) (thermal_bridge_angle 45)  ${p.P10})
+        (pad "8" smd roundrect (at 8.455 -7.62 ${p.rot}) (size 2.432 1.524) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.1) (thermal_bridge_angle 45)  ${p.P8})
+        (pad "9" smd roundrect (at 8.455 -5.08 ${p.rot}) (size 2.432 1.524) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.1) (thermal_bridge_angle 45)  ${p.P9})
+        (pad "10" smd roundrect (at 8.455 -2.54 ${p.rot}) (size 2.432 1.524) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.1) (thermal_bridge_angle 45)  ${p.P10})
         (pad "11" smd roundrect (at 8.455 0 ${p.rot}) (size 2.432 1.524) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.1) (thermal_bridge_angle 45)  ${p.P11})
-        (pad "12" smd roundrect (at 8.455 -2.54 ${p.rot}) (size 2.432 1.524) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.1) (thermal_bridge_angle 45)  ${p.P12})
-        (pad "13" smd roundrect (at 8.455 -5.08 ${p.rot}) (size 2.432 1.524) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.1) (thermal_bridge_angle 45)  ${p.P13})
-        (pad "14" smd roundrect (at 8.455 -7.62 ${p.rot}) (size 2.432 1.524) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.1) (thermal_bridge_angle 45)  ${p.P14})
+        (pad "12" smd roundrect (at 8.455 2.54 ${p.rot}) (size 2.432 1.524) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.1) (thermal_bridge_angle 45)  ${p.P12})
+        (pad "13" smd roundrect (at 8.455 5.08 ${p.rot}) (size 2.432 1.524) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.1) (thermal_bridge_angle 45)  ${p.P13})
+        (pad "14" smd roundrect (at 8.455 7.62 ${p.rot}) (size 2.432 1.524) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.1) (thermal_bridge_angle 45)  ${p.P14})
     `
     const back_fabrication = `
         (property "Value" "XIAO-RP2040-edgecut" (at 0 0 ${0 + p.rot}) (unlocked yes) (layer "B.Fab")  (effects (font (size 0.635 0.635) (thickness 0.1016)) (justify mirror)))
@@ -155,7 +155,7 @@ module.exports = {
     const user_eco2 = `
     `
     const model = `
-        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/xiao_rp2040.step" (offset (xyz 0 0 1.2)) (scale (xyz 1 1 1)) (rotate (xyz 0 180 180)))
+        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/xiao_rp2040.step" (offset (xyz 0 0 1.2)) (scale (xyz 1 1 1)) (rotate (xyz 0 180 0)))
     `
     const standard_closing = `
             )
