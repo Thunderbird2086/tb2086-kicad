@@ -67,7 +67,7 @@ module.exports = {
     `
     const front_paste = `
     `
-    const pads_front = `
+    const front_pads_holes = `
         (pad "1" thru_hole circle (at 7.62 -7.62 ${180 + p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P1})
         (pad "2" thru_hole circle (at 7.62 -5.08 ${180 + p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P2})
         (pad "3" thru_hole circle (at 7.62 -2.54 ${180 + p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P3})
@@ -83,7 +83,7 @@ module.exports = {
         (pad "13" thru_hole circle (at -7.62 5.08 ${p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P13})
         (pad "14" thru_hole circle (at -7.62 7.62 ${p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P14})
     `
-    const pads_back = `
+    const back_pads_holes = `
         (pad "1" thru_hole circle (at -7.62 -7.62 ${180 + p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P1})
         (pad "2" thru_hole circle (at -7.62 -5.08 ${180 + p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P2})
         (pad "3" thru_hole circle (at -7.62 -2.54 ${180 + p.rot}) (size 1.524 1.524) (drill 0.889) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P3})
@@ -154,8 +154,12 @@ module.exports = {
     `
     const user_eco2 = `
     `
+    let rotate = `rotate (xyz 0 180 0)`
+    if (p.side == 'B') {
+        rotate = `rotate (xyz 0 180 180)`
+    }
     const model = `
-        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/xiao_rp2040.step" (offset (xyz 0 0 1.2)) (scale (xyz 1 1 1)) (rotate (xyz 0 180 0)))
+        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/xiao_rp2040.step" (offset (xyz 0 0 1.2)) (scale (xyz 1 1 1)) (${rotate}))
     `
     const standard_closing = `
             )
@@ -168,11 +172,11 @@ module.exports = {
         final += front_mask;
         final += front_courtyard;
         final += front_paste;
-        final += pads_front;
+        final += front_pads_holes;
     }
 
     if (p.side == 'B') {
-        final += pads_back;
+        final += back_pads_holes;
         final += back_silkscreen;
         final += back_pads;
         final += back_fabrication;
