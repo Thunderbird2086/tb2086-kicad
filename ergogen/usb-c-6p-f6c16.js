@@ -80,10 +80,10 @@ module.exports = {
     `
     const edge_cuts = `
         (fp_line (start -4.62 3.4) (end -4.62 -2.8) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
-        (fp_line (start -3.62 -2.8) (end 3.62 -2.8) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
+        (fp_line (start -3.686988 -3.05) (end 3.68699 -3.050001) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
         (fp_line (start 4.62 -2.8) (end 4.62 3.4) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
-        (fp_arc (start -4.62 -2.8) (mid -4.12 -3.3) (end -3.62 -2.8) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
-        (fp_arc (start 3.62 -2.8) (mid 4.12 -3.3) (end 4.62 -2.8) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
+        (fp_arc (start -4.62 -2.8) (mid -4.24941 -3.282963) (end -3.686988 -3.050001) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
+        (fp_arc (start 3.686988 -3.050001) (mid 4.24941 -3.282963) (end 4.62 -2.8) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
     `
     const user_drawing = `
     `
