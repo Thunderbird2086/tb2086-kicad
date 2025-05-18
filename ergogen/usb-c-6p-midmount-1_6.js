@@ -67,10 +67,10 @@ module.exports = {
     const back_paste = `
     `
     const edge_cuts = `
-        (fp_line (start -4.62 3.4) (end -4.62 -3.000001) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
-        (fp_line (start -3.686988 -3.3) (end 3.68699 -3.300001) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
-        (fp_line (start 4.62 -3) (end 4.62 3.4) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
-        (fp_arc (start -4.62 -3) (mid -4.278114 -3.474342) (end -3.72 -3.3) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
+        (fp_line (start -4.62 3.4) (end -4.619999 -3) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
+        (fp_line (start -3.72 -3.3) (end 3.720003 -3.300001) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
+        (fp_line (start 4.619999 -3) (end 4.62 3.4) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
+        (fp_arc (start -4.62 -3) (mid -4.278114 -3.474342) (end -3.72 -3.300001) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
         (fp_arc (start 3.720001 -3.300001) (mid 4.278114 -3.474341) (end 4.62 -3) (stroke (width 0.15) (type default)) (layer "Edge.Cuts") )
     `
     const user_drawing = `
