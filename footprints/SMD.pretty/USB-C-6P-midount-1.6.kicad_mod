@@ -1,9 +1,11 @@
-(footprint "USB-20C-F-6C16"
+(footprint "USB-C-6P-midount-1.6"
 	(version 20241229)
 	(generator "pcbnew")
 	(generator_version "9.0")
 	(layer "F.Cu")
-	(property "Reference" "REF**"
+	(descr "USB 3.1 1 Sinking plate 6P Female -25℃~+85℃ Type-C SMD ")
+	(tags "C399928, 918-418K2024S40006")
+	(property "Reference" "USB"
 		(at 0 -0.5 0)
 		(unlocked yes)
 		(layer "F.SilkS")
@@ -16,7 +18,7 @@
 			)
 		)
 	)
-	(property "Value" "USB-20C-F-6C16"
+	(property "Value" "USB-C-6P-midount-1.6"
 		(at 0 1 0)
 		(unlocked yes)
 		(layer "F.Fab")
@@ -28,7 +30,7 @@
 			)
 		)
 	)
-	(property "Datasheet" ""
+	(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8590165822238068736"
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
@@ -54,7 +56,7 @@
 	)
 	(fp_line
 		(start -4.62 3.4)
-		(end -4.62 -2.8)
+		(end -4.62 -3.000001)
 		(stroke
 			(width 0.15)
 			(type default)
@@ -63,8 +65,8 @@
 		(uuid "aa30129a-3c0c-43c6-85fb-42e5ce638950")
 	)
 	(fp_line
-		(start -3.686988 -3.1)
-		(end 3.68699 -3.100001)
+		(start -3.686988 -3.3)
+		(end 3.68699 -3.300001)
 		(stroke
 			(width 0.15)
 			(type default)
@@ -73,7 +75,7 @@
 		(uuid "c9a8cc9e-6d47-431b-80d6-b94d9d21cf98")
 	)
 	(fp_line
-		(start 4.62 -2.8)
+		(start 4.62 -3)
 		(end 4.62 3.4)
 		(stroke
 			(width 0.15)
@@ -83,9 +85,9 @@
 		(uuid "790dede5-a6b4-4fdc-8860-62396c0a066d")
 	)
 	(fp_arc
-		(start -4.62 -2.8)
-		(mid -4.278114 -3.274342)
-		(end -3.72 -3.1)
+		(start -4.62 -3)
+		(mid -4.278114 -3.474342)
+		(end -3.72 -3.3)
 		(stroke
 			(width 0.15)
 			(type default)
@@ -94,9 +96,9 @@
 		(uuid "fd1cf38e-2b4a-481f-bec0-b8c199e071da")
 	)
 	(fp_arc
-		(start 3.720001 -3.100001)
-		(mid 4.278114 -3.274341)
-		(end 4.62 -2.8)
+		(start 3.720001 -3.300001)
+		(mid 4.278114 -3.474341)
+		(end 4.62 -3)
 		(stroke
 			(width 0.15)
 			(type default)
@@ -105,7 +107,7 @@
 		(uuid "55d3f3b0-e0c7-4da5-94df-f1d1afc9de98")
 	)
 	(fp_rect
-		(start -4.62 -3.08)
+		(start -4.62 -3.28)
 		(end 4.62 3.4)
 		(stroke
 			(width 0.12)
@@ -116,51 +118,51 @@
 		(uuid "ed10c089-69ec-47d8-acc9-c9829df0fef3")
 	)
 	(pad "A5" smd roundrect
-		(at -0.5 -4.5)
-		(size 0.8 1.6)
+		(at -0.5 -4)
+		(size 0.8 1.4)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.25)
 		(uuid "2b87e2bd-cec0-43df-98ff-fcb38be69ec6")
 	)
 	(pad "A9" smd roundrect
-		(at 1.52 -4.5)
-		(size 0.8 1.6)
+		(at 1.52 -4)
+		(size 0.8 1.4)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.25)
 		(uuid "18cd8bcb-609f-4a0f-b10a-791602818c83")
 	)
 	(pad "A12" smd roundrect
-		(at 2.75 -4.5)
-		(size 0.9 1.6)
+		(at 2.75 -4)
+		(size 0.9 1.4)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.25)
 		(uuid "9bf34749-517a-4ad3-a173-7a358f81e83c")
 	)
 	(pad "B5" smd roundrect
-		(at 0.5 -4.5)
-		(size 0.8 1.6)
+		(at 0.5 -4)
+		(size 0.8 1.4)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.25)
 		(uuid "3f5c03f3-9a72-4766-9917-e94c5f8167de")
 	)
 	(pad "B9" smd roundrect
-		(at -1.52 -4.5)
-		(size 0.8 1.6)
+		(at -1.52 -4)
+		(size 0.8 1.4)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.25)
 		(uuid "92d06653-baab-40fb-b705-bcfc5fe3a37a")
 	)
 	(pad "B12" smd roundrect
-		(at -2.75 -4.5)
-		(size 0.9 1.6)
+		(at -2.75 -4)
+		(size 0.9 1.4)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.25)
 		(uuid "17d1f752-9acb-4107-8fdb-487c92438cc5")
 	)
 	(pad "S1" thru_hole oval
-		(at -5.575 -3)
+		(at -5.575 -2.8)
 		(size 1.3 2.3)
-		(drill oval 0.6 1.6)
+		(drill oval 0.5 1.3)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(uuid "4670774a-a29d-4a0c-8cd1-1d4da94fe92b")
@@ -168,15 +170,15 @@
 	(pad "S1" thru_hole oval
 		(at -5.575 0.8)
 		(size 1.3 2.5)
-		(drill oval 0.6 1.8)
+		(drill oval 0.5 1.7)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(uuid "78fc74b9-0264-4c26-a563-f929da598d31")
 	)
 	(pad "S1" thru_hole oval
-		(at 5.575 -3)
+		(at 5.575 -2.8)
 		(size 1.3 2.3)
-		(drill oval 0.6 1.6)
+		(drill oval 0.5 1.3)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(uuid "876af0bc-6fa5-4dce-9d42-79d5a6aee173")
@@ -184,7 +186,7 @@
 	(pad "S1" thru_hole oval
 		(at 5.575 0.8)
 		(size 1.3 2.5)
-		(drill oval 0.6 1.8)
+		(drill oval 0.5 1.7)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(uuid "2a6dc76d-1275-47c1-aabb-d819732c8985")
