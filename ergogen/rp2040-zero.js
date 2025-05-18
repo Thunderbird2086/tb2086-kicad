@@ -34,7 +34,7 @@ module.exports = {
 
     if (p.edgecut) {
         fp_name_tail += `_edgecut`
-        idx += 2
+        idx = 1
     }
 
     const standard_opening = `(
@@ -49,6 +49,7 @@ module.exports = {
     `
     const front_silkscreen = []
     front_silkscreen[0] = `
+        (property "Value" "RP2040-Zero" (at 0 -0.75 ${0 + p.rot}) (unlocked yes) (layer "F.SilkS") (hide yes)  (effects (font (size 1 1) (thickness 0.15))))
         (fp_line (start -8.000001 -11.950001) (end 8.000001 -11.950001) (stroke (width 0.15) (type default)) (layer "F.SilkS") )
         (fp_line (start -8.000001 11.950001) (end -6.2 11.95) (stroke (width 0.15) (type default)) (layer "F.SilkS") )
         (fp_line (start 8.000001 11.950001) (end 6.2 11.95) (stroke (width 0.15) (type default)) (layer "F.SilkS") )
@@ -57,9 +58,8 @@ module.exports = {
         (fp_arc (start 8.000001 -11.950001) (mid 8.665641 -11.748461) (end 9.107693 -11.211539) (stroke (width 0.15) (type default)) (layer "F.SilkS") )
         (fp_arc (start 9.107693 11.211539) (mid 8.665641 11.748461) (end 8.000001 11.950001) (stroke (width 0.15) (type default)) (layer "F.SilkS") )
     `
-    front_silkscreen[1] = ``
-    front_silkscreen[2] = ``
-    front_silkscreen[3] = `
+    front_silkscreen[1] = `
+        (property "Value" "RP2040-Zero_flip_edgecut_s" (at 0 -0.75 ${0 + p.rot}) (unlocked yes) (layer "F.SilkS") (hide yes)  (effects (font (size 1 1) (thickness 0.15))))
         (fp_line (start -8.000001 11.950001) (end -6.2 11.95) (stroke (width 0.15) (type default)) (layer "F.SilkS") )
         (fp_line (start -5.000001 -11.950001) (end -8.000001 -11.950001) (stroke (width 0.15) (type default)) (layer "F.SilkS") )
         (fp_line (start 8.000001 -11.950001) (end 5.000001 -11.950001) (stroke (width 0.15) (type default)) (layer "F.SilkS") )
@@ -96,9 +96,7 @@ module.exports = {
         (pad "22" smd roundrect (at 2.54 11.46 ${270 + p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.GP10})
         (pad "23" smd roundrect (at 5.08 11.46 ${270 + p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.GP09})
     `
-    front_pads[1] = []
-    front_pads[2] = []
-    front_pads[3] = `
+    front_pads[1] = `
         (pad "1" smd roundrect (at 8.92 -10.16 ${p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.v5v0})
         (pad "2" smd roundrect (at 8.92 -7.62 ${p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.GND})
         (pad "3" smd roundrect (at 8.92 -5.08 ${p.rot}) (size 3.5 1.8) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)  ${p.v3v3})
@@ -186,87 +184,11 @@ module.exports = {
         (pad "22" thru_hole circle (at -2.54 10.16 ${90 + p.rot}) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.GP10})
         (pad "23" thru_hole circle (at -5.08 10.16 ${90 + p.rot}) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.GP09})
     `
-    pads[2] = pads[0]
-    pads[3] = pads[1]
-
-    const back_silkscreen = []
-    back_silkscreen[0] = ``
-    back_silkscreen[1] = `
-        (fp_line (start -8.000001 11.950001) (end -6.2 11.95) (stroke (width 0.15) (type default)) (layer "B.SilkS") )
-        (fp_line (start 8.000001 -11.950001) (end -8.000001 -11.950001) (stroke (width 0.15) (type default)) (layer "B.SilkS") )
-        (fp_line (start 8.000001 11.950001) (end 6.2 11.95) (stroke (width 0.15) (type default)) (layer "B.SilkS") )
-        (fp_arc (start -9.107693 -11.211539) (mid -8.665641 -11.748461) (end -8.000001 -11.950001) (stroke (width 0.15) (type default)) (layer "B.SilkS") )
-        (fp_arc (start -8.000001 11.950001) (mid -8.665641 11.748461) (end -9.107693 11.211539) (stroke (width 0.15) (type default)) (layer "B.SilkS") )
-        (fp_arc (start 8.000001 -11.950001) (mid 8.665641 -11.748461) (end 9.107693 -11.211539) (stroke (width 0.15) (type default)) (layer "B.SilkS") )
-        (fp_arc (start 9.107693 11.211539) (mid 8.665641 11.748461) (end 8.000001 11.950001) (stroke (width 0.15) (type default)) (layer "B.SilkS") )
+    
+    const back_silkscreen = `
     `
-    back_silkscreen[2] = `
-        (fp_line (start -8.000001 11.950001) (end -6.2 11.95) (stroke (width 0.15) (type default)) (layer "B.SilkS") )
-        (fp_line (start -5 -11.95) (end -8 -11.95) (stroke (width 0.15) (type default)) (layer "B.SilkS") )
-        (fp_line (start 8.000001 -11.950001) (end 5.000001 -11.950001) (stroke (width 0.15) (type default)) (layer "B.SilkS") )
-        (fp_line (start 8.000001 11.950001) (end 6.2 11.95) (stroke (width 0.15) (type default)) (layer "B.SilkS") )
-        (fp_arc (start -9.107693 -11.211539) (mid -8.665641 -11.748461) (end -8.000001 -11.950001) (stroke (width 0.15) (type default)) (layer "B.SilkS") )
-        (fp_arc (start -8.000001 11.950001) (mid -8.665641 11.748461) (end -9.107693 11.211539) (stroke (width 0.15) (type default)) (layer "B.SilkS") )
-        (fp_arc (start 8.000001 -11.950001) (mid 8.665641 -11.748461) (end 9.107693 -11.211539) (stroke (width 0.15) (type default)) (layer "B.SilkS") )
-        (fp_arc (start 9.107693 11.211539) (mid 8.665641 11.748461) (end 8.000001 11.950001) (stroke (width 0.15) (type default)) (layer "B.SilkS") )
+    const back_pads = `
     `
-    back_silkscreen[3] = ``
-
-    const back_pads = []
-    back_pads[0] = ``
-    back_pads[1] = `
-        (pad "1" smd roundrect (at 8.92 -10.16 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.v5v0})
-        (pad "2" smd roundrect (at 8.92 -7.62 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GND})
-        (pad "3" smd roundrect (at 8.92 -5.08 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.v3v3})
-        (pad "4" smd roundrect (at 8.92 -2.54 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP29})
-        (pad "5" smd roundrect (at 8.92 0 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP28})
-        (pad "6" smd roundrect (at 8.92 2.54 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP27})
-        (pad "7" smd roundrect (at 8.92 5.08 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP26})
-        (pad "8" smd roundrect (at 8.92 7.62 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP15})
-        (pad "9" smd roundrect (at 8.92 10.16 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP14})
-        (pad "10" smd roundrect (at -8.92 -10.16 ${180 + p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP00})
-        (pad "11" smd roundrect (at -8.92 -7.62 ${180 + p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP01})
-        (pad "12" smd roundrect (at -8.92 -5.08 ${180 + p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP02})
-        (pad "13" smd roundrect (at -8.92 -2.54 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP03})
-        (pad "14" smd roundrect (at -8.92 0 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP04})
-        (pad "15" smd roundrect (at -8.92 2.54 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP05})
-        (pad "16" smd roundrect (at -8.92 5.08 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP06})
-        (pad "17" smd roundrect (at -8.92 7.62 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP07})
-        (pad "18" smd roundrect (at -8.92 10.16 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP08})
-        (pad "19" smd roundrect (at 5.08 11.46 ${90 + p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP13})
-        (pad "20" smd roundrect (at 2.54 11.46 ${90 + p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP12})
-        (pad "21" smd roundrect (at 0 11.46 ${90 + p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP11})
-        (pad "22" smd roundrect (at -2.54 11.46 ${90 + p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP10})
-        (pad "23" smd roundrect (at -5.08 11.46 ${90 + p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP09})
-    `
-    back_pads[2] = `
-        (pad "1" smd roundrect (at -8.92 -10.16 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.v5v0})
-        (pad "2" smd roundrect (at -8.92 -7.62 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GND})
-        (pad "3" smd roundrect (at -8.92 -5.08 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.v3v3})
-        (pad "4" smd roundrect (at -8.92 -2.54 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP29})
-        (pad "5" smd roundrect (at -8.92 0 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP28})
-        (pad "6" smd roundrect (at -8.92 2.54 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP27})
-        (pad "7" smd roundrect (at -8.92 5.08 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP26})
-        (pad "8" smd roundrect (at -8.92 7.62 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP15})
-        (pad "9" smd roundrect (at -8.92 10.16 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP14})
-        (pad "10" smd roundrect (at 8.92 -10.16 ${180 + p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP00})
-        (pad "11" smd roundrect (at 8.92 -7.62 ${180 + p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP01})
-        (pad "12" smd roundrect (at 8.92 -5.08 ${180 + p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP02})
-        (pad "13" smd roundrect (at 8.92 -2.54 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP03})
-        (pad "14" smd roundrect (at 8.92 0 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP04})
-        (pad "15" smd roundrect (at 8.92 2.54 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP05})
-        (pad "16" smd roundrect (at 8.92 5.08 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP06})
-        (pad "17" smd roundrect (at 8.92 7.62 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP07})
-        (pad "18" smd roundrect (at 8.92 10.16 ${p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP08})
-        (pad "19" smd roundrect (at -5.08 11.46 ${270 + p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP13})
-        (pad "20" smd roundrect (at -2.54 11.46 ${270 + p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP12})
-        (pad "21" smd roundrect (at 0 11.46 ${270 + p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP11})
-        (pad "22" smd roundrect (at 2.54 11.46 ${270 + p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP10})
-        (pad "23" smd roundrect (at 5.08 11.46 ${270 + p.rot}) (size 3.5 1.8) (layers "B.Cu" "B.Mask") (roundrect_rratio 0.25)  ${p.GP09})
-    `
-    back_pads[3] = ``
-
-
     const back_fabrication = `
     `
     const back_mask = `
@@ -287,8 +209,7 @@ module.exports = {
         (fp_arc (start 5.5 -11.75) (mid 6.207107 -11.457107) (end 6.5 -10.75) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
         (fp_arc (start 6.5 7.5) (mid 6.207107 8.207107) (end 5.5 8.5) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
     `
-    edge_cuts[1] = edge_cuts[0]
-    edge_cuts[2] = `
+    edge_cuts[1] = `
         (fp_line (start -6.5 7.5) (end -6.5 -8.75) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
         (fp_line (start -5.500232 -9.749946) (end -5.057768 -9.750053) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
         (fp_line (start -4.557768 -10.250053) (end -4.557768 -11.950053) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
@@ -305,7 +226,6 @@ module.exports = {
         (fp_arc (start 5.5 -9.75) (mid 6.207107 -9.457107) (end 6.5 -8.75) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
         (fp_arc (start 6.5 7.5) (mid 6.207107 8.207107) (end 5.5 8.5) (stroke (width 0.05) (type default)) (layer "Edge.Cuts") )
     `
-    edge_cuts[3] = edge_cuts[2]
 
 
     const user_drawing = `
@@ -327,8 +247,12 @@ module.exports = {
     const user_eco2 = `
     `
 
-    const model = `
-        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/RP2040-ZERO-WAVESHARE.step" (offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz -90 0 0))
+    const model = []
+    model[0] = `
+        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/RP2040-ZERO-WAVESHARE.step" (offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz -90 0 0)))
+    `
+    model[1] = `
+        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/RP2040-ZERO-WAVESHARE.step" (offset (xyz 0 0 1.1)) (scale (xyz 1 1 1)) (rotate (xyz -90 180 0)))
     `
     const standard_closing = `
             )
@@ -344,8 +268,8 @@ module.exports = {
     final += front_paste;
 
     final += pads[idx];
-    final += back_silkscreen[idx];
-    final += back_pads[idx];
+    final += back_silkscreen;
+    final += back_pads;
 
     final += back_fabrication;
     final += back_mask;
@@ -360,7 +284,7 @@ module.exports = {
     final += user_eco2;
 
     if (p.show_3d) {
-        final += model;
+        final += model[idx];
     }
 
     final += standard_closing;
