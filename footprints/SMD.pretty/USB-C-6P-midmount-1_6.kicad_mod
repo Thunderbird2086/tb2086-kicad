@@ -1,4 +1,4 @@
-(footprint "USB-C-6P-midount-1.6"
+(footprint "USB-C-6P-midmount-1.6mm"
 	(version 20241229)
 	(generator "pcbnew")
 	(generator_version "9.0")
@@ -18,7 +18,7 @@
 			)
 		)
 	)
-	(property "Value" "USB-C-6P-midount-1.6"
+	(property "Value" "USB-C-6P-midmount-1.6mm"
 		(at 0 1 0)
 		(unlocked yes)
 		(layer "F.Fab")
