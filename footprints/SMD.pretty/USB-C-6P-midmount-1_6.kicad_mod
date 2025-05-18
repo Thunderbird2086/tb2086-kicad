@@ -1,4 +1,4 @@
-(footprint "USB-C-6P-midmount-1.6mm"
+(footprint "USB-C-6P-midmount-1_6"
 	(version 20241229)
 	(generator "pcbnew")
 	(generator_version "9.0")
@@ -56,7 +56,7 @@
 	)
 	(fp_line
 		(start -4.62 3.4)
-		(end -4.62 -3.000001)
+		(end -4.619999 -3)
 		(stroke
 			(width 0.15)
 			(type default)
@@ -65,8 +65,8 @@
 		(uuid "aa30129a-3c0c-43c6-85fb-42e5ce638950")
 	)
 	(fp_line
-		(start -3.686988 -3.3)
-		(end 3.68699 -3.300001)
+		(start -3.72 -3.3)
+		(end 3.720003 -3.300001)
 		(stroke
 			(width 0.15)
 			(type default)
@@ -75,7 +75,7 @@
 		(uuid "c9a8cc9e-6d47-431b-80d6-b94d9d21cf98")
 	)
 	(fp_line
-		(start 4.62 -3)
+		(start 4.619999 -3)
 		(end 4.62 3.4)
 		(stroke
 			(width 0.15)
@@ -87,7 +87,7 @@
 	(fp_arc
 		(start -4.62 -3)
 		(mid -4.278114 -3.474342)
-		(end -3.72 -3.3)
+		(end -3.72 -3.300001)
 		(stroke
 			(width 0.15)
 			(type default)
