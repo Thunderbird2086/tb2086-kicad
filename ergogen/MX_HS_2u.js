@@ -1,7 +1,7 @@
 module.exports = {
   params: {
-    designator: 'B',    // change it accordingly
-    side: 'F',          // delete if not needed
+    designator: 'S',    // change it accordingly
+    side: 'B',          // delete if not needed
     reversible: false,  // delete if not needed
     show_3d: false,     // delete if not needed
     P1: {type: 'net', value: undefined}, // undefined}, // change to undefined as needed
