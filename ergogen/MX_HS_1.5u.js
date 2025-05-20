@@ -1,7 +1,7 @@
 module.exports = {
   params: {
     designator: 'S',    // change it accordingly
-    side: 'B',          // delete if not needed
+    side: 'F',          // delete if not needed
     reversible: false,  // delete if not needed
     show_3d: false,     // delete if not needed
     P2: {type: 'net', value: undefined}, // change to undefined as needed
@@ -19,7 +19,7 @@ module.exports = {
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")
-        (layer "F.Cu")
+        (layer "${p.side}.Cu")
         (descr "Footprint for Cherry MX style switches with Kailh hotswap socket")
         (property "Reference" "${p.ref}" (at -4.4196 1.778 ${0 + p.rot}) (layer "${p.side}.SilkS") ${p.ref_hide} (effects (font (size 1 1) (thickness 0.15))))
         (attr smd)
@@ -96,6 +96,7 @@ module.exports = {
         (pad "2" thru_hole circle (at -3.81 -2.54 ${p.rot}) (size 3.3 3.3) (drill 3) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P2})
     `
     const back_fabrication = `
+        (fp_text user "${p.ref}" (at 4.3688 1.778 ${0 + p.rot}) (layer "B.Fab")  (effects (font (size 1 1) (thickness 0.15)) (justify mirror)))
     `
     const back_mask = `
     `
