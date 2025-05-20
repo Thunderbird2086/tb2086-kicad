@@ -1,7 +1,7 @@
 module.exports = {
   params: {
     designator: 'S',    // change it accordingly
-    side: 'B',          // delete if not needed
+    side: 'F',          // delete if not needed
     reversible: false,  // delete if not needed
     show_3d: false,     // delete if not needed
     P2: {type: 'net', value: undefined}, // change to undefined as needed
@@ -19,7 +19,7 @@ module.exports = {
         (version 20240108)
         (generator "pcbnew")
         (generator_version "8.0")
-        (layer "F.Cu")
+        (layer "${p.side}.Cu")
         (descr "Footprint for Cherry MX style switches with Kailh hotswap socket")
         (property "Reference" "${p.ref}" (at -4.2672 1.8288 ${0 + p.rot}) (layer "${p.side}.SilkS") ${p.ref_hide} (effects (font (size 1 1) (thickness 0.15))))
         (attr smd)

@@ -1,7 +1,7 @@
 module.exports = {
   params: {
     designator: 'S',    // change it accordingly
-    side: 'B',          // delete if not needed
+    side: 'F',          // delete if not needed
     reversible: false,  // delete if not needed
     show_3d: false,     // delete if not needed
     P1: {type: 'net', value: undefined}, // undefined}, // change to undefined as needed
@@ -60,6 +60,7 @@ module.exports = {
         (pad "2" smd roundrect (at -6.484824 -2.52978 ${p.rot}) (size 4.2 2.5) (layers "B.Cu" "B.Mask" "B.Paste") (roundrect_rratio 0.1)  ${p.P2})
     `
     const back_fabrication = `
+        (fp_text user "${p.ref}" (at 4.3688 1.778 ${0 + p.rot}) (layer "B.Fab")  (effects (font (size 1 1) (thickness 0.15)) (justify mirror)))
     `
     const back_mask = `
     `
@@ -115,7 +116,7 @@ module.exports = {
     `
     const model = `
         (model "\${KIPRJMOD}/tb2086-kicad/packages3D/Hot Swap/mx.step" (offset (xyz -3.81 2.45 -3.5)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
-        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/Keycaps/DSA_1u.step" (offset (xyz 0 0 12)) (scale (xyz 1 1 1)) (rotate (xyz -90 0 0)))
+        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/Keycaps/DSA_1.75u.step" (offset (xyz 0 0 12)) (scale (xyz 1 1 1)) (rotate (xyz -90 0 0)))
         (model "\${KIPRJMOD}/tb2086-kicad/packages3D/Key Switch/MX .STEP" (offset (xyz -7.35 -7.35 6)) (scale (xyz 1 1 1)) (rotate (xyz -90 0 0)))
     `
     const standard_closing = `
