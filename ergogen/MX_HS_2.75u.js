@@ -117,7 +117,7 @@ module.exports = {
     const model = `
         (model "\${KIPRJMOD}/tb2086-kicad/packages3D/Hot Swap/mx.step" (offset (xyz -3.81 2.45 -3.5)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
         (model "\${KIPRJMOD}/tb2086-kicad/packages3D/Keycaps/DSA_2.75u.step" (offset (xyz 0 0 12)) (scale (xyz 1 1 1)) (rotate (xyz -90 0 0)))
-        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/Key Switch/MX .STEP" (offset (xyz -7.35 -7.35 6)) (scale (xyz 1 1 1)) (rotate (xyz -90 0 0)))
+        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/Key Switch/Cherry-MX-silent_alpaca.step" (offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
     `
     const standard_closing = `
             )
