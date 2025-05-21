@@ -611,15 +611,15 @@
 			(xyz -90 0 0)
 		)
 	)
-	(model "${KIPRJMOD}/tb2086-kicad/packages3D/Key Switch/MX .STEP"
+	(model "${KIPRJMOD}/tb2086-kicad/packages3D/Key Switch/Cherry-MX-silent_alpaca.step"
 		(offset
-			(xyz -7.35 -7.35 6)
+			(xyz 0 0 0)
 		)
 		(scale
 			(xyz 1 1 1)
 		)
 		(rotate
-			(xyz -90 0 0)
+			(xyz 0 0 0)
 		)
 	)
 )
