@@ -1,7 +1,7 @@
 (footprint "SW_MX_HS_1u"
-	(version 20240108)
+	(version 20241229)
 	(generator "pcbnew")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(layer "F.Cu")
 	(descr "Footprint for Cherry MX style switches with Kailh hotswap socket")
 	(property "Reference" "REF**"
@@ -23,18 +23,6 @@
 		(effects
 			(font
 				(size 1 1)
-				(thickness 0.15)
-			)
-		)
-	)
-	(property "Footprint" ""
-		(at 0 0 0)
-		(layer "F.Fab")
-		(hide yes)
-		(uuid "228d5fc9-f360-499e-b966-e75635df0fce")
-		(effects
-			(font
-				(size 1.27 1.27)
 				(thickness 0.15)
 			)
 		)
@@ -214,7 +202,7 @@
 			(width 0.12)
 			(type default)
 		)
-		(fill none)
+		(fill no)
 		(layer "Cmts.User")
 		(uuid "adfacccf-739b-43fe-a218-a1576fa6f3af")
 	)
@@ -526,16 +514,6 @@
 		(layer "B.CrtYd")
 		(uuid "0512bc39-7278-4055-8976-6579dd8e8c22")
 	)
-	(fp_line
-		(start -4.864824 -3.87022)
-		(end -4.864824 -2.70022)
-		(stroke
-			(width 0.05)
-			(type solid)
-		)
-		(layer "F.CrtYd")
-		(uuid "6cc7ba43-ff35-4c10-923b-491474f9b58f")
-	)
 	(fp_text user "LED"
 		(at -1.27 5.6896 0)
 		(unlocked yes)
@@ -581,14 +559,14 @@
 	(pad "1" smd roundrect
 		(at 5.315176 -5.06978)
 		(size 4.2 2.5)
-		(layers "B.Cu" "B.Paste" "B.Mask")
+		(layers "B.Cu" "B.Mask" "B.Paste")
 		(roundrect_rratio 0.1)
 		(uuid "1cffe02a-95b3-462c-924b-fe525044de00")
 	)
 	(pad "2" smd roundrect
 		(at -6.484824 -2.52978)
 		(size 4.2 2.5)
-		(layers "B.Cu" "B.Paste" "B.Mask")
+		(layers "B.Cu" "B.Mask" "B.Paste")
 		(roundrect_rratio 0.1)
 		(uuid "e9dc95fc-cae4-4923-a789-5bba6ca5811e")
 	)
@@ -600,6 +578,7 @@
 		(remove_unused_layers no)
 		(uuid "a25d5e04-cf8b-4d96-84eb-d6c6993c0eeb")
 	)
+	(embedded_fonts no)
 	(model "${KIPRJMOD}/tb2086-kicad/packages3D/Hot Swap/mx.step"
 		(offset
 			(xyz -3.81 2.45 -3.5)

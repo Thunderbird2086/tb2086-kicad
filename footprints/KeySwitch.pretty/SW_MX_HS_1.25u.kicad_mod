@@ -514,16 +514,6 @@
 		(layer "B.CrtYd")
 		(uuid "0512bc39-7278-4055-8976-6579dd8e8c22")
 	)
-	(fp_line
-		(start -4.864824 -3.87022)
-		(end -4.864824 -2.70022)
-		(stroke
-			(width 0.05)
-			(type solid)
-		)
-		(layer "F.CrtYd")
-		(uuid "6cc7ba43-ff35-4c10-923b-491474f9b58f")
-	)
 	(fp_text user "LED"
 		(at -1.27 5.6896 0)
 		(unlocked yes)
