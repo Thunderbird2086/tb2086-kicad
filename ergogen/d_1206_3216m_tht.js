@@ -72,8 +72,8 @@ module.exports = {
     const back_pads = `
         (fp_line (start -1.775 0) (end -3.81 0) (stroke (width 0.2) (type default)) (layer "B.Cu") )
         (fp_line (start 1.775 0) (end 3.81 0) (stroke (width 0.2) (type default)) (layer "B.Cu") )
-        (pad "1" smd rect (at -1.775 0 ${p.rot}) (size 1.3 0.95) (layers "B.Cu" "F.Mask" "B.Paste")  ${p.to})
-        (pad "2" smd rect (at 1.775 0 ${p.rot}) (size 1.3 0.95) (layers "B.Cu" "F.Mask" "B.Paste")  ${p.from})
+        (pad "1" smd rect (at -1.775 0 ${p.rot}) (size 1.3 0.95) (layers "B.Cu" "B.Mask" "B.Paste")  ${p.to})
+        (pad "2" smd rect (at 1.775 0 ${p.rot}) (size 1.3 0.95) (layers "B.Cu" "B.Mask" "B.Paste")  ${p.from})
     `
     const back_fabrication = `
     `
