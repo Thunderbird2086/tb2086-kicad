@@ -32,7 +32,6 @@ module.exports = {
     const front_mask = `
     `
     const front_courtyard = `
-        (fp_line (start -4.864824 -3.87022) (end -4.864824 -2.70022) (stroke (width 0.05) (type solid)) (layer "F.CrtYd") )
     `
     const front_paste = `
     `
@@ -60,7 +59,6 @@ module.exports = {
         (pad "2" smd roundrect (at -6.484824 -2.52978 ${p.rot}) (size 4.2 2.5) (layers "B.Cu" "B.Mask" "B.Paste") (roundrect_rratio 0.1)  ${p.P2})
     `
     const back_fabrication = `
-        (fp_text user "${p.ref}" (at 4.3688 1.778 ${0 + p.rot}) (layer "B.Fab")  (effects (font (size 1 1) (thickness 0.15)) (justify mirror)))
     `
     const back_mask = `
     `

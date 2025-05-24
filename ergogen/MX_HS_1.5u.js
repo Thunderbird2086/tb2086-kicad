@@ -162,7 +162,7 @@ module.exports = {
 
     let final = standard_opening;
 
-    if (p.reversible || p.side == "F") {
+    if (p.reversible) {
         final += front_silkscreen;
         final += front_pads;
         final += front_fabrication;
@@ -173,14 +173,12 @@ module.exports = {
 
     final += pads;
 
-    if (p.reversible || p.side == "B") {
-        final += back_silkscreen;
-        final += back_pads;
-        final += back_fabrication;
-        final += back_mask;
-        final += back_courtyard;
-        final += back_paste;
-    }
+    final += back_silkscreen;
+    final += back_pads;
+    final += back_fabrication;
+    final += back_mask;
+    final += back_courtyard;
+    final += back_paste;
 
     final += edge_cuts;
     final += user_drawing;
