@@ -4,13 +4,11 @@ module.exports = {
     side: 'F',          // delete if not needed
     reversible: false,  // delete if not needed
     show_3d: false,     // delete if not needed
-    B9: {type: 'net', value: 'B9'}, // undefined}, // change to undefined as needed
-    A5: {type: 'net', value: 'A5'}, // undefined}, // change to undefined as needed
-    B12: {type: 'net', value: 'B12'}, // undefined}, // change to undefined as needed
+    CC1: {type: 'net', value: 'CC1'}, // undefined}, // change to undefined as needed
     S1: {type: 'net', value: 'S1'}, // undefined}, // change to undefined as needed
-    B5: {type: 'net', value: 'B5'}, // undefined}, // change to undefined as needed
-    A9: {type: 'net', value: 'A9'}, // undefined}, // change to undefined as needed
-    A12: {type: 'net', value: 'A12'}, // undefined}, // change to undefined as needed
+    CC2: {type: 'net', value: 'CC2'}, // undefined}, // change to undefined as needed
+    VCC: {type: 'net', value: 'VCC'}, // undefined}, // change to undefined as needed
+    GND: {type: 'net', value: 'GND'}, // undefined}, // change to undefined as needed
   },
   body: p => {
     let fp_name="TB2086_SMD:USB-C-6P-midmount-1.6mm"
@@ -29,12 +27,12 @@ module.exports = {
     const front_silkscreen = `
     `
     const front_pads = `
-        (pad "A5" smd roundrect (at -0.5 -4 ${p.rot}) (size 0.8 1.4) (layers "F.Cu" "F.Mask" "F.Paste") (roundrect_rratio 0.25)  ${p.A5})
-        (pad "A9" smd roundrect (at 1.52 -4 ${p.rot}) (size 0.8 1.4) (layers "F.Cu" "F.Mask" "F.Paste") (roundrect_rratio 0.25)  ${p.A9})
-        (pad "A12" smd roundrect (at 2.75 -4 ${p.rot}) (size 0.9 1.4) (layers "F.Cu" "F.Mask" "F.Paste") (roundrect_rratio 0.25)  ${p.A12})
-        (pad "B5" smd roundrect (at 0.5 -4 ${p.rot}) (size 0.8 1.4) (layers "F.Cu" "F.Mask" "F.Paste") (roundrect_rratio 0.25)  ${p.B5})
-        (pad "B9" smd roundrect (at -1.52 -4 ${p.rot}) (size 0.8 1.4) (layers "F.Cu" "F.Mask" "F.Paste") (roundrect_rratio 0.25)  ${p.B9})
-        (pad "B12" smd roundrect (at -2.75 -4 ${p.rot}) (size 0.9 1.4) (layers "F.Cu" "F.Mask" "F.Paste") (roundrect_rratio 0.25)  ${p.B12})
+        (pad "A5" smd roundrect (at -0.5 -4 ${p.rot}) (size 0.8 1.4) (layers "F.Cu" "F.Mask" "F.Paste") (roundrect_rratio 0.25)  ${p.CC1})
+        (pad "A9" smd roundrect (at 1.52 -4 ${p.rot}) (size 0.8 1.4) (layers "F.Cu" "F.Mask" "F.Paste") (roundrect_rratio 0.25)  ${p.VCC})
+        (pad "A12" smd roundrect (at 2.75 -4 ${p.rot}) (size 0.9 1.4) (layers "F.Cu" "F.Mask" "F.Paste") (roundrect_rratio 0.25)  ${p.GND})
+        (pad "B5" smd roundrect (at 0.5 -4 ${p.rot}) (size 0.8 1.4) (layers "F.Cu" "F.Mask" "F.Paste") (roundrect_rratio 0.25)  ${p.CC2})
+        (pad "B9" smd roundrect (at -1.52 -4 ${p.rot}) (size 0.8 1.4) (layers "F.Cu" "F.Mask" "F.Paste") (roundrect_rratio 0.25)  ${p.VCC})
+        (pad "B12" smd roundrect (at -2.75 -4 ${p.rot}) (size 0.9 1.4) (layers "F.Cu" "F.Mask" "F.Paste") (roundrect_rratio 0.25)  ${p.GND})
     `
     const front_fabrication = `
         (property "Value" "${fp_name}" (at 0 1 ${0 + p.rot}) (unlocked yes) (layer "F.Fab")  (effects (font (size 1 1) (thickness 0.15))))
