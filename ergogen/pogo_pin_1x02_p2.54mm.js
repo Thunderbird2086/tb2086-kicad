@@ -1,6 +1,6 @@
 module.exports = {
   params: {
-    designator: 'J',    // change it accordingly
+    designator: 'POGO',    // change it accordingly
     side: 'F',          // delete if not needed
     P2: {type: 'net', value: 'P2'}, // undefined}, // change to undefined as needed
     P1: {type: 'net', value: 'P1'}, // undefined}, // change to undefined as needed
