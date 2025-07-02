@@ -2,6 +2,7 @@ module.exports = {
   params: {
     designator: 'H',    // change it accordingly
     side: 'F',          // delete if not needed
+    P1: {type: 'net', value: 'P1'}, // undefined}, // change to undefined as needed
   },
   body: p => {
     const standard_opening = `(
@@ -35,7 +36,7 @@ module.exports = {
     const front_paste = `
     `
     const pads = `
-        (pad "" thru_hole circle (at 0 0 ${p.rot}) (size 3.5 3.5) (drill 3.2) (layers "*.Cu" "*.Mask") (remove_unused_layers no) )
+        (pad "1" thru_hole circle (at 0 0 ${p.rot}) (size 3.5 3.5) (drill 3.2) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P1})
     `
     const back_silkscreen = `
     `
