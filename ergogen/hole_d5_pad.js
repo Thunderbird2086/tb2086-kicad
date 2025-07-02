@@ -1,6 +1,7 @@
 module.exports = {
   params: {
     designator: 'H',    // change it accordingly
+    side: 'F',          // delete if not needed
     P1: {type: 'net', value: 'P1'}, // undefined}, // change to undefined as needed
   },
   body: p => {
