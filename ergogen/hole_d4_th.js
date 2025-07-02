@@ -1,6 +1,7 @@
 module.exports = {
   params: {
     designator: 'H',    // change it accordingly
+    side: 'F',          // delete if not needed
   },
   body: p => {
     const standard_opening = `(
