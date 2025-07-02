@@ -93,6 +93,7 @@
 		(drill 3.2)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
+		(zone_connect 2)
 		(uuid "fa055336-61f5-479c-bf43-b9204a2cfbf2")
 	)
 	(embedded_fonts no)

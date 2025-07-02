@@ -36,7 +36,7 @@ module.exports = {
     const front_paste = `
     `
     const pads = `
-        (pad "1" thru_hole circle (at 0 0 ${p.rot}) (size 3.5 3.5) (drill 3.2) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P1})
+        (pad "1" thru_hole circle (at 0 0 ${p.rot}) (size 3.5 3.5) (drill 3.2) (layers "*.Cu" "*.Mask") (remove_unused_layers no) (zone_connect 2)  ${p.P1})
     `
     const back_silkscreen = `
     `
