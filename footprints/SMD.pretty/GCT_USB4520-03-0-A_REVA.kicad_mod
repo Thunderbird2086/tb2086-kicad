@@ -556,19 +556,19 @@
 			)
 		)
 	)
-	(pad "A1_B12" smd rect
+	(pad "A1" smd rect
 		(at -3.2 -5.15)
 		(size 0.6 1.1)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(solder_mask_margin 0.102)
-		(uuid "bdba4924-39a0-4f60-a7bf-b41aa0726ae3")
+		(uuid "bb1da7e7-ccfb-40f5-aba0-ac318ae165a0")
 	)
-	(pad "A4_B9" smd rect
+	(pad "A4" smd rect
 		(at -2.4 -5.15)
 		(size 0.6 1.1)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(solder_mask_margin 0.102)
-		(uuid "0e829aa6-182e-4f43-b233-54fe3b7210c7")
+		(uuid "86f664f0-4c58-4c01-b222-36264497f42b")
 	)
 	(pad "A5" smd rect
 		(at -1.25 -5.15)
@@ -598,19 +598,33 @@
 		(solder_mask_margin 0.102)
 		(uuid "37677952-38ae-4f53-834c-6fea63f6871d")
 	)
-	(pad "B1_A12" smd rect
+	(pad "A9" smd rect
+		(at 2.4 -5.15)
+		(size 0.6 1.1)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0.102)
+		(uuid "8e7f37f8-ec3a-4c1f-aeb0-c2126943a31a")
+	)
+	(pad "A12" smd rect
+		(at 3.2 -5.15)
+		(size 0.6 1.1)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0.102)
+		(uuid "747a148f-76ea-40b4-83b2-b0b5b487092b")
+	)
+	(pad "B1" smd rect
 		(at 3.2 -5.15)
 		(size 0.6 1.1)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(solder_mask_margin 0.102)
 		(uuid "3d8d0515-83dd-462e-9654-e0bb0aa0dd20")
 	)
-	(pad "B4_A9" smd rect
+	(pad "B4" smd rect
 		(at 2.4 -5.15)
 		(size 0.6 1.1)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(solder_mask_margin 0.102)
-		(uuid "8e7f37f8-ec3a-4c1f-aeb0-c2126943a31a")
+		(uuid "c27647c2-1b53-460d-8090-783c203f2b96")
 	)
 	(pad "B5" smd rect
 		(at 1.75 -5.15)
@@ -639,6 +653,20 @@
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(solder_mask_margin 0.102)
 		(uuid "2148953d-a908-42f9-8449-65d4bc27affd")
+	)
+	(pad "B9" smd rect
+		(at -2.4 -5.15)
+		(size 0.6 1.1)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0.102)
+		(uuid "0e829aa6-182e-4f43-b233-54fe3b7210c7")
+	)
+	(pad "B12" smd rect
+		(at -3.2 -5.15)
+		(size 0.6 1.1)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0.102)
+		(uuid "bdba4924-39a0-4f60-a7bf-b41aa0726ae3")
 	)
 	(pad "S1" thru_hole custom
 		(at -5.62 0)
