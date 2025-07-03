@@ -4,26 +4,30 @@ module.exports = {
     side: 'F',          // delete if not needed
     reversible: false,  // delete if not needed
     show_3d: false,     // delete if not needed
-    B8: {type: 'net', value: 'B8'}, // undefined}, // change to undefined as needed
-    B7: {type: 'net', value: 'B7'}, // undefined}, // change to undefined as needed
-    S2: {type: 'net', value: 'S2'}, // undefined}, // change to undefined as needed
-    A7: {type: 'net', value: 'A7'}, // undefined}, // change to undefined as needed
-    B1_A12: {type: 'net', value: 'B1_A12'}, // undefined}, // change to undefined as needed
-    S3: {type: 'net', value: 'S3'}, // undefined}, // change to undefined as needed
-    B4_A9: {type: 'net', value: 'B4_A9'}, // undefined}, // change to undefined as needed
-    A4_B9: {type: 'net', value: 'A4_B9'}, // undefined}, // change to undefined as needed
     A8: {type: 'net', value: 'A8'}, // undefined}, // change to undefined as needed
-    S1: {type: 'net', value: 'S1'}, // undefined}, // change to undefined as needed
-    A6: {type: 'net', value: 'A6'}, // undefined}, // change to undefined as needed
-    A1_B12: {type: 'net', value: 'A1_B12'}, // undefined}, // change to undefined as needed
     B5: {type: 'net', value: 'B5'}, // undefined}, // change to undefined as needed
+    B4: {type: 'net', value: 'B4'}, // undefined}, // change to undefined as needed
+    B9: {type: 'net', value: 'B9'}, // undefined}, // change to undefined as needed
+    S2: {type: 'net', value: 'S2'}, // undefined}, // change to undefined as needed
+    A5: {type: 'net', value: 'A5'}, // undefined}, // change to undefined as needed
+    A7: {type: 'net', value: 'A7'}, // undefined}, // change to undefined as needed
     S4: {type: 'net', value: 'S4'}, // undefined}, // change to undefined as needed
     B6: {type: 'net', value: 'B6'}, // undefined}, // change to undefined as needed
-    A5: {type: 'net', value: 'A5'}, // undefined}, // change to undefined as needed
+    B7: {type: 'net', value: 'B7'}, // undefined}, // change to undefined as needed
+    B8: {type: 'net', value: 'B8'}, // undefined}, // change to undefined as needed
+    A6: {type: 'net', value: 'A6'}, // undefined}, // change to undefined as needed
+    A4: {type: 'net', value: 'A4'}, // undefined}, // change to undefined as needed
+    A1: {type: 'net', value: 'A1'}, // undefined}, // change to undefined as needed
+    S3: {type: 'net', value: 'S3'}, // undefined}, // change to undefined as needed
+    B1: {type: 'net', value: 'B1'}, // undefined}, // change to undefined as needed
+    A12: {type: 'net', value: 'A12'}, // undefined}, // change to undefined as needed
+    B12: {type: 'net', value: 'B12'}, // undefined}, // change to undefined as needed
+    A9: {type: 'net', value: 'A9'}, // undefined}, // change to undefined as needed
+    S1: {type: 'net', value: 'S1'}, // undefined}, // change to undefined as needed
   },
   body: p => {
     const standard_opening = `(
-         footprint "TB2086_SMD:GCT_USB4520-03-0-A_REVA"
+         footprint "GCT_USB4520-03-0-A_REVA"
         (version 20241229)
         (generator "pcbnew")
         (generator_version "9.0")
@@ -38,18 +42,22 @@ module.exports = {
         (fp_circle (center -3.27 -6.35) (end -3.17 -6.35) (stroke (width 0.2) (type solid)) (fill no) (layer "F.SilkS") )
     `
     const front_pads = `
-        (pad "A1_B12" smd rect (at -3.2 -5.15 ${p.rot}) (size 0.6 1.1) (layers "F.Cu" "F.Mask" "F.Paste") (solder_mask_margin 0.102)  ${p.A1_B12})
-        (pad "A4_B9" smd rect (at -2.4 -5.15 ${p.rot}) (size 0.6 1.1) (layers "F.Cu" "F.Mask" "F.Paste") (solder_mask_margin 0.102)  ${p.A4_B9})
+        (pad "A1" smd rect (at -3.2 -5.15 ${p.rot}) (size 0.6 1.1) (layers "F.Cu" "F.Mask" "F.Paste") (solder_mask_margin 0.102)  ${p.A1})
+        (pad "A4" smd rect (at -2.4 -5.15 ${p.rot}) (size 0.6 1.1) (layers "F.Cu" "F.Mask" "F.Paste") (solder_mask_margin 0.102)  ${p.A4})
         (pad "A5" smd rect (at -1.25 -5.15 ${p.rot}) (size 0.3 1.1) (layers "F.Cu" "F.Mask" "F.Paste") (solder_mask_margin 0.102)  ${p.A5})
         (pad "A6" smd rect (at -0.25 -5.15 ${p.rot}) (size 0.3 1.1) (layers "F.Cu" "F.Mask" "F.Paste") (solder_mask_margin 0.102)  ${p.A6})
         (pad "A7" smd rect (at 0.25 -5.15 ${p.rot}) (size 0.3 1.1) (layers "F.Cu" "F.Mask" "F.Paste") (solder_mask_margin 0.102)  ${p.A7})
         (pad "A8" smd rect (at 1.25 -5.15 ${p.rot}) (size 0.3 1.1) (layers "F.Cu" "F.Mask" "F.Paste") (solder_mask_margin 0.102)  ${p.A8})
-        (pad "B1_A12" smd rect (at 3.2 -5.15 ${p.rot}) (size 0.6 1.1) (layers "F.Cu" "F.Mask" "F.Paste") (solder_mask_margin 0.102)  ${p.B1_A12})
-        (pad "B4_A9" smd rect (at 2.4 -5.15 ${p.rot}) (size 0.6 1.1) (layers "F.Cu" "F.Mask" "F.Paste") (solder_mask_margin 0.102)  ${p.B4_A9})
+        (pad "A9" smd rect (at 2.4 -5.15 ${p.rot}) (size 0.6 1.1) (layers "F.Cu" "F.Mask" "F.Paste") (solder_mask_margin 0.102)  ${p.A9})
+        (pad "A12" smd rect (at 3.2 -5.15 ${p.rot}) (size 0.6 1.1) (layers "F.Cu" "F.Mask" "F.Paste") (solder_mask_margin 0.102)  ${p.A12})
+        (pad "B1" smd rect (at 3.2 -5.15 ${p.rot}) (size 0.6 1.1) (layers "F.Cu" "F.Mask" "F.Paste") (solder_mask_margin 0.102)  ${p.B1})
+        (pad "B4" smd rect (at 2.4 -5.15 ${p.rot}) (size 0.6 1.1) (layers "F.Cu" "F.Mask" "F.Paste") (solder_mask_margin 0.102)  ${p.B4})
         (pad "B5" smd rect (at 1.75 -5.15 ${p.rot}) (size 0.3 1.1) (layers "F.Cu" "F.Mask" "F.Paste") (solder_mask_margin 0.102)  ${p.B5})
         (pad "B6" smd rect (at 0.75 -5.15 ${p.rot}) (size 0.3 1.1) (layers "F.Cu" "F.Mask" "F.Paste") (solder_mask_margin 0.102)  ${p.B6})
         (pad "B7" smd rect (at -0.75 -5.15 ${p.rot}) (size 0.3 1.1) (layers "F.Cu" "F.Mask" "F.Paste") (solder_mask_margin 0.102)  ${p.B7})
         (pad "B8" smd rect (at -1.75 -5.15 ${p.rot}) (size 0.3 1.1) (layers "F.Cu" "F.Mask" "F.Paste") (solder_mask_margin 0.102)  ${p.B8})
+        (pad "B9" smd rect (at -2.4 -5.15 ${p.rot}) (size 0.6 1.1) (layers "F.Cu" "F.Mask" "F.Paste") (solder_mask_margin 0.102)  ${p.B9})
+        (pad "B12" smd rect (at -3.2 -5.15 ${p.rot}) (size 0.6 1.1) (layers "F.Cu" "F.Mask" "F.Paste") (solder_mask_margin 0.102)  ${p.B12})
     `
     const front_fabrication = `
         (property "Value" "GCT_USB4520-03-0-A_REVA" (at 9.155 -7.385 ${0 + p.rot}) (layer "F.Fab")  (effects (font (size 1 1) (thickness 0.15))))
@@ -121,7 +129,7 @@ module.exports = {
     const user_eco2 = `
     `
     const model = `
-        (model "\${TB2086_3DMODEL}/USB4520-03-0-A_REVA.step" (offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz -90 -0 -0)))
+        (model "\${KIPRJMOD}/tb2086-kicad/packages3D/USB4520-03-0-A_REVA.step" (offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz -90 -0 -0)))
     `
     const standard_closing = `
             )
