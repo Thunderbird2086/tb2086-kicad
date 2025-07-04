@@ -40,8 +40,7 @@ module.exports = {
     `
     const front_paste = `
     `
-    const pads = `
-        (pad "1" thru_hole circle (at -7.62 0 ${p.rot}) (size 2.1 2.1) (drill 0.9) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P1})
+    const pads_front = `
         (pad "1" thru_hole circle (at -7.62 0 ${p.rot}) (size 2.1 2.1) (drill 0.9) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P1})
         (pad "2" thru_hole circle (at -5.08 0 ${p.rot}) (size 2.1 2.1) (drill 0.9) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P2})
         (pad "3" thru_hole circle (at -2.54 0 ${p.rot}) (size 2.1 2.1) (drill 0.9) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P3})
@@ -49,6 +48,15 @@ module.exports = {
         (pad "5" thru_hole circle (at 2.54 0 ${p.rot}) (size 2.1 2.1) (drill 0.9) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P5})
         (pad "6" thru_hole circle (at 5.08 0 ${p.rot}) (size 2.1 2.1) (drill 0.9) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P6})
         (pad "7" thru_hole circle (at 7.62 0 ${p.rot}) (size 2.1 2.1) (drill 0.9) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P7})
+    `
+    const pads_back = `
+        (pad "7" thru_hole circle (at -7.62 0 ${p.rot}) (size 2.1 2.1) (drill 0.9) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P7})
+        (pad "6" thru_hole circle (at -5.08 0 ${p.rot}) (size 2.1 2.1) (drill 0.9) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P6})
+        (pad "5" thru_hole circle (at -2.54 0 ${p.rot}) (size 2.1 2.1) (drill 0.9) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P5})
+        (pad "4" thru_hole circle (at 0 0 ${p.rot}) (size 2.1 2.1) (drill 0.9) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P4})
+        (pad "3" thru_hole circle (at 2.54 0 ${p.rot}) (size 2.1 2.1) (drill 0.9) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P3})
+        (pad "2" thru_hole circle (at 5.08 0 ${p.rot}) (size 2.1 2.1) (drill 0.9) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P2})
+        (pad "1" thru_hole circle (at 7.62 0 ${p.rot}) (size 2.1 2.1) (drill 0.9) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P1})
     `
     const back_silkscreen = `
     `
@@ -87,7 +95,11 @@ module.exports = {
     final += front_mask;
     final += front_courtyard;
     final += front_paste;
-    final += pads;
+    if (p.side == "F") {
+        final += pads_front;
+    } else if (p.side == "B") {
+        final += pads_back;
+    } 
     final += back_silkscreen;
     final += back_pads;
     final += back_fabrication;

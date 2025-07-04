@@ -16,13 +16,14 @@ module.exports = {
 
     const standard_opening = `(
          footprint "${fp_name}"
-        (version 20240108)
+        (version 20241229)
         (generator "pcbnew")
-        (generator_version "8.0")
+        (generator_version "9.0")
         (layer "${p.side}.Cu")
         (tags "solder jumper open")
-        (property "Reference" "${p.ref}" (at 0 -1.8 ${0 + p.rot}) (layer "${p.side}.SilkS") ${p.ref_hide} (effects (font (size 1 1) (thickness 0.15))))
+        (property "Reference" "${p.ref}" (at 0 -1.8 ${0 + p.rot}) (layer "${p.side}.SilkS") ${p.ref_hide}  (effects (font (size 1 1) (thickness 0.15))))
         (attr exclude_from_pos_files exclude_from_bom)
+        (embedded_fonts no)
         ${p.at /* parametric position */}
     `
     const front_silkscreen = `
@@ -44,8 +45,7 @@ module.exports = {
         (pad "3" smd custom (at 1.3 0 ${p.rot}) (size 1 0.5) (layers "F.Cu" "F.Mask") (zone_connect 2) (thermal_bridge_angle 45) (options (clearance outline) (anchor rect)) (primitives (gr_circle (center 0 0.25) (end 0.5 0.25) (width 0) (fill yes)) (gr_circle (center 0 -0.25) (end 0.5 -0.25) (width 0) (fill yes)) (gr_poly (pts (xy 0 0.75) (xy -0.55 0.75) (xy -0.55 -0.75) (xy 0 -0.75)) (width 0) (fill yes)))  ${p.P3})
     `
     const front_fabrication = `
-        (property "Value" "${fp_name}" (at 0 1.9 ${0 + p.rot}) (layer "F.Fab") (effects (font (size 1 1) (thickness 0.15))))
-        (property "Footprint" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes)  (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (property "Value" "${fp_name}" (at 0 1.9 ${0 + p.rot}) (layer "F.Fab")  (effects (font (size 1 1) (thickness 0.15))))
         (property "Datasheet" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes)  (effects (font (size 1.27 1.27) (thickness 0.15))))
         (property "Description" "" (at 0 0 ${0 + p.rot}) (layer "F.Fab") (hide yes)  (effects (font (size 1.27 1.27) (thickness 0.15))))
     `
@@ -65,10 +65,10 @@ module.exports = {
     const back_silkscreen = `
         (fp_line (start -2.05 -0.3) (end -2.05 0.3) (stroke (width 0.12) (type solid)) (layer "B.SilkS") )
         (fp_line (start -1.4 1) (end 1.4 1) (stroke (width 0.12) (type solid)) (layer "B.SilkS") )
-        (fp_line (start 1.2 1.2) (end 0.9 1.5) (stroke (width 0.12) (type solid)) (layer "B.SilkS") )
-        (fp_line (start 1.2 1.2) (end 1.5 1.5) (stroke (width 0.12) (type solid)) (layer "B.SilkS") )
+        (fp_line (start -1.2 1.2) (end -1.5 1.5) (stroke (width 0.12) (type solid)) (layer "B.SilkS") )
+        (fp_line (start -1.2 1.2) (end -0.9 1.5) (stroke (width 0.12) (type solid)) (layer "B.SilkS") )
+        (fp_line (start -0.9 1.5) (end -1.5 1.5) (stroke (width 0.12) (type solid)) (layer "B.SilkS") )
         (fp_line (start 1.4 -1) (end -1.4 -1) (stroke (width 0.12) (type solid)) (layer "B.SilkS") )
-        (fp_line (start 1.5 1.5) (end 0.9 1.5) (stroke (width 0.12) (type solid)) (layer "B.SilkS") )
         (fp_line (start 2.05 0.3) (end 2.05 -0.3) (stroke (width 0.12) (type solid)) (layer "B.SilkS") )
         (fp_arc (start -2.05 -0.3) (mid -1.844975 -0.794975) (end -1.35 -1) (stroke (width 0.12) (type solid)) (layer "B.SilkS") )
         (fp_arc (start -1.35 1) (mid -1.844975 0.794975) (end -2.05 0.3) (stroke (width 0.12) (type solid)) (layer "B.SilkS") )
