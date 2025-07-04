@@ -95,7 +95,11 @@ module.exports = {
     final += front_mask;
     final += front_courtyard;
     final += front_paste;
-    final += pads;
+    if (p.side == "F") {
+        final += pads_front;
+    } else if (p.side == "B") {
+        final += pads_back;
+    } 
     final += back_silkscreen;
     final += back_pads;
     final += back_fabrication;

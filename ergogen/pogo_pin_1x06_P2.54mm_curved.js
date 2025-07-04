@@ -92,9 +92,9 @@ module.exports = {
     final += front_mask;
     final += front_courtyard;
     final += front_paste;
-    if (p.side == "F" {
+    if (p.side == "F") {
         final += pads_front;
-    } else if (p.side == "B" {
+    } else if (p.side == "B") {
         final += pads_back;
     } 
     final += back_silkscreen;
