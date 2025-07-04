@@ -36,10 +36,15 @@ module.exports = {
     `
     const front_paste = `
     `
-    const pads = `
+    const pads_front = `
         (pad "1" thru_hole circle (at -2.54 0 ${p.rot}) (size 2.1 2.1) (drill 0.9) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P1})
         (pad "2" thru_hole circle (at 0 0 ${p.rot}) (size 2.1 2.1) (drill 0.9) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P2})
         (pad "3" thru_hole circle (at 2.54 0 ${p.rot}) (size 2.1 2.1) (drill 0.9) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P3})
+    `
+    const pads_back = `
+        (pad "3" thru_hole circle (at -2.54 0 ${p.rot}) (size 2.1 2.1) (drill 0.9) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P3})
+        (pad "2" thru_hole circle (at 0 0 ${p.rot}) (size 2.1 2.1) (drill 0.9) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P2})
+        (pad "1" thru_hole circle (at 2.54 0 ${p.rot}) (size 2.1 2.1) (drill 0.9) (layers "*.Cu" "*.Mask") (remove_unused_layers no)  ${p.P1})
     `
     const back_silkscreen = `
     `
@@ -78,7 +83,12 @@ module.exports = {
     final += front_mask;
     final += front_courtyard;
     final += front_paste;
-    final += pads;
+    if (p.side == "F" {
+        final += pads_front;
+    } else if (p.side == "B" {
+        final += pads_back;
+    } 
+
     final += back_silkscreen;
     final += back_pads;
     final += back_fabrication;
