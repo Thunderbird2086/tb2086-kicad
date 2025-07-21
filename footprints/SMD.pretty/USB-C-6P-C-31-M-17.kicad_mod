@@ -1,7 +1,7 @@
 (footprint "USB-C-6P-C-31-M-17"
-	(version 20240108)
+	(version 20241229)
 	(generator "pcbnew")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(layer "F.Cu")
 	(property "Reference" "REF**"
 		(at 0 -0.5 0)
@@ -24,18 +24,6 @@
 		(effects
 			(font
 				(size 1 1)
-				(thickness 0.15)
-			)
-		)
-	)
-	(property "Footprint" ""
-		(at 0 0 0)
-		(layer "F.Fab")
-		(hide yes)
-		(uuid "584669da-11ff-4fed-9f93-534e4bfb4b07")
-		(effects
-			(font
-				(size 1.27 1.27)
 				(thickness 0.15)
 			)
 		)
@@ -64,6 +52,7 @@
 			)
 		)
 	)
+	(attr smd)
 	(fp_rect
 		(start -4.17 -3.4)
 		(end 4.17 3.4)
@@ -71,49 +60,49 @@
 			(width 0.12)
 			(type default)
 		)
-		(fill none)
+		(fill no)
 		(layer "F.CrtYd")
 		(uuid "ed10c089-69ec-47d8-acc9-c9829df0fef3")
 	)
 	(pad "A5" smd roundrect
 		(at -0.5 -3.18)
 		(size 0.8 1.6)
-		(layers "F.Cu" "F.Paste" "F.Mask")
+		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.25)
 		(uuid "2b87e2bd-cec0-43df-98ff-fcb38be69ec6")
 	)
 	(pad "A9" smd roundrect
 		(at 1.52 -3.18)
 		(size 0.8 1.6)
-		(layers "F.Cu" "F.Paste" "F.Mask")
+		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.25)
 		(uuid "18cd8bcb-609f-4a0f-b10a-791602818c83")
 	)
 	(pad "A12" smd roundrect
 		(at 2.75 -3.18)
 		(size 0.9 1.6)
-		(layers "F.Cu" "F.Paste" "F.Mask")
+		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.25)
 		(uuid "9bf34749-517a-4ad3-a173-7a358f81e83c")
 	)
 	(pad "B5" smd roundrect
 		(at 0.5 -3.18)
 		(size 0.8 1.6)
-		(layers "F.Cu" "F.Paste" "F.Mask")
+		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.25)
 		(uuid "3f5c03f3-9a72-4766-9917-e94c5f8167de")
 	)
 	(pad "B9" smd roundrect
 		(at -1.52 -3.18)
 		(size 0.8 1.6)
-		(layers "F.Cu" "F.Paste" "F.Mask")
+		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.25)
 		(uuid "92d06653-baab-40fb-b705-bcfc5fe3a37a")
 	)
 	(pad "B12" smd roundrect
 		(at -2.75 -3.18)
 		(size 0.9 1.6)
-		(layers "F.Cu" "F.Paste" "F.Mask")
+		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.25)
 		(uuid "17d1f752-9acb-4107-8fdb-487c92438cc5")
 	)
@@ -149,6 +138,7 @@
 		(remove_unused_layers no)
 		(uuid "2a6dc76d-1275-47c1-aabb-d819732c8985")
 	)
+	(embedded_fonts no)
 	(model "${KIPRJMOD}/tb2086-kicad/packages3D/GCT_USB4105-GF-A.wrl"
 		(offset
 			(xyz 0 0 0)
